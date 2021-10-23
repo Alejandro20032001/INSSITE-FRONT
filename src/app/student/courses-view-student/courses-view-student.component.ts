@@ -49,6 +49,11 @@ export class CoursesViewStudentComponent implements OnInit {
     this.courses.push(prueba3);
     this.courses.push(prueba4);
     this.courses.push(prueba5);
+    this.courses.push(prueba);
+    this.courses.push(prueba2);
+    this.courses.push(prueba3);
+    this.courses.push(prueba4);
+    this.courses.push(prueba5);
     console.log(this.courses);
   }
 
