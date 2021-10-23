@@ -25,7 +25,14 @@
 
   <div class="seccion-cursos-inferior">
     <div class="cursos">
-
+      <div class="curso" *ngFor= "let course of courses">
+        <div class="nombre-curso">
+          <h3>{{ course.name }}</h3>
+        </div>
+        <div class="descripcion-curso">
+          <p> {{ course.description }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
