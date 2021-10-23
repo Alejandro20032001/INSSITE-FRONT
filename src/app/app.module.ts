@@ -9,12 +9,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialComponentsModule } from './material-components/material-components.module';
 import { CoursesViewStudentComponent } from './student/courses-view-student/courses-view-student.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RegistroComponent } from './registro/registro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeViewStudentComponent,
-    CoursesViewStudentComponent
+    CoursesViewStudentComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
