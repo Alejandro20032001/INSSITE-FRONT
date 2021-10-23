@@ -8,6 +8,7 @@ import { WelcomeViewStudentComponent } from './student/welcome-view-student/welc
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialComponentsModule } from './material-components/material-components.module';
 import { CoursesViewStudentComponent } from './student/courses-view-student/courses-view-student.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CoursesViewStudentComponent } from './student/courses-view-student/cour
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MaterialComponentsModule
+    MaterialComponentsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
