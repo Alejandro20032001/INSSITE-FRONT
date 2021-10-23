@@ -101,7 +101,7 @@ table {
 }
 
 .seccion-cursos{
-  display: flex;
+  display: block;
   height: 95%;
   width: 85%;
   float: right;
@@ -139,7 +139,6 @@ table {
   display: flex;
   height: 100%;
   width: 20%;
-  float: left;
   align-items: center;
   justify-content: center;
 }
@@ -158,4 +157,22 @@ table {
 
 .scs-der a:hover{
   background-color: rgb(184, 184, 184);
+}
+
+.seccion-cursos-inferior{
+  display: flex;
+  background-color: rgb(238, 238, 234);
+  height: 80%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursos{
+  display: block;
+  background-color: rgb(255, 255, 255);
+  height: 95%;
+  width: 95%;
+  border: 2px solid rgb(0, 0, 0);
+  overflow-y: scroll;
 }
