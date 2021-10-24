@@ -8,10 +8,12 @@ import { MaterialModule } from './material/material.module';
 import { ViewMainTeacherComponent } from './teacher/view-main-teacher/view-main-teacher.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './register/register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ViewMainTeacherComponent
+    ViewMainTeacherComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
