@@ -47,11 +47,12 @@
   border: 2px solid #1f53c5;
   font-family: 'Calibri';
   font-size: 1.2em;
+  color: rgb(255, 255, 255);
 }
 
 .estudiante,.docente{
   margin-top: 15px;
-  font-size: 1.2em;
+  font-size: 1.4em;
   padding: 10px;
   background-color: #1f53c5;
   color: rgb(255, 255, 255);
@@ -62,5 +63,16 @@
 
 .docente{
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.estudiante:hover,.docente:hover{
+  background-color: #16377e;
+}
+
+.regresar{
+  text-decoration: none;
+  font-family: 'Calibri';
+  font-size: 1.5em;
+  color: rgb(255, 255, 255);
 }
