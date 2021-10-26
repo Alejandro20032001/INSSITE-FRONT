@@ -1,0 +1,15 @@
+{"courses": [
+  {
+    "id": 1,
+    "courseName": "Books"
+  },
+  {
+    "id": 2,
+    "courseName": "Electronics"
+  },
+  {
+    "id": 3,
+    "courseName": "Computers"
+  }
+]
+}

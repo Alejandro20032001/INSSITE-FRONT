@@ -23,15 +23,13 @@
         <button mat-list-item (click)="goAddCourse()"> Add courses </button>
       </mat-action-list>
   
-      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
       <button  mat-flat-button (click)="logout()" class="logout">
         Log out
       </button>
   
     </mat-drawer>
         <h1>Courses</h1>
-    
-    <section class="courses"  *ngIf="courses.length!=0; else sinCursos">
+<section class="courses"  *ngIf="courses.length!=0; else sinCursos">
       <mat-card class="card"*ngFor="let course of courses">
         
         <div class="rippleCourse"
@@ -43,6 +41,8 @@
        </div>     
       </mat-card>
   </section>
+
+    
   <ng-template #sinCursos><h3>You do not have courses created yet.</h3></ng-template>
   </mat-drawer-container>
 
