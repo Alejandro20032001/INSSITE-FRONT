@@ -1,14 +1,14 @@
 <div class="fondo">
   <div class="formulario">
 
-    <form class="form">
+    <form class="form" (submit) ="estudiante ? submitEstudiante() : submitDocente()">
       <h2>Registro</h2>
-      <input type="text" class="campos" placeholder="Nombre completo">
-      <input type="text" class="campos" placeholder="Nombre de usuario">
-      <input type="password" class="campos" placeholder="Contraseña">
-      <input type="password" class="campos" placeholder="Repetir contraseña">
-      <input type="submit" class="estudiante" value="Estudiante">
-      <input type="submit" class="docente" value="Docente">
+      <input type="text" class="campos" placeholder="Nombre completo" [(ngModel)]="user.name" [ngModelOptions]="{standalone: true}">
+      <input type="text" class="campos" placeholder="Nombre de usuario" [(ngModel)]="user.userName" [ngModelOptions]="{standalone: true}">
+      <input type="password" class="campos" placeholder="Contraseña" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}">
+      <input type="password" class="campos" placeholder="Repetir contraseña" [(ngModel)]="user.password2" [ngModelOptions]="{standalone: true}">
+      <input type="submit" class="estudiante" value="Estudiante" (click) = "cambiarEstudiante()">
+      <input type="submit" class="docente" value="Docente" (click) = "cambiarDocente()">
       <p><a href="" class="regresar">Cancel</a></p>
     </form>
   </div>
