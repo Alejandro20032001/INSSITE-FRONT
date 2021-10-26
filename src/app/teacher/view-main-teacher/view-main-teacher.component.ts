@@ -27,6 +27,12 @@ export class ViewMainTeacherComponent implements OnInit {
     this.courseService.getCourses().pipe(
       tap((courses: Course[])=> this.courses=courses)
     ).subscribe();
+
+    this.courseService.getCourses()
+    .pipe(
+      tap(res => console.log(res))
+      )
+    .subscribe();
   }
 
 }
