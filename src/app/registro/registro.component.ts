@@ -44,6 +44,9 @@ export class RegistroComponent implements OnInit {
   }
 
   validar():boolean{
+    if(!this.user.name.match('^[a-zA-Z\\s]{3,50}$')){
+      alert('El nombre debe contener entre 3 y 50 caracteres, y solo se permite el uso del espacio como caracter especial')
+    }
     return true;
   }
 }
