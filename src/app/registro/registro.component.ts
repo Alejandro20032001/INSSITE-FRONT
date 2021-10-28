@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from './interfaces/user.interface';
+import { userSend } from './interfaces/userSend.interface';
 import { RegisterServices } from './services/user.service';
 
 @Component({
@@ -17,6 +18,13 @@ export class RegistroComponent implements OnInit {
     userRoll: ''
   };
 
+  userSend: userSend = {
+    completeName: '',
+    username: '',
+    password: '',
+    userRoll: ''
+  }
+
   //ESTUDIANTE , DOCENTE
 
   estudiante:boolean = false;
@@ -29,8 +37,11 @@ export class RegistroComponent implements OnInit {
   submitEstudiante():void{
     if (this.validar()) {
       this.user.userRoll = 'ESTUDIANTE';
-      console.log('hola');
-      console.log(this.register.registrar(this.user));
+      this.userSend.completeName = this.user.name;
+      this.userSend.username = this.user.userName;
+      this.userSend.password = this.user.password;
+      this.userSend.userRoll = this.user.userRoll;
+      this.register.registrar(this.userSend).subscribe(data => console.log(data));
     }
 
   }
@@ -38,8 +49,11 @@ export class RegistroComponent implements OnInit {
   submitDocente():void{
     if (this.validar()) {
       this.user.userRoll = 'DOCENTE';
-      console.log('hola');
-      console.log(this.register.registrar(this.user));
+      this.userSend.completeName = this.user.name;
+      this.userSend.username = this.user.userName;
+      this.userSend.password = this.user.password;
+      this.userSend.userRoll = this.user.userRoll;
+      this.register.registrar(this.userSend).subscribe(data => console.log(data));
     }
   }
 
