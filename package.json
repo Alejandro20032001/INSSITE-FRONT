@@ -11,8 +11,8 @@
     "serverAPI": "json-server --watch server/bd.json --port 3000"
   },
   "engines": {
-    "node": "12.4.0",
-    "npm": "6.9.0"
+    "node": "14.17.3",
+    "npm": "6.14.13"
   },
   "private": true,
   "dependencies": {
