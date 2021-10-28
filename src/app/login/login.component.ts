@@ -30,9 +30,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('token', response.data.accessToken)
         //console.log(response.data.accessToken);
         this.router.navigate(['/home'])
-
       }
-
     })
   }
 
