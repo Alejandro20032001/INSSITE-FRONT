@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {tap} from 'rxjs/operators';
 import { Course } from 'src/app/courses/interfaces/course.interface';
 import { CourseService } from 'src/app/courses/services/course.service';
@@ -18,10 +19,10 @@ export class ViewMainTeacherComponent implements OnInit {
   //color: string;
   goHome(){}
   goAddCourse(){}
-  logout(){}
+
 
   courses!: Course[];
-  constructor(private courseService: CourseService) { }
+  constructor(private courseService: CourseService, private router: Router) { }
 
   ngOnInit(): void {
     this.courseService.getCourses().pipe(
@@ -35,4 +36,7 @@ export class ViewMainTeacherComponent implements OnInit {
     .subscribe();
   }
 
+  logout():void{
+    this.router.navigate(['./login']);
+  }
 }

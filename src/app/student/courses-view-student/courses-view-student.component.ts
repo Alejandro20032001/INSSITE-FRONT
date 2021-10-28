@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CoursesService } from '../services/courses.service';
 import {tap} from 'rxjs/operators';
 import { Course } from '../interfaces/course.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-courses-view-student',
@@ -12,7 +13,7 @@ export class CoursesViewStudentComponent implements OnInit {
 
   courses: Course[] = [];
 
-  constructor(private productSvc: CoursesService) { }
+  constructor(private productSvc: CoursesService, private router:Router) { }
 
   ngOnInit(): void {
 
@@ -23,4 +24,11 @@ export class CoursesViewStudentComponent implements OnInit {
     .subscribe();
   }
 
+  logOut():void{
+    this.router.navigate(['./login']);
+  }
+
+  goHome():void{
+    this.router.navigate(['./studentWelcomeView']);
+  }
 }

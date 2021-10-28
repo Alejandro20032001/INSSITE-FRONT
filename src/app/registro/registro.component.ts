@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from './interfaces/user.interface';
 import { userSend } from './interfaces/userSend.interface';
 import { RegisterServices } from './services/user.service';
@@ -29,7 +30,7 @@ export class RegistroComponent implements OnInit {
 
   estudiante:boolean = false;
 
-  constructor(private register: RegisterServices) { }
+  constructor(private register: RegisterServices, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -91,5 +92,9 @@ export class RegistroComponent implements OnInit {
 
       return true;
     }
+  }
+
+  regresar():void{
+    this.router.navigate(['./login']);
   }
 }
