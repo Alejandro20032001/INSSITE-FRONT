@@ -1,0 +1,48 @@
+
+<mat-toolbar>
+   <div class="example-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button> 
+    </div>
+    <span>Professor</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>assessment</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>delete_outline</mat-icon>
+   </button>
+</mat-toolbar> 
+
+  <mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+  
+      <mat-action-list>
+        <button mat-list-item (click)="goHome()"> Home </button>
+        <button mat-list-item (click)="goAddCourse()"> Add courses </button>
+      </mat-action-list>
+  
+      <button  mat-flat-button (click)="logout()" class="logout">
+        Log out
+      </button>
+  
+    </mat-drawer>
+        <h1>Courses</h1>
+<section class="courses"  *ngIf="courses.length!=0; else sinCursos">
+      <mat-card class="card"*ngFor="let course of courses">
+        
+        <div class="rippleCourse"
+       matRipple
+       [matRippleCentered]="centered"
+       [matRippleDisabled]="disabled"
+       [matRippleUnbounded]="unbounded">
+       {{course.courseName}}
+       </div>     
+      </mat-card>
+  </section>
+
+    
+  <ng-template #sinCursos><h3>You do not have courses created yet.</h3></ng-template>
+  </mat-drawer-container>
+
