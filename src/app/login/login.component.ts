@@ -27,11 +27,20 @@ export class LoginComponent implements OnInit {
     this.http.Login(form).subscribe(data => {
       let response:ResponseI = data
       if (response) {  //validar status
+        console.log(response.data.user.userRoll);
         localStorage.setItem('token', response.data.accessToken)
         //console.log(response.data.accessToken);
-        this.router.navigate(['/home'])
+        if(response.data.user.userRoll === 'ESTUDIANTE'){
+          this.router.navigate(['/studentWelcomeView'])
+        }else{
+          this.router.navigate(['/teacher'])
+        }
+
       }
     })
   }
 
+  goToRegister():void{
+    this.router.navigate(['register']);
+  }
 }

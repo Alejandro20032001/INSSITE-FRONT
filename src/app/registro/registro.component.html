@@ -9,7 +9,7 @@
       <input type="password" class="campos" placeholder="Repetir contraseña" [(ngModel)]="user.password2" [ngModelOptions]="{standalone: true}">
       <input type="submit" class="estudiante" value="Estudiante" (click) = "cambiarEstudiante()">
       <input type="submit" class="docente" value="Docente" (click) = "cambiarDocente()">
-      <p><a href="" class="regresar">Cancel</a></p>
+      <p><a class="regresar" (click) = 'regresar()'>Cancel</a></p>
     </form>
   </div>
 </div>
