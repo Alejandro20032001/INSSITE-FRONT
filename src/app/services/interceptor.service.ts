@@ -8,7 +8,7 @@ import {catchError} from 'rxjs/internal/operators';
 })
 export class HttpErrorInterceptor implements HttpInterceptor {
   construct() {}
-  
+
   intercept(req: HttpRequest<any>, next: HttpHandler) {
     return next.handle(req).pipe(
       catchError(error => {
@@ -21,6 +21,15 @@ export class HttpErrorInterceptor implements HttpInterceptor {
           errorMessage = `Server-side error: ${error.status} ${error.message}`;
         }
         console.log(error.error.message);
+
+        if(error.error.message === 'Username already exist'){
+          alert('El nombre de usuario ya existe');
+        }
+
+        if(error.error.message === 'Login user or password does not match.'){
+          alert('El nombre de usuario o la contraseña son incorrectos');
+        }
+
         return throwError(errorMessage);
       })
     );

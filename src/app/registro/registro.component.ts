@@ -43,6 +43,8 @@ export class RegistroComponent implements OnInit {
       this.userSend.password = this.user.password;
       this.userSend.userRoll = this.user.userRoll;
       this.register.registrar(this.userSend).subscribe(data => console.log(data));
+      alert('Usuario registrado como estudiante');
+      this.router.navigate(['./login']);
     }
 
   }
@@ -55,6 +57,8 @@ export class RegistroComponent implements OnInit {
       this.userSend.password = this.user.password;
       this.userSend.userRoll = this.user.userRoll;
       this.register.registrar(this.userSend).subscribe(data => console.log(data));
+      alert('Usuario registrado como docente');
+      this.router.navigate(['./login']);
     }
   }
 
