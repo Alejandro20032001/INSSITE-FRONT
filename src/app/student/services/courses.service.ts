@@ -8,7 +8,7 @@ import { Course } from '../interfaces/course.interface';
 })
 export class CoursesService {
 
-  private apiURL = 'https://inssite-database.herokuapp.com/course';
+  private apiURL = 'https://inssite-database.herokuapp.com/user/courses';
 
   constructor(private http: HttpClient) { }
 

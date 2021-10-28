@@ -14,6 +14,7 @@ import { AngularMModule } from './angularM.material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component'
 import { HttpErrorInterceptor } from './services/interceptor.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { HttpErrorInterceptor } from './services/interceptor.service';
     HttpClientModule
   ],
   providers: [
+    CookieService,
     { provide: HTTP_INTERCEPTORS,useClass: HttpErrorInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
