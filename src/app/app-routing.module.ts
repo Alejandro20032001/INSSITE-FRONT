@@ -8,7 +8,7 @@ import { WelcomeViewStudentComponent } from './student/welcome-view-student/welc
 import { CoursesViewStudentComponent } from './student/courses-view-student/courses-view-student.component';
 
 const routes: Routes = [
-  { path:'teacher', component: ViewMainTeacherComponent},
+  { path:' teacher', component: ViewMainTeacherComponent},
   { path: 'home', component: HomeComponent},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistroComponent},
