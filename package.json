@@ -1,5 +1,5 @@
 {
-  "name": "inssite1",
+  "name": "inssite",
   "version": "0.0.0",
   "scripts": {
     "heroku-postbuild": "ng build --prod",
