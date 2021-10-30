@@ -42,9 +42,14 @@ export class RegistroComponent implements OnInit {
       this.userSend.username = this.user.userName;
       this.userSend.password = this.user.password;
       this.userSend.userRoll = this.user.userRoll;
-      this.register.registrar(this.userSend).subscribe(data => console.log(data));
-      alert('Usuario registrado como estudiante');
-      this.router.navigate(['./login']);
+      this.register.registrar(this.userSend).subscribe(data => {
+        if(data.message !== 'Username already exist'){
+          alert('Usuario registrado como estudiante');
+          this.router.navigate(['./login']);
+        }
+      }
+        );
+
     }
 
   }
@@ -56,9 +61,13 @@ export class RegistroComponent implements OnInit {
       this.userSend.username = this.user.userName;
       this.userSend.password = this.user.password;
       this.userSend.userRoll = this.user.userRoll;
-      this.register.registrar(this.userSend).subscribe(data => console.log(data));
-      alert('Usuario registrado como docente');
-      this.router.navigate(['./login']);
+      this.register.registrar(this.userSend).subscribe(data => {
+        if(data.message !== 'Username already exist'){
+          alert('Usuario registrado como docente');
+          this.router.navigate(['./login']);
+        }
+      }
+        );
     }
   }
 
@@ -84,7 +93,7 @@ export class RegistroComponent implements OnInit {
 
     } else if (!this.user.password.match('^(?=\\w*\\d)(?=\\w*[A-Z])(?=\\w*[a-z])\\S{8,}$')) {
 
-      alert('Password is not valid: La contraseña debe contener 8 caracteres como minimo, al menos una mayuscula y un numero, ademas de no contener espacios')
+      alert('Password is not valid: La contraseña debe contener 8 caracteres como minimo, al menos una mayuscula, un numero y una miniscula, ademas de no contener espacios')
       return false;
 
     } else if (this.user.password !== this.user.password2) {
