@@ -1,12 +1,8 @@
-.example-spacer {
+.espacio {
   flex: 1 1 auto;
 }
-.toolbar {
-  height: 30px;
-  background-color: #838f8d
-}
 
-.example-container {
+.container-courses {
   height: 600px;
   background-color: #e8e9e9;
   .textUp{
@@ -14,7 +10,7 @@
   }
 }
 
-.example-sidenav-content {
+.toolbar {
   display: flex;
   height: 30px;
   align-content: center;
@@ -25,7 +21,7 @@
   }
 }
 
-.example-sidenav {
+.lateral {
   background-color: #97aaae;
   padding: 10px;
   width: 200px;

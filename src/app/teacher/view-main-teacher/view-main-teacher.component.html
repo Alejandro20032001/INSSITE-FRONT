@@ -1,20 +1,20 @@
-<div class="example-sidenav-content">
+<div class="toolbar">
   <button type="button" mat-button (click)="drawer.toggle()">
      <mat-icon>menu</mat-icon>
   </button> 
   <h2>Teacher</h2>
-  <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+  <span class="espacio"></span>
+  <button mat-icon-button class="analitics-icon" aria-label="Example icon-button with analitics icon">
     <mat-icon>assessment</mat-icon>
   </button>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+  <button mat-icon-button class="delete-icon" aria-label="Example icon-button with delete icon">
     <mat-icon>delete_outline</mat-icon>
   </button>
  </div>
   
 
-<mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
+<mat-drawer-container class="container-courses" autosize>
+    <mat-drawer #drawer class="lateral" mode="side">
      <img src="../../../assets/images/Classroom.jpg"/>
     <mat-action-list>
       <button class="opt" mat-list-item (click)="goAddCourse()"> Add courses </button>
