@@ -11,15 +11,11 @@ import { CourseService } from 'src/app/courses/services/course.service';
 })
 export class ViewMainTeacherComponent implements OnInit {
   showFiller = false;
-
   centered = false;
   disabled = false;
   unbounded = false;
-  //radius: number;
-  //color: string;
   goHome(){}
   goAddCourse(){}
-
 
   courses!: Course[];
   constructor(private courseService: CourseService, private router: Router) { }
