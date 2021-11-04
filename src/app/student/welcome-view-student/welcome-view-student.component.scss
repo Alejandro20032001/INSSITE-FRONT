@@ -6,16 +6,12 @@
 
 a{
   cursor: pointer;
-  transition-duration: 1s;
+  transition-duration: 0.4s;
 }
 
 nav ul li a:hover{
-  background-image: radial-gradient(rgb(67, 175, 224), rgb(167, 199, 199), rgb(214, 214, 214));
-  border-radius: 5px;
-  font-size: 4em;
-  color: #3b2374;
-  text-shadow: 2px 2px;
-  padding: 5px;
+  background-color: #8bc0ba;
+  border-radius: 10px;
 }
 
 header{
