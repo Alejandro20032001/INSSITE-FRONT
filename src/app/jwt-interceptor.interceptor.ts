@@ -10,23 +10,28 @@ import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 
 @Injectable()
-export class JwtInterceptorInterceptor implements HttpInterceptor {
+export class JwtInterceptor implements HttpInterceptor {
 
   constructor(
     private cookieService: CookieService,
     private router: Router,
   ) {}
 
-  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token: string = this.cookieService.get('token');
     let req = request;
     if(token){
-      req = request.clone({
+      console.log('hay token')
+      //req.clone({ headers: req.headers.set('x-access-token', 'Bearer' +token) });
+      //req.headers.set('x-access-token',`Bearer ${token}`)
+      request = request.clone({
         setHeaders: { 
           authorization: `Bearer ${token}`
         }
       });
+      //console.log(request)
     }
+    //console.log(req);
     return next.handle(request);
   }
 }

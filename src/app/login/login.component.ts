@@ -37,11 +37,12 @@ export class LoginComponent implements OnInit {
         //localStorage.setItem('token', response.data.accessToken)
         this.cookieService.set('token', response.data.accessToken);
         //console.log(response.data.accessToken);
-        if(response.data.user.userRoll === 'ESTUDIANTE'){
+        if(response.data.user.roles[0] === 'ESTUDIANTE'){
           this.router.navigate(['/studentWelcomeView'])
         }else{
           this.router.navigate(['/teacher'])
         }
+        console.log(response.data.user.roles)
       }
     })
   }
