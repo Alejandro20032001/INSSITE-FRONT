@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+a{
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+nav ul li a:hover{
+  background-color: #8bc0ba;
+  border-radius: 10px;
+}
+
 header{
   background-color: #ffffff;
   width: 100%;
@@ -42,7 +52,7 @@ nav ul li a{
   text-decoration: none;
   color: rgb(0, 0, 0);
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .banner{
