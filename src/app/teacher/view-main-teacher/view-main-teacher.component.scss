@@ -1,71 +1,79 @@
+.espacio {
+  flex: 1 1 auto;
+}
 
-
-.example-spacer {
-    flex: 1 1 auto;
-  }
- .toolbar {
-    background-color: #a9e9e1
- }
-
-  .example-container {
-    height: 600px;
-    border: 0px solid rgba(0, 0, 0, 0.5);
-    h1{
-      color: #000000;
-      margin: 12px 12px 12px 12px;
-    }
-  }
-  
-  .example-sidenav-content {
-    display: flex;
-    height:50%;
-    align-items: normal;
-    justify-content: left;
-  }
-  
-  .example-sidenav {
-    padding: 20px;
-    .logout{
-      background-color: #a9e9e1;
-      width: 120px;
-      height: 50px;
-    }
-  }
-  .rippleCourse {
-    
-    cursor: pointer;
-    text-align: center;
-  
-    width: 300px;
-    height: 200px;
-    line-height: 100px;
-    background-color: #a9e9e1;
-
+.container-courses {
+  height: 600px;
+  background-color: #e8e9e9;
+  .textUp{
     margin: 12px 12px 12px 12px;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-  
-    -webkit-user-drag: none;
-    -webkit-tap-highlight-color: transparent;
   }
-  section.courses{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    
-    margin: 50px 12px 12px 50px;
-    .card{
-      background-color: #f4f4f4;
-      
-    margin-top: 20px;
-    margin-right: 15px;
-    margin-bottom: 20px;
+}
 
-    }
- }
- h3{
+.toolbar {
+  display: flex;
+  height: 30px;
+  align-content: center;
+  justify-content: left;
+  background-color: #54938e;
+  .button{
+    height: 30px;
+  }
+}
+
+.lateral {
+  background-color: #97aaae;
+  padding: 10px;
+  width: 200px;
+  img{
+    width: 175px;
+    height: 175px;
+    border: 0px;
+  }
+  .logout{
+    background-color: #54938e;
+    width: 175px;
+    height: 50px;
+  }
+}
+.rippleCourse {
+  
+  cursor: pointer;
   text-align: center;
+
+  width: 300px;
+  height: 100px;
+  line-height: 100px;
+  background-color: #54938e;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+}
+section.courses{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;    
+  margin: 50px 12px 12px 50px;
+  background-color: #ffffff;    
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  .card{
+  width: 300px;
+  height: 200px;
+  background-color: #f4f4f4;
+  margin-top: 20px;
+  margin-right: 15px;
+  margin-bottom: 20px;
+  .cssCourse{
+    font-size: x-large;
+    font-style: italic;
+  }
+  }
+}
+h3{
+text-align: center;
 }
