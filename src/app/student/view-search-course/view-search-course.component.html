@@ -1,0 +1,33 @@
+
+<div class="container">
+    <h1>Inssite</h1>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <input type="text" class="form-control" name="filterPost" placeholder="Search..." [(ngModel)]="filterPost">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Area Course</th>
+              <th>Course Name</th>
+              <th>Description</th>
+              <th>Register</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let course of courses | filter:filterPost ">
+              <td>{{course.areaCourse}}</td>
+              <td>{{course.courseName}}</td>
+              <td>{{course.description}}</td>
+              <td><button mat-flat-button (click)="enroll()" class="join">Join me</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>

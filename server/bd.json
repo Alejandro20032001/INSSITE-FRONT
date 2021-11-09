@@ -1,15 +1,18 @@
 {"courses": [
   {
-    "id": 1,
-    "courseName": "Books"
+    "areaCourse": "Informatica",
+    "courseName": "Books",
+    "description": "Este es e texto que debe mostrarse en el lugar de la sdescription"
   },
   {
-    "id": 2,
-    "courseName": "Electronics"
+    "areaCourse": "Informatica",
+    "courseName": "Electronics",
+    "description": "Este es e texto que debe mostrarse en el lugar de la sdescription"
   },
   {
-    "id": 3,
-    "courseName": "Computers"
+    "areaCourse": "Matematica",
+    "courseName": "Computers",
+    "description": "Este es e texto que debe mostrarse en el lugar de la sdescription"
   }
 ]
 }

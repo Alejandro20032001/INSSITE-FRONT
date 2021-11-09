@@ -6,7 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { WelcomeViewStudentComponent } from './student/welcome-view-student/welcome-view-student.component';
 import { CoursesViewStudentComponent } from './student/courses-view-student/courses-view-student.component';
-
+import { ViewSearchCourseComponent } from './student/view-search-course/view-search-course.component';
 const routes: Routes = [
   { path: 'teacher', component: ViewMainTeacherComponent},
   { path: 'home', component: HomeComponent},
@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'register', component: RegistroComponent},
   { path: 'studentWelcomeView', component: WelcomeViewStudentComponent},
   { path: 'studentCourses', component: CoursesViewStudentComponent},
+  { path: 'searchCourse', component: ViewSearchCourseComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ]
 

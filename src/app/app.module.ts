@@ -14,6 +14,8 @@ import { AngularMModule } from './angularM.material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component'
 import { HttpErrorInterceptor } from './services/interceptor.service';
+import { FilterPipe } from './pipes/filter.pipe';
+import { ViewSearchCourseComponent } from './student/view-search-course/view-search-course.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { HttpErrorInterceptor } from './services/interceptor.service';
     RegistroComponent,
     ViewMainTeacherComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    ViewSearchCourseComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
