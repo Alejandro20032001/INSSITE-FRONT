@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component'
 import { HttpErrorInterceptor } from './services/interceptor.service';
 import { CookieService } from 'ngx-cookie-service';
 import { JwtInterceptor } from './jwt-interceptor.interceptor';
+import { VentanaPrincipalComponent } from './anadirMaterialModulo/ventana-principal/ventana-principal.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { JwtInterceptor } from './jwt-interceptor.interceptor';
     RegistroComponent,
     ViewMainTeacherComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    VentanaPrincipalComponent
   ],
   imports: [
     BrowserModule,
