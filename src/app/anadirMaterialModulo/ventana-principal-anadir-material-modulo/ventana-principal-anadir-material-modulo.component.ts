@@ -12,4 +12,5 @@ export class VentanaPrincipalAnadirMaterialModuloComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }
