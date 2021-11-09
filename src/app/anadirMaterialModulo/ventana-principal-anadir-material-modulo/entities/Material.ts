@@ -1,4 +1,4 @@
-abstract class Material {
+export abstract class Material {
 
   constructor() {
 

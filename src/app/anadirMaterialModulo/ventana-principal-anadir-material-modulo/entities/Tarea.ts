@@ -1,4 +1,6 @@
-class Tarea extends Material{
+import { Material } from "./material";
+
+export class Tarea extends Material{
 
   fecha:Date;
   puntuacion: Number;

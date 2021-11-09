@@ -1,4 +1,6 @@
-class Videollamada extends Material {
+import { Material } from "./material";
+
+export class Videollamada extends Material {
 
   link:string
   fecha:Date;
