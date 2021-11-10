@@ -17,6 +17,10 @@ import { HttpErrorInterceptor } from './services/interceptor.service';
 import { CookieService } from 'ngx-cookie-service';
 import { JwtInterceptor } from './jwt-interceptor.interceptor';
 import { VentanaPrincipalAnadirMaterialModuloComponent } from './anadirMaterialModulo/ventana-principal-anadir-material-modulo/ventana-principal-anadir-material-modulo.component';
+import { LecturaComponent } from './anadirMaterialModulo/lectura/lectura.component';
+import { LinkMaterialComponent } from './anadirMaterialModulo/link-material/link-material.component';
+import { VideollamadaComponent } from './anadirMaterialModulo/videollamada/videollamada.component';
+import { TareaComponent } from './anadirMaterialModulo/tarea/tarea.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { VentanaPrincipalAnadirMaterialModuloComponent } from './anadirMaterialM
     ViewMainTeacherComponent,
     LoginComponent,
     HomeComponent,
-    VentanaPrincipalAnadirMaterialModuloComponent
+    VentanaPrincipalAnadirMaterialModuloComponent,
+    LecturaComponent,
+    LinkMaterialComponent,
+    VideollamadaComponent,
+    TareaComponent
   ],
   imports: [
     BrowserModule,
