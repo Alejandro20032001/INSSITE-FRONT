@@ -23,7 +23,11 @@ export class FilterPipe implements PipeTransform {
         };
      // };
     };
-        return resultPosts;
+    if(resultPosts.length!=0){
+       return resultPosts;
+    }else{
+      alert('No courses were found');
+    }
   }
 
 

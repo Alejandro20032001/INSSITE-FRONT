@@ -2,21 +2,18 @@
   <div class="encabezado">
     <div><h1>Inssite</h1></div>
     <div><h2>Search courses</h2></div>
-    <input type="text" class="form-control" name="filterPost" placeholder="Search..." [(ngModel)]="filterPost">
+    <input type="text" class="form-control" name="filterPost" placeholder="Search your courses by name or area to which they belong..." [(ngModel)]="filterPost">
   </div>
- 
+  
     
-      <div class="container">          
-          <div class="courses">
+      <div class="courses">
+           
             <div *ngFor="let course of courses | filter:filterPost ">
-              <mat-card class="card">
+               <mat-card class="card">
                   <li class="names"><strong>{{course.courseName}}</strong></li>
-                  <li><small>
-                    {{course.areaCourse}}
-                  </small></li>
+                  <li><small>{{course.areaCourse}}</small></li>
                   <li>{{course.description}}</li>
-                  <button mat-flat-button (click)="enroll()" class="join">Join me</button>
-                </mat-card>
+                  <button mat-flat-button (click)="enroll(course)" class="join">Register</button>
+               </mat-card>
             </div>
-          </div>
       </div>

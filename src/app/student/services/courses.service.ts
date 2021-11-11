@@ -8,11 +8,14 @@ import { Course } from '../interfaces/course.interface';
 })
 export class CoursesService {
 
-  private apiURL = 'https://inssite-database.herokuapp.com/course';
+  private apiURL = 'http://localhost:3000/products';
 
   constructor(private http: HttpClient) { }
 
   getProducts():Observable<Course[]>{
     return this.http.get<Course[]>(this.apiURL);
+  }
+  createCourse(course:Course):Observable<Course>{
+    return this.http.post<Course>(this.apiURL, course);
   }
 }

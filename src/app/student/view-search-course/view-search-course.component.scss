@@ -17,6 +17,7 @@ thead{
 
 .encabezado{
   background-image: url(../../../assets/images/Classroom3.jpg);
+  height: 300px;
   padding: 10%;
   }
   
@@ -30,13 +31,18 @@ thead{
   }
 .courses{
     margin: 12px 12px 12px 12px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    max-height: 350px;
+    justify-content: center;
 }
 li{
     list-style: none;
     text-align: center;
 }
 .card{
-  height: 100px;
+  height: 150px;
   width: 80%;
   margin-top: 30px;
   margin-left: 10%;
