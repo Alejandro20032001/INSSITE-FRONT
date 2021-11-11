@@ -2,16 +2,21 @@
   {
     "areaCourse": "Informatica",
     "courseName": "Books",
+    "dateStartEnroles":{"date":29,"day":3,"year":2021},
     "description": "Este es e texto que debe mostrarse en el lugar de la sdescription"
   },
   {
     "areaCourse": "Informatica",
     "courseName": "Electronics",
+    
+    "dateStartEnroles":{"date":29,"day":12,"year":2021},
     "description": "Este es e texto que debe mostrarse en el lugar de la sdescription"
   },
   {
     "areaCourse": "Matematica",
     "courseName": "Computers",
+    
+    "dateStartEnroles":{"date":29,"day":11,"year":2021},
     "description": "Este es e texto que debe mostrarse en el lugar de la sdescription"
   }
 ]
