@@ -1,4 +1,19 @@
-
+<div class="toolbar">
+  <button type="button" mat-button (click)="drawer.toggle()">
+     <mat-icon>menu</mat-icon>
+  </button> 
+  <h2>Student</h2>
+  </div>
+<mat-drawer-container class="container-courses" autosize>
+  <mat-drawer #drawer class="barra-lateral" mode="side">
+   <img src="../../../assets/images/logo.jpeg"/>
+  <mat-action-list>
+    <button class="opt" mat-list-item (click)="goHome()"> Home </button>
+  </mat-action-list>
+  <button  mat-flat-button (click)="logOut()" class="logout">
+    Log out
+  </button>
+</mat-drawer>
   <div class="encabezado">
     <div><h1>Inssite</h1></div>
     <div><h2>Search courses</h2></div>
@@ -17,3 +32,4 @@
                </mat-card>
             </div>
       </div>
+</mat-drawer-container>

@@ -3,14 +3,14 @@ import { CourseService } from 'src/app/courses/services/course.service';
 import { Course } from 'src/app/courses/interfaces/course.interface';
 import {tap} from 'rxjs/operators';
 import { CoursesService } from '../services/courses.service';
-import swal from 'sweetalert';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-view-search-course',
   templateUrl: './view-search-course.component.html',
   styleUrls: ['./view-search-course.component.scss']
 })
 export class ViewSearchCourseComponent implements OnInit {
-    constructor(private courseService: CourseService,private mycourses: CoursesService) { }
+    constructor(private courseService: CourseService, private mycourses: CoursesService, private router:Router) { }
     filterPost = '';
     courses!: Course[];
     mycourse!: Course[];
@@ -42,11 +42,19 @@ export class ViewSearchCourseComponent implements OnInit {
      }
      enrollPrevious(course:Course): boolean {
        var res:boolean =false;
-       for( var courseAux of this.mycourse ){
-          if(courseAux==course){
+       for(let courseAux of this.mycourse ){
+          if(courseAux.courseName === course.courseName && courseAux.descriptionCourse===course.descriptionCourse){
               res= true;
           }
        }
+       console.log(course.courseName);
        return res;
      }
+     logOut():void{
+      this.router.navigate(['./login']);
+    }
+  
+    goHome():void{
+      this.router.navigate(['./studentWelcomeView']);
+    }
   }

@@ -1,11 +1,10 @@
 .join{
-    background-color:#54938e;
+    background-color:#559A95;
 }
 thead{
     align-content: center;
 }
 .input1{
-    background-color: #535353;
     height: 70px;
     width: 100%;
     opacity: 0.7;
@@ -49,4 +48,42 @@ li{
 }
 .names{
   font-size: 20px;
+}
+
+
+
+
+.container-courses {
+  height: 600px;
+  background-color: #F7F7F7;
+  .textUp{
+    margin: 12px 12px 12px 12px;
+  }
+}
+
+.toolbar {
+  display: flex;
+  height: 30px;
+  align-content: center;
+  justify-content: left;
+  background-color: #559A95;
+  .button{
+    height: 30px;
+  }
+}
+
+.barra-lateral{
+  background-color: #97ABAE;
+  padding: 10px;
+  width: 200px;
+  img{
+    width: 175px;
+    height: 175px;
+    border: 0px;
+  }
+  .logout{
+    background-color: #559A95;
+    width: 175px;
+    height: 50px;
+  }
 }
