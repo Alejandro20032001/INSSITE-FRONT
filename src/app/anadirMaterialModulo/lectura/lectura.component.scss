@@ -1,0 +1,98 @@
+.superior{
+  display: flex;
+  width: 100%;
+  height: 5%;
+  background-color: #559A95;
+  align-items: center;
+}
+
+.superior span{
+  margin-left: 15px;
+}
+
+.titulo{
+  display: block;
+  width: 100%;
+  height: 20%;
+  background-color: #F7F7F7;
+  padding: 16px;
+}
+
+.titulo h2{
+  display: block;
+  width: 70%;
+  height: 20%;
+}
+
+.titulo textarea{
+  display: block;
+  width: 90%;
+  height: 70%;
+  margin: auto;
+  font-size: 1.5em;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding: 5px;
+  padding-right: 10px;
+  resize: none;
+}
+
+.titulo textarea:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.contenido{
+  display: block;
+  width: 100%;
+  height: 65%;
+  background-color: #F7F7F7;
+  padding: 16px;
+}
+
+.contenido h2{
+  display: block;
+  width: 70%;
+  height: 10%;
+}
+
+.contenido textarea{
+  display: block;
+  width: 90%;
+  height: 80%;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding: 5px;
+  padding-right: 10px;
+  resize: none;
+}
+
+.guardar{
+  display: flex;
+  height: 10%;
+  align-items: center;
+  justify-content: end;
+}
+
+.guardar a{
+  display: flex;
+  text-decoration: none;
+  height: 70%;
+  width: 15%;
+  background-color: #559A95;
+  align-items: center;
+  justify-content: center;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  font-size: 2em;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+}
+
+.guardar a:hover{
+  color: black;
+  background-color: #47837f;
+}
