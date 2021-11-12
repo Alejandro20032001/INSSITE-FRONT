@@ -14,6 +14,9 @@ import { AngularMModule } from './angularM.material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component'
 import { HttpErrorInterceptor } from './services/interceptor.service';
+import { CoursesModule } from './courses/courses.module';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core'
 
 @NgModule({
   declarations: [
@@ -29,11 +32,13 @@ import { HttpErrorInterceptor } from './services/interceptor.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule,MatDatepickerModule,MatNativeDateModule,
     MaterialComponentsModule,
     AngularMModule,
     ReactiveFormsModule,
-    HttpClientModule
+    CoursesModule,
+    HttpClientModule,
+
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS,useClass: HttpErrorInterceptor, multi: true}
