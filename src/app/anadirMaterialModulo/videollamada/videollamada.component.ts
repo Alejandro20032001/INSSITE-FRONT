@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-videollamada',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideollamadaComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router:Router,
+    private cookieService: CookieService) { }
 
   ngOnInit(): void {
   }
 
+  guardar():void{
+    this.router.navigate(['materialModulo']);
+  }
 }

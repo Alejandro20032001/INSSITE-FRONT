@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'nuevaLectura', component: LecturaComponent},
   { path: 'nuevoMaterial', component:LinkMaterialComponent},
   { path: 'nuevaVideollamada',component:VideollamadaComponent},
-  { path: 'nuevaTara', component: TareaComponent},
+  { path: 'nuevaTarea', component: TareaComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ]
 

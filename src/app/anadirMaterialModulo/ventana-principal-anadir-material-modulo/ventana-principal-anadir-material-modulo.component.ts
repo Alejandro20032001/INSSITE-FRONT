@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 import { Lectura } from './entities/lectura';
 import { LinkMaterial } from './entities/LinkMaterial';
 import { Material } from './entities/material';
@@ -14,7 +16,10 @@ export class VentanaPrincipalAnadirMaterialModuloComponent implements OnInit {
 
   materiales:Material[] = [];
 
-  constructor() { }
+  constructor(
+    private router:Router,
+    private cookieService: CookieService) {
+  }
 
   ngOnInit(): void {
 
@@ -26,8 +31,25 @@ export class VentanaPrincipalAnadirMaterialModuloComponent implements OnInit {
     this.materiales[1] = link;
     this.materiales[2] = video;
     this.materiales[3] = tarea;
-
   }
 
+  nuevaLectura():void{
+    this.cookieService.set('idModulo',"ABCD");
+    this.router.navigate(["/nuevaLectura"]);
+  }
 
+  nuevoMaterial():void{
+    this.cookieService.set('idModulo',"ABCD");
+    this.router.navigate(["/nuevoMaterial"]);
+  }
+
+  nuevaTarea():void{
+    this.cookieService.set('idModulo',"ABCD");
+    this.router.navigate(["/nuevaTarea"]);
+  }
+
+  nuevaVideollamada():void{
+    this.cookieService.set('idModulo',"ABCD");
+    this.router.navigate(["/nuevaVideollamada"]);
+  }
 }

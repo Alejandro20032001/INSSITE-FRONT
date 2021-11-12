@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-lectura',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LecturaComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router:Router,
+    private cookieService: CookieService) { }
 
   ngOnInit(): void {
+    console.log(this.cookieService.get('idModulo'));
+  }
+
+  guardar():void{
+    this.router.navigate(['materialModulo']);
   }
 
 }
