@@ -4,17 +4,17 @@
 
 <div class="titulo">
   <h2>Titulo:</h2>
-  <textarea name="" id="" maxlength="200"></textarea>
+  <textarea name="" id="" maxlength="200" [(ngModel)]="tarea.titulo"></textarea>
 </div>
 
 <div class="descripcion">
   <h2>Descripcion:</h2>
-  <textarea name="" id="" maxlength="10000"></textarea>
+  <textarea name="" id="" maxlength="10000" [(ngModel)]="tarea.descripcion"></textarea>
 </div>
 
 <div class="calificacion">
   <h2>Calificacion:</h2>
-  <input type="number" name="" id="" min="1" max="10">
+  <input type="number" name="" id="" min="1" max="10" [(ngModel)]="tarea.puntuacion">
 </div>
 
 <div class="guardar">

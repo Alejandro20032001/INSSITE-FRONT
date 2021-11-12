@@ -4,23 +4,23 @@
 
 <div class="link">
   <h2>Link de la videollamada:</h2>
-  <input type="url" name="" id="">
+  <input type="url" name="" id="" [(ngModel)]="videollamada.link">
 </div>
 
 <div class="fecha">
   <div class="fecha-arriba">
     <h2>Fecha:</h2>
-    <input type="date" name="" id="">
+    <input type="date" name="" id="" [(ngModel)]="videollamada.fecha">
   </div>
   <div class="fecha-abajo">
     <h2>Hora:</h2>
-    <input type="time" name="" id="">
+    <input type="time" name="" id="" [(ngModel)]="videollamada.hora">
   </div>
 </div>
 
 <div class="descripcion">
   <h2>Descripcion:</h2>
-  <textarea name="" id="" maxlength="1000"></textarea>
+  <textarea name="" id="" maxlength="1000" [(ngModel)]="videollamada.descripcion"></textarea>
 </div>
 
 <div class="guardar">
