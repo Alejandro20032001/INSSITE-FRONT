@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'register', component: RegistroComponent},
   { path: 'studentWelcomeView', component: WelcomeViewStudentComponent},
   { path: 'studentCourses', component: CoursesViewStudentComponent, canActivate: [UserGuardGuard]},
-  { path: 'moduleMaterial',component: VentanaPrincipalAnadirMaterialModuloComponent},
+  { path: 'materialModulo',component: VentanaPrincipalAnadirMaterialModuloComponent},
   { path: 'nuevaLectura', component: LecturaComponent},
   { path: 'nuevoMaterial', component:LinkMaterialComponent},
   { path: 'nuevaVideollamada',component:VideollamadaComponent},
