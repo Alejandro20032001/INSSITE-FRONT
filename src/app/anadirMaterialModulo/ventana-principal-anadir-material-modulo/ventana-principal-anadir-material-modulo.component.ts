@@ -25,7 +25,7 @@ export class VentanaPrincipalAnadirMaterialModuloComponent implements OnInit {
 
     let lectura = new Lectura("Algo","algo");
     let link = new LinkMaterial("algo","algo");
-    let video = new Videollamada("algo",new Date(),"algo","");
+    let video = new Videollamada("algo","","algo","");
     let tarea = new Tarea(new Date(),1,"","");
     this.materiales[0] = lectura;
     this.materiales[1] = link;

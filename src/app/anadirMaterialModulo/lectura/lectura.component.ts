@@ -25,9 +25,12 @@ export class LecturaComponent implements OnInit {
   }
 
   guardar():void{
-    //this.router.navigate(['materialModulo']);
-    console.log(this.lectura.titulo);
-    console.log(this.lectura.contenido);
+    if(this.lectura.titulo.length === 0){
+      alert("El titulo es obligatorio");
+    }else if(this.lectura.contenido.length === 0){
+      alert("El contenido es obligatorio");
+    }else{
+      this.router.navigate(['materialModulo']);
+    }
   }
-
 }

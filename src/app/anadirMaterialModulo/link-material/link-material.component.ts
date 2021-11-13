@@ -23,8 +23,12 @@ export class LinkMaterialComponent implements OnInit {
   }
 
   guardar():void{
-    //this.router.navigate(['materialModulo']);
-    console.log(this.linkMaterial.link);
-    console.log(this.linkMaterial.descripcion);
+    if(this.linkMaterial.link.length === 0){
+      alert("La URL es obligatoria");
+    }else if(this.linkMaterial.descripcion.length === 0){
+      alert("La descripcion es obligatoria");
+    }else{
+      this.router.navigate(['materialModulo']);
+    }
   }
 }

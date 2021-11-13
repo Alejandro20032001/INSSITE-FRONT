@@ -12,7 +12,7 @@ export class VideollamadaComponent implements OnInit {
 
   videollamada: Videollamada = {
     link:"",
-    fecha: new Date(),
+    fecha: "",
     hora:"",
     descripcion:""
   };
@@ -25,10 +25,16 @@ export class VideollamadaComponent implements OnInit {
   }
 
   guardar():void{
-    //this.router.navigate(['materialModulo']);
-    console.log(this.videollamada.link);
-    console.log(this.videollamada.fecha);
-    console.log(this.videollamada.hora);
-    console.log(this.videollamada.descripcion);
+    if (this.videollamada.link.length === 0) {
+      alert("La URL es obligatoria");
+    } else if(this.videollamada.fecha.length === 0){
+      alert("La fecha es obligatoria");
+    } else if(this.videollamada.hora.length === 0){
+      alert("La hora es obligatoria");
+    } else if(this.videollamada.descripcion.length === 0){
+      alert("La descripcion es obligatoria");
+    } else{
+      this.router.navigate(['materialModulo']);
+    }
   }
 }

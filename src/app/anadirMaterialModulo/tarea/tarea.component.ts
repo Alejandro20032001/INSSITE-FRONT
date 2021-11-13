@@ -25,10 +25,13 @@ export class TareaComponent implements OnInit {
   }
 
   guardar():void{
-    //this.router.navigate(['materialModulo']);
-    console.log(this.tarea.fecha);
-    console.log(this.tarea.titulo);
-    console.log(this.tarea.descripcion);
-    console.log(this.tarea.puntuacion);
+
+    if(this.tarea.titulo.length === 0){
+      alert("El titulo es obligatorio");
+    }else if(this.tarea.puntuacion < 1 || this.tarea.puntuacion > 10){
+      alert("La calificacion debe ser mayor que 0 y menor que 11");
+    }else{
+      this.router.navigate(['materialModulo']);
+    }
   }
 }
