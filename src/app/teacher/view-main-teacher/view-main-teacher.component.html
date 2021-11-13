@@ -2,14 +2,14 @@
   <button type="button" mat-button (click)="drawer.toggle()">
      <mat-icon>menu</mat-icon>
   </button> 
-  <h2>Teacher</h2>
-  <span class="espacio"></span>
+  <h2>Docente</h2>
+  <!---<span class="espacio"></span>
   <button mat-icon-button class="analitics-icon" aria-label="Example icon-button with heart icon">
     <mat-icon>assessment</mat-icon>
   </button>
   <button mat-icon-button class="delete-icon" aria-label="Example icon-button with share icon">
     <mat-icon>delete_outline</mat-icon>
-  </button>
+  </button>-->
  </div>
   
 
@@ -17,21 +17,19 @@
     <mat-drawer #drawer class="barra-lateral" mode="side">
      <img src="../../../assets/images/Classroom.jpg"/>
     <mat-action-list>
-      <button class="opt" mat-list-item (click)="goAddCourse()"> Add courses </button>
+      <button class="opt" mat-list-item (click)="goAddCourse()"> Añadir curso </button>
     </mat-action-list>
     <button  mat-flat-button (click)="logout()" class="logout">
-      Log out
+      Cerrar sesion
     </button>
 </mat-drawer>
   <div class= "textUp">
-    <h1>Courses</h1>
-    <span>New courses can be created in any order</span>
+    <h1>Cursos</h1>
+    <span></span>
   </div>
 <section class="courses"  *ngIf="courses.length!=0; else sinCursos">
     <mat-card class="card"*ngFor="let course of courses">
-      
-      <div class="rippleCourse"
-     matRipple>
+      <div class="rippleCourse" matRipple >
      <span class="cssCourse"><strong>
       {{course.courseName}}
      </strong>
@@ -40,5 +38,5 @@
      {{course.descriptionCourse}}   
     </mat-card>
 </section>
-<ng-template #sinCursos><h3>You do not have courses created yet.</h3></ng-template>
+<ng-template #sinCursos><h3>Tu no tienes cursos creados aun</h3></ng-template>
 </mat-drawer-container>
