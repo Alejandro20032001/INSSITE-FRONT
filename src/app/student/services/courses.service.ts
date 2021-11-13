@@ -8,14 +8,16 @@ import { Course } from '../interfaces/course.interface';
 })
 export class CoursesService {
 
-  private apiURL = 'http://localhost:3000/products';
+  private apiURL = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
   getProducts():Observable<Course[]>{
-    return this.http.get<Course[]>(this.apiURL);
+   return this.http.get<Course[]>(this.apiURL+'/products');//pruebas
+   //return this.http.get<Course[]>(this.apiURL+'/user/courses');
   }
   createCourse(course:Course):Observable<Course>{
-    return this.http.post<Course>(this.apiURL, course);
+    return this.http.put<Course>(this.apiURL+'/products', course); //pruebas
+   // return this.http.put<Course>(this.apiURL + course.idCourse, course);
   }
 }
