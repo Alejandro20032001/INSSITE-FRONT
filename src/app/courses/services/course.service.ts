@@ -12,7 +12,8 @@ export class CourseService {
   constructor(private http:HttpClient) { }
 
   getCourses():Observable<Course[]>{
-    return this.http.get<Course[]>('http://localhost:3000/courses');
+    return this.http.get<Course[]>('http://localhost:3000/courses');//pruebas
+    //return this.http.get<Course[]>('BASE_URL+'/courses');
   }
 
   getCourse(id: number):Observable<Course>{
