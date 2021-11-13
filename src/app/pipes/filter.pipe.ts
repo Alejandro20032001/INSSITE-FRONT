@@ -7,14 +7,14 @@ import { ViewSearchCourseComponent } from '../student/view-search-course/view-se
 export class FilterPipe implements PipeTransform {
 
   transform(value: any, arg: any): any {
-    let date: Date=new Date();
-    let msPerDay: number=1000*60*60*24;
+    let date: Date = new Date();
     if (arg === '' || arg.length < 3 || arg.length !> 30) return value;
     const resultPosts = [];
-    console.log(date.getDate());
+    console.log(date.getDate()+'/'+(date.getMonth()+1)+'/'+date.getFullYear());
     for (const course of value) {
-      if(course.dateStartEnroles.day < date.getMonth()
-      && course.dateStartEnroles.year===date.getFullYear()){
+     // console.log(course.dateStartEnroles.month );
+      if(course.dateStartEnroles.month <= date.getMonth()+1
+      && course.dateStartEnroles.year === date.getFullYear()){
         if (course.courseName.toLowerCase().indexOf(arg.toLowerCase()) > -1 ) {
           resultPosts.push(course);
         };
