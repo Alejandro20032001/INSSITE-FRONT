@@ -24,21 +24,17 @@ export class ViewSearchCourseComponent implements OnInit {
       tap((mycourse:Course[]) => this.mycourse = mycourse)
     )
     .subscribe();
-    this.mycourses.getProducts().subscribe(data => console.log(data));
+    //this.mycourses.getProducts().subscribe(data => console.log(data));
     }
 
      enroll(course:Course){
-       if(this.enrollPrevious(course)){
-         alert("You have previously registered for the course");
-       }else{
-        var resultado = window.confirm('Do you sure?');
+        var resultado = window.confirm('Confirma tu inscripcion');
         if (resultado === true) {
             this.mycourses.createCourse(course);
-            window.alert('You have registed for this course')
+            window.alert('Tu inscripcion ha sido exitosa')
         } else { 
-            window.alert('Unsuccessful registration');
+            window.alert('Inscripcion cancelada');
         }
-       }
      }
      enrollPrevious(course:Course): boolean {
        var res:boolean =false;
