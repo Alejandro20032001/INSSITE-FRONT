@@ -27,12 +27,15 @@
                   <li class="names"><strong>{{course.courseName}}</strong></li>
                   <li><small>{{course.areaCourse}}</small></li>
                   <li>{{course.description}}</li>
-                <div *ngIf=" !enrollPrevious(course) else inscrito">
+                <div *ngIf=" !enrollPrevious(course)&&lateEnroll(course) else late">
                   <button mat-flat-button (click)="enroll(course)" class="join">Inscribirse</button>
                 </div>
-                <ng-template #inscrito><span>Inscrito</span>
+                <ng-template #late> <div *ngIf="!lateEnroll(course)&& !enrollPrevious(course) else inscrito"><span><strong>Cerrado</strong></span></div>
+                </ng-template>
+                <ng-template #inscrito><span><strong>Inscrito</strong></span>
                 </ng-template>
                </mat-card>
             </div>
       </div>
+
 </mat-drawer-container>
