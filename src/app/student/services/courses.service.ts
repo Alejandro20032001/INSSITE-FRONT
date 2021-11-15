@@ -18,6 +18,6 @@ export class CoursesService {
   }
   createCourse(course:Course):Observable<Course>{
     return this.http.put<Course>(this.apiURL+'/products', course); //pruebas
-   // return this.http.put<Course>(this.apiURL + course.idCourse, course);
+   // return this.http.put<Course>(this.apiURL +'/'+ course.idCourse, course);
   }
 }
