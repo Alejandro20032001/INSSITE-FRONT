@@ -2,66 +2,66 @@
   {
     "areaCourse": "Informatica",
     "courseName": "Programacion",
-    "dateStartEnroles":{"date":29,"month":3,"year":2021},
+    "dateStartEnroles":"2021-11-14",
     "description": "Este es el texto que debe mostrarse en el lugar de la description"
   },
   {
     "areaCourse": "Informatica",
     "courseName": "Base de Datos",
     
-    "dateStartEnroles":{"date":10,"month":10,"year":2021},
+    "dateStartEnroles":"2021-10-26",
     "description": "Este es el texto que debe mostrarse en el lugar de la description"
   },
   {
     "areaCourse": "Matematica",
     "courseName": "Algebra",
     
-    "dateStartEnroles":{"date":29,"month":11,"year":2021},
+    "dateStartEnroles":"2020-3-1",
     "description": "Este es el texto que debe mostrarse en el lugar de la description"
   },{
     "areaCourse": "Informatica",
     "courseName": "Sistemas Operativos",
-    "dateStartEnroles":{"date":29,"month":3,"year":2021},
+    "dateStartEnroles":"2021-11-29",
     "description": "Este es el texto que debe mostrarse en el lugar de la description"
   },
   {
     "areaCourse": "Administracion",
     "courseName": "Contabilidad Basica",
     
-    "dateStartEnroles":{"date":29,"month":12,"year":2021},
+    "dateStartEnroles":"2021-5-6",
     "description": "Este es el texto que debe mostrarse en el lugar de la description"
   },
   {
     "areaCourse": "Matematica",
     "courseName": "Calculo",
     
-    "dateStartEnroles":{"date":29,"month":11,"year":2021},
+    "dateStartEnroles":"2021-9-6",
     "description": "Este es el texto que debe mostrarse en el lugar de la description"
   },{
     "areaCourse": "Administracion",
     "courseName": "Costos",
     
-    "dateStartEnroles":{"date":29,"month":12,"year":2021},
+    "dateStartEnroles":"2022-8-7",
     "description": "Este es el texto que debe mostrarse en el lugar de la description"
   },
   {
     "areaCourse": "Matematica",
     "courseName": "Computers",
     
-    "dateStartEnroles":{"date":29,"month":11,"year":2021},
+    "dateStartEnroles":"2021-10-4",
     "description": "Este es el texto que debe mostrarse en el lugar de la description"
   },{
     "areaCourse": "Informatica",
     "courseName": "Redes",
     
-    "dateStartEnroles":{"date":29,"month":12,"year":2021},
+    "dateStartEnroles":"2022-1-31",
     "description": "Este es el texto que debe mostrarse en el lugar de la description"
   },
   {
     "areaCourse": "Matematica",
     "courseName": "Calculo II",
     
-    "dateStartEnroles":{"date":29,"month":11,"year":2021},
+    "dateStartEnroles":"2020-11-29",
     "description": "Este es el texto que debe mostrarse en el lugar de la description"
   }
 ],
@@ -70,14 +70,14 @@
     "areaCourse": "Informatica",
     "courseName": "Programacion",
     
-    "dateStartEnroles":{"date":29,"month":12,"year":2021},
+    "dateStartEnroles":"2021-11-14",
     "description": "Este es el texto que debe mostrarse en el lugar de la description"
   },
   {
     "areaCourse": "Matematica",
     "courseName": "Calculo",
     
-    "dateStartEnroles":{"date":29,"month":11,"year":2021},
+    "dateStartEnroles":"2021-9-6",
     "description": "Este es el texto que debe mostrarse en el lugar de la description"
   }
 ]
