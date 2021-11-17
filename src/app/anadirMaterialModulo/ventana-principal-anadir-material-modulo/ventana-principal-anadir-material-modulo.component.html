@@ -5,8 +5,8 @@
 <div class="seccion-material">
   <div class="materiales">
     <div class="material"  *ngFor= "let material of materiales">
-        <h3>{{material.constructor.name}}</h3>
-        <mat-icon>delete_forever</mat-icon>
+        <h3>{{material.resourceType}}</h3>
+        <mat-icon (click) = 'eliminar(material.idResource)'>delete_forever</mat-icon>
     </div>
   </div>
 </div>
@@ -20,5 +20,5 @@
 </div>
 
 <div class="seccion-guardar">
-  <a>Guardar</a>
+  <a (click)="guardar()">Guardar</a>
 </div>

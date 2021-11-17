@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { tap } from 'rxjs/operators';
 import { Lectura } from './entities/lectura';
 import { LinkMaterial } from './entities/LinkMaterial';
 import { Material } from './entities/material';
 import { Tarea } from './entities/Tarea';
 import { Videollamada } from './entities/Videollamada';
+import { MaterialLista } from './interfaces/materialMenu.interface';
+import { ModuleServices } from './services/module.service';
 
 @Component({
   selector: 'app-ventana-principal-anadir-material-modulo',
@@ -14,42 +17,49 @@ import { Videollamada } from './entities/Videollamada';
 })
 export class VentanaPrincipalAnadirMaterialModuloComponent implements OnInit {
 
-  materiales:Material[] = [];
+  materiales:MaterialLista[] = [];
 
   constructor(
     private router:Router,
-    private cookieService: CookieService) {
+    private cookieService: CookieService,
+    private servicios: ModuleServices) {
   }
 
   ngOnInit(): void {
-
-    let lectura = new Lectura("Algo","algo");
-    let link = new LinkMaterial("algo","algo");
-    let video = new Videollamada("algo","","algo","");
-    let tarea = new Tarea(new Date(),1,"","");
-    this.materiales[0] = lectura;
-    this.materiales[1] = link;
-    this.materiales[2] = video;
-    this.materiales[3] = tarea;
+    this.cookieService.set('idModulo',"0be18942-b6a2-48cf-8cfc-2edf1b8e5d5a");
+    this.servicios.obtenerMaterialModulo(this.cookieService.get('idModulo')).
+    pipe(
+      tap((materiales:MaterialLista[]) => this.materiales = materiales.reverse())
+    )
+    .subscribe();
   }
 
   nuevaLectura():void{
-    this.cookieService.set('idModulo',"ABCD");
     this.router.navigate(["/nuevaLectura"]);
   }
 
   nuevoMaterial():void{
-    this.cookieService.set('idModulo',"ABCD");
     this.router.navigate(["/nuevoMaterial"]);
   }
 
   nuevaTarea():void{
-    this.cookieService.set('idModulo',"ABCD");
     this.router.navigate(["/nuevaTarea"]);
   }
 
   nuevaVideollamada():void{
-    this.cookieService.set('idModulo',"ABCD");
     this.router.navigate(["/nuevaVideollamada"]);
+  }
+
+  guardar():void{
+    console.log(this.materiales[0].resourceType);
+  }
+
+  eliminar(id:string):void{
+    this.servicios.eliminarMaterial(id).subscribe( (data) =>
+    {
+      console.log(data);
+      this.ngOnInit();
+    }
+  );
   }
 }
