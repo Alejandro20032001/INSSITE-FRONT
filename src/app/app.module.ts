@@ -21,6 +21,9 @@ import { LecturaComponent } from './anadirMaterialModulo/lectura/lectura.compone
 import { LinkMaterialComponent } from './anadirMaterialModulo/link-material/link-material.component';
 import { VideollamadaComponent } from './anadirMaterialModulo/videollamada/videollamada.component';
 import { TareaComponent } from './anadirMaterialModulo/tarea/tarea.component';
+import { CoursesModule } from './courses/courses.module';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core'
 
 @NgModule({
   declarations: [
@@ -41,11 +44,13 @@ import { TareaComponent } from './anadirMaterialModulo/tarea/tarea.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule,MatDatepickerModule,MatNativeDateModule,
     MaterialComponentsModule,
     AngularMModule,
     ReactiveFormsModule,
-    HttpClientModule
+    CoursesModule,
+    HttpClientModule,
+
   ],
   providers: [
     CookieService,

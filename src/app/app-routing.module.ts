@@ -12,6 +12,8 @@ import { LecturaComponent } from './anadirMaterialModulo/lectura/lectura.compone
 import { LinkMaterialComponent } from './anadirMaterialModulo/link-material/link-material.component';
 import { VideollamadaComponent } from './anadirMaterialModulo/videollamada/videollamada.component';
 import { TareaComponent } from './anadirMaterialModulo/tarea/tarea.component';
+import { CoursesModule } from './courses/courses.module';
+import { NuevoComponent } from './courses/nuevo/nuevo.component';
 
 const routes: Routes = [
   { path: 'teacher', component: ViewMainTeacherComponent, canActivate: [UserGuardGuard]},
@@ -25,6 +27,8 @@ const routes: Routes = [
   { path: 'nuevoMaterial', component:LinkMaterialComponent},
   { path: 'nuevaVideollamada',component:VideollamadaComponent},
   { path: 'nuevaTarea', component: TareaComponent},
+  { path: 'studentCourses', component: CoursesViewStudentComponent},
+  { path: 'newC',component: NuevoComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ]
 

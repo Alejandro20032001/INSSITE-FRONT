@@ -1,0 +1,44 @@
+<p style="text-align:center;" >
+  REGISTRO DE NUEVO CURSO
+</p>
+<div class="fondo">
+  <div class="formulario">
+    <form FormTemplate="ngForm" class="form" >
+
+      <div>
+          <label for="nombre" class="text">nombre: </label>
+          <input type="text" class="campos" placeholder="Nombre completo">
+          <!--input type="text" [formControl]='name'-->
+
+      </div>
+      <div>
+          <label for="descripcion" class="text">descripcion: </label>
+          <textarea  type="text" id="nc" cols="20" rows="6"
+          class="campos" placeholder="ingrese una descripcion">
+
+          </textarea>
+          <!--input type="text" [formControl]='name' cols="30"-->
+
+      </div>
+      <-- fecha de inicio de inscripciones --/>
+      <div>
+        <label for="nombre" class="text">fecha de inicio de inscripciones: </label>
+        <input matInput [matDatepicker]="picker" >
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+
+      </div>
+      <div>
+          <label for="nombre" class="text">fecha de inicio de curso: </label>
+          <input matInput [matDatepicker]="picker2" >
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+
+      </div>
+      <div>
+          <button mat-flat-button (click)="mostrar()" class="logout">cancelar</button>
+          <button mat-flat-button (click)="mostrar()" class="logout">siguiente</button>
+      </div>
+    </form>
+  </div>
+</div>
