@@ -24,6 +24,8 @@ import { TareaComponent } from './anadirMaterialModulo/tarea/tarea.component';
 import { CoursesModule } from './courses/courses.module';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core'
+import { FilterPipe } from './pipes/filter.pipe';
+import { ViewSearchCourseComponent } from './student/view-search-course/view-search-course.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import {MatNativeDateModule} from '@angular/material/core'
     LecturaComponent,
     LinkMaterialComponent,
     VideollamadaComponent,
-    TareaComponent
+    TareaComponent,
+    ViewSearchCourseComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

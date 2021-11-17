@@ -1,0 +1,41 @@
+<div class="toolbar">
+  <button type="button" mat-button (click)="drawer.toggle()">
+     <mat-icon>menu</mat-icon>
+  </button> 
+  <h2>Estudiante</h2>
+  </div>
+<mat-drawer-container class="container-courses" autosize>
+  <mat-drawer #drawer class="barra-lateral" mode="side">
+   <img src="../../../assets/images/logo.jpeg"/>
+  <mat-action-list>
+    <button class="opt" mat-list-item (click)="goHome()"> Inicio </button>
+  </mat-action-list>
+  <button  mat-flat-button (click)="logOut()" class="logout">
+   Cerrar sesion
+  </button>
+</mat-drawer>
+  <div class="encabezado">
+    <div><h1>Inssite</h1></div>
+    <div><h2>Buscar cursos</h2></div>
+    <input type="text" class="form-control" name="filterPost" placeholder="Busca el curso por su nombre o el area al que pertenece" [(ngModel)]="filterPost">
+  </div>
+  
+    
+      <div class="courses">
+            <div *ngFor="let course of courses | filter:filterPost ">
+               <mat-card class="card">
+                  <li class="names"><strong>{{course.courseName}}</strong></li>
+                  <li><small>{{course.areaCourse}}</small></li>
+                  <li>{{course.description}}</li>
+                <div *ngIf=" !enrollPrevious(course)&&lateEnroll(course) else late">
+                  <button mat-flat-button (click)="enroll(course)" class="join">Inscribirse</button>
+                </div>
+                <ng-template #late> <div *ngIf="!lateEnroll(course)&& !enrollPrevious(course) else inscrito"><span><strong>Cerrado</strong></span></div>
+                </ng-template>
+                <ng-template #inscrito><span><strong>Inscrito</strong></span>
+                </ng-template>
+               </mat-card>
+            </div>
+      </div>
+
+</mat-drawer-container>

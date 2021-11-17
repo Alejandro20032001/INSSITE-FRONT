@@ -15,6 +15,7 @@ import { TareaComponent } from './anadirMaterialModulo/tarea/tarea.component';
 import { CoursesModule } from './courses/courses.module';
 import { NuevoComponent } from './courses/nuevo/nuevo.component';
 
+import { ViewSearchCourseComponent } from './student/view-search-course/view-search-course.component';
 const routes: Routes = [
   { path: 'teacher', component: ViewMainTeacherComponent, canActivate: [UserGuardGuard]},
   { path: 'home', component: HomeComponent},
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'nuevaTarea', component: TareaComponent},
   { path: 'studentCourses', component: CoursesViewStudentComponent},
   { path: 'newC',component: NuevoComponent},
+  { path: 'searchCourse', component: ViewSearchCourseComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ]
 

@@ -20,4 +20,7 @@ export class WelcomeViewStudentComponent implements OnInit {
   irCursos():void{
     this.router.navigate(['./studentCourses']);
   }
+  searchCourse():void{
+    this.router.navigate(['./searchCourse']);
+  }
 }
