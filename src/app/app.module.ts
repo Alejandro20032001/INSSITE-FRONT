@@ -14,6 +14,13 @@ import { AngularMModule } from './angularM.material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component'
 import { HttpErrorInterceptor } from './services/interceptor.service';
+import { CookieService } from 'ngx-cookie-service';
+import { JwtInterceptor } from './jwt-interceptor.interceptor';
+import { VentanaPrincipalAnadirMaterialModuloComponent } from './anadirMaterialModulo/ventana-principal-anadir-material-modulo/ventana-principal-anadir-material-modulo.component';
+import { LecturaComponent } from './anadirMaterialModulo/lectura/lectura.component';
+import { LinkMaterialComponent } from './anadirMaterialModulo/link-material/link-material.component';
+import { VideollamadaComponent } from './anadirMaterialModulo/videollamada/videollamada.component';
+import { TareaComponent } from './anadirMaterialModulo/tarea/tarea.component';
 import { CoursesModule } from './courses/courses.module';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core'
@@ -26,7 +33,12 @@ import {MatNativeDateModule} from '@angular/material/core'
     RegistroComponent,
     ViewMainTeacherComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    VentanaPrincipalAnadirMaterialModuloComponent,
+    LecturaComponent,
+    LinkMaterialComponent,
+    VideollamadaComponent,
+    TareaComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +53,9 @@ import {MatNativeDateModule} from '@angular/material/core'
 
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS,useClass: HttpErrorInterceptor, multi: true}
+    CookieService,
+    { provide: HTTP_INTERCEPTORS,useClass: HttpErrorInterceptor, multi: true},
+    { provide: HTTP_INTERCEPTORS, useClass:JwtInterceptor , multi: true},
   ],
   bootstrap: [AppComponent]
 })

@@ -12,7 +12,7 @@ export class CourseService {
   constructor(private http:HttpClient) { }
 
   getCourses():Observable<Course[]>{
-    return this.http.get<Course[]>('https://inssite-database.herokuapp.com/course');
+    return this.http.get<Course[]>('https://inssite-database.herokuapp.com/user/courses');
   }
 
   getCourse(id: number):Observable<Course>{
