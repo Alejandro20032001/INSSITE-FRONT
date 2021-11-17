@@ -24,7 +24,7 @@ export class ViewSearchCourseComponent implements OnInit {
       tap((mycourse:Course[]) => this.mycourse = mycourse)
     )
     .subscribe();
-    //this.mycourses.getProducts().subscribe(data => console.log(data));
+    this.courseService.getCourses().subscribe(data => console.log(data));
     }
 
      enroll(course:Course){

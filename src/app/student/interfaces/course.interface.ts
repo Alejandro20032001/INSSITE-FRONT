@@ -1,8 +1,8 @@
 export interface Course{
-  idCourse:number;
+  idCourse:string;
   courseName:string;
   descriptionCourse:string;
   areaCourse: string;
-  dateStartEnroles: string;
+  dateStartEnrole: Date;
 
 }
