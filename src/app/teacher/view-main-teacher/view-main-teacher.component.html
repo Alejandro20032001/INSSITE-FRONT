@@ -1,7 +1,7 @@
 <div class="toolbar">
   <button type="button" mat-button (click)="drawer.toggle()">
      <mat-icon>menu</mat-icon>
-  </button> 
+  </button>
   <h2>Teacher</h2>
   <span class="espacio"></span>
   <button mat-icon-button class="analitics-icon" aria-label="Example icon-button with analitics icon">
@@ -11,7 +11,7 @@
     <mat-icon>delete_outline</mat-icon>
   </button>
  </div>
-  
+
 
 <mat-drawer-container class="container-courses" autosize>
     <mat-drawer #drawer class="lateral" mode="side">
@@ -29,15 +29,15 @@
   </div>
 <section class="courses"  *ngIf="courses.length!=0; else sinCursos">
     <mat-card class="card"*ngFor="let course of courses">
-      
+
       <div class="rippleCourse"
      matRipple>
      <span class="cssCourse"><strong>
       {{course.courseName}}
      </strong>
      </span>
-     </div>  
-     {{course.descriptionCourse}}   
+     </div>
+     {{course.descriptionCourse}}
     </mat-card>
 </section>
 <ng-template #sinCursos><h3>You do not have courses created yet.</h3></ng-template>

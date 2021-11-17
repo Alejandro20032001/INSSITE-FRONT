@@ -11,9 +11,12 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RegistroComponent } from './registro/registro.component';
 import { ViewMainTeacherComponent } from './teacher/view-main-teacher/view-main-teacher.component';
 import { AngularMModule } from './angularM.material';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule, FormGroup } from '@angular/forms';
 import { HomeComponent } from './home/home.component'
 import { HttpErrorInterceptor } from './services/interceptor.service';
+import { NuevoComponent } from './courses/nuevo/nuevo.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core'
 
 @NgModule({
   declarations: [
@@ -23,17 +26,19 @@ import { HttpErrorInterceptor } from './services/interceptor.service';
     RegistroComponent,
     ViewMainTeacherComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    //NuevoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule,MatDatepickerModule,MatNativeDateModule,
     MaterialComponentsModule,
     AngularMModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    //FormGroup
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS,useClass: HttpErrorInterceptor, multi: true}

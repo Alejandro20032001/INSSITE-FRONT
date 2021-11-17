@@ -1,0 +1,62 @@
+<div style="text-align:center; background-color: #559A95;  height: 30px;">
+  <p  >
+    REGISTRO DE NUEVO CURSO
+  </p>
+</div>
+<div class="fondo">
+  <div >
+    <!--form FormTemplate="ngForm" class="form" (submit)=" validar()"-->
+     <!--form  class ="form" ng-submit= "validar()"-->
+     <form class="form"  [formGroup]="signupForm" (ngSubmit)="mostrarDatos(signupForm.value)">
+      <div>
+          <label for="nombre" class="">nombre: </label>
+          <!--input formControlName="nomM" id= "nombreM" type="text" class="campos" placeholder="Nombre" [(ngModel)]="nuevoCurso.courseName" [ngModelOptions]="{standalone: true}"-->
+          <!--input type="text" [formControl]='name'-->
+          <input formControlName="nomM" id= "nombreM" type="text" class="campos" placeholder="Nombre">
+
+      </div>
+      <div>
+          <label for="descripcion" class="text">descripcion: </label>
+          <textarea formControlName="descM" type="text" id="nc" col="0" rows="5"
+          class="campos" placeholder="ingrese una descripcion">
+          </textarea>
+          <!--input type="text" [formControl]='name' cols="30"-->
+      </div>
+      <div  >
+        <label for="area" class="text">area</label>
+        <select formControlName="areaM" name="area" id="form-selected" class="campos">
+          <option selected> seleccione una area</option>
+          <option value="Matematicas">matematicas</option>
+          <option value="Biologia">biologia</option>
+          <option value="Fisica">fisica</option>
+        </select>
+      </div>
+      <div><h4></h4></div>
+      <!-- fecha de inicio de inscripciones --/-->
+      <div>
+        <label for="nombre" class="text">fecha de inicio de inscripciones: </label>
+        <input formControlName="fII" matInput [matDatepicker]="picker" class="campos">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+
+      </div>
+      <div>
+          <label for="nombre" class="text">fecha de inicio de curso: </label>
+          <input formControlName="fIC" matInput [matDatepicker]="picker2" class="campos" >
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+
+      </div>
+      <div>
+        <hr>
+      </div>
+      <div>
+          <button mat-flat-button (click)="mostrar()" class="logout" type="submit">cancelar</button>
+          <hr>
+          <!--button mat-flat-button (click)="goToTeacher()" class="logout">siguiente</button-->
+          <button mat-flat-button [disabled]="signupForm.invalid" class="logout" type="submit">siguiente</button>
+      </div>
+    </form>
+  </div>
+</div>
+
