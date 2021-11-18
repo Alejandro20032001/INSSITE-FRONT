@@ -5,6 +5,7 @@ import {Router} from '@angular/router'
 import { CookieService } from 'ngx-cookie-service';
 import { UpperCasePipe } from '@angular/common';
 let palabra="como Estas1";
+
 @Component({
   selector: 'app-nuevo',
   templateUrl: './nuevo.component.html',
