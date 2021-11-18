@@ -16,7 +16,9 @@ import { HomeComponent } from './home/home.component'
 import { HttpErrorInterceptor } from './services/interceptor.service';
 import { NuevoComponent } from './courses/nuevo/nuevo.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule} from '@angular/material/core'
+import {MatNativeDateModule} from '@angular/material/core';
+import { CookieService } from 'ngx-cookie-service';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import {MatNativeDateModule} from '@angular/material/core'
     LoginComponent,
     HomeComponent,
     //NuevoComponent
+
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import {MatNativeDateModule} from '@angular/material/core'
     //FormGroup
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS,useClass: HttpErrorInterceptor, multi: true}
+    { provide: HTTP_INTERCEPTORS,useClass: HttpErrorInterceptor, multi: true},
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

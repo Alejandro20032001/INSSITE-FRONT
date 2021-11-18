@@ -1,7 +1,7 @@
 export interface Course{
-    courseName:string;
-    descriptionCourse:string;
-    areaCourse: string;
+    courseName:String;
+    descriptionCourse:String;
+    areaCourse: String;
     courseStartDate: Date;
     registrationStartDate: Date;
 }

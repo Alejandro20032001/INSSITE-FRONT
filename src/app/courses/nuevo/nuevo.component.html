@@ -7,25 +7,31 @@
   <div >
     <!--form FormTemplate="ngForm" class="form" (submit)=" validar()"-->
      <!--form  class ="form" ng-submit= "validar()"-->
-     <form class="form"  [formGroup]="signupForm" (ngSubmit)="mostrarDatos(signupForm.value)">
+     <form class="form"  [formGroup]="signupForm" (ngSubmit)="guardarDatos(signupForm.value);funcion()">
       <div>
-          <label for="nombre" class="">nombre: </label>
-          <!--input formControlName="nomM" id= "nombreM" type="text" class="campos" placeholder="Nombre" [(ngModel)]="nuevoCurso.courseName" [ngModelOptions]="{standalone: true}"-->
-          <!--input type="text" [formControl]='name'-->
+          <label for="nombre" class="text">Nombre de Curso </label>
           <input formControlName="nomM" id= "nombreM" type="text" class="campos" placeholder="Nombre">
+          <!--div *ngIf="signupForm.controls['nomM'].errors?.required && signupForm.controls['nomM'].touched">es reqerido</div-->
+          <span class="help-block form-error text-danger small"
+          *ngIf="signupForm.controls['nomM'].errors?.required&&
+          signupForm.controls['nomM'].touched">
+            El nombre es requerido y no debe pasar los 30 caracteres</span>
 
       </div>
       <div>
-          <label for="descripcion" class="text">descripcion: </label>
+          <label for="descripcion" class="text">Descripcion: </label>
           <textarea formControlName="descM" type="text" id="nc" col="0" rows="5"
           class="campos" placeholder="ingrese una descripcion">
           </textarea>
-          <!--input type="text" [formControl]='name' cols="30"-->
+          <span class="help-block form-error text-danger small"
+          *ngIf="signupForm.controls['descM'].errors?.required&&
+          signupForm.controls['descM'].touched">
+            La descripcion es obligatoria!...</span>
       </div>
       <div  >
-        <label for="area" class="text">area</label>
-        <select formControlName="areaM" name="area" id="form-selected" class="campos">
-          <option selected> seleccione una area</option>
+        <label for="area" class="text">Area del Curso</label>
+        <select formControlName="areaM" name="area" id="form-selected" class="campos" >
+          <!--option selected> seleccione una area</option-->
           <option value="Matematicas">matematicas</option>
           <option value="Biologia">biologia</option>
           <option value="Fisica">fisica</option>
@@ -51,10 +57,11 @@
         <hr>
       </div>
       <div>
-          <button mat-flat-button (click)="mostrar()" class="logout" type="submit">cancelar</button>
+          <button mat-flat-button (click)="goToTeacher()" class="logout" >cancelar</button>
           <hr>
           <!--button mat-flat-button (click)="goToTeacher()" class="logout">siguiente</button-->
-          <button mat-flat-button [disabled]="signupForm.invalid" class="logout" type="submit">siguiente</button>
+          <!--button mat-flat-button [disabled]="signupForm.invalid" class="logout" type="submit" (click)="gotToAddModule()">siguiente</button-->
+          <button mat-flat-button class="logout" type="submit" (click)="gotToAddModule()">siguiente</button>
       </div>
     </form>
   </div>
