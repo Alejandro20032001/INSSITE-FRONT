@@ -39,6 +39,7 @@ export class ViewSearchCourseComponent implements OnInit {
      }
      enrollPrevious(course:Course): boolean {
        var res:boolean =false;
+       if(this.mycourse !== undefined)
        for(let courseAux of this.mycourse ){
           //if(courseAux.idCourse === course.idCourse){
           if(courseAux.courseName === course.courseName && courseAux.descriptionCourse===course.descriptionCourse){//prueba
