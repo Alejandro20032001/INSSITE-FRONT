@@ -30,6 +30,7 @@ export class ViewSearchCourseComponent implements OnInit {
      enroll(course:Course){
         var resultado = window.confirm('Confirma tu inscripcion');
         if (resultado === true) {
+            console.log(course);
             this.mycourses.createCourse(course);
             location.reload();
             window.alert('Tu inscripcion ha sido exitosa');
