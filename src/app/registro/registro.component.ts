@@ -84,7 +84,7 @@ export class RegistroComponent implements OnInit {
 
     } else if (!this.user.password.match('^(?=\\w*\\d)(?=\\w*[A-Z])(?=\\w*[a-z])\\S{8,}$')) {
 
-      alert('Password is not valid: La contraseña debe contener 8 caracteres como minimo, al menos una mayuscula y un numero, ademas de no contener espacios')
+      alert('Password is not valid: La contraseña debe contener 8 caracteres como minimo, al menos una mayuscula, un numero y una miniscula, ademas de no contener espacios')
       return false;
 
     } else if (this.user.password !== this.user.password2) {
