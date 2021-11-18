@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseService } from 'src/app/courses/services/course.service';
-import { Course } from 'src/app/courses/interfaces/course.interface';
+import { Course } from '../interfaces/course.interface';
 import {tap} from 'rxjs/operators';
 import { CoursesService } from '../services/courses.service';
 import { Router } from '@angular/router';
