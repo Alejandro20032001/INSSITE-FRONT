@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ViewMainTeacherComponent } from './teacher/view-main-teacher/view-main-teacher.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { ModulosComponent } from './components/modulos/modulos.component';
 import { RegistroComponent } from './registro/registro.component';
 import { WelcomeViewStudentComponent } from './student/welcome-view-student/welcome-view-student.component';
 import { CoursesViewStudentComponent } from './student/courses-view-student/courses-view-student.component';
@@ -17,6 +18,9 @@ import { NuevoComponent } from './courses/nuevo/nuevo.component';
 
 import { ViewSearchCourseComponent } from './student/view-search-course/view-search-course.component';
 const routes: Routes = [
+  { path: 'home', component: HomeComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'modulosConfig', component: ModulosComponent },
   { path: 'teacher', component: ViewMainTeacherComponent, canActivate: [UserGuardGuard]},
   { path: 'home', component: HomeComponent},
   { path: 'login', component: LoginComponent },

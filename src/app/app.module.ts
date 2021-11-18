@@ -3,6 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms'; 
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { ModulosComponent } from './components/modulos/modulos.component'
+import { ModulosHeaderComponent } from './components/modulos-header/modulos-header.component';
+import { ModuloComponent } from './components/modulo/modulo.component';
+import { CrearModuloComponent } from './components/crear-modulo/crear-modulo.component';
 import { WelcomeViewStudentComponent } from './student/welcome-view-student/welcome-view-student.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialComponentsModule } from './material-components/material-components.module';
@@ -36,6 +43,10 @@ import { ViewSearchCourseComponent } from './student/view-search-course/view-sea
     ViewMainTeacherComponent,
     LoginComponent,
     HomeComponent,
+    ModulosComponent,
+    ModulosHeaderComponent,
+    ModuloComponent,
+    CrearModuloComponent
     VentanaPrincipalAnadirMaterialModuloComponent,
     LecturaComponent,
     LinkMaterialComponent,
