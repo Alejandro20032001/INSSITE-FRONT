@@ -54,6 +54,9 @@ export class ViewSearchCourseComponent implements OnInit {
      logOut():void{
       this.router.navigate(['./login']);
     }
+    miscursos():void{
+      this.router.navigate(['./studentCourse']);
+    }
   
     goHome():void{
       this.router.navigate(['./studentWelcomeView']);
