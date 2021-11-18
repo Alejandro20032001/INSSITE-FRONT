@@ -1,0 +1,83 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fondo{
+  display: flex;
+  background-image: linear-gradient(to right, #a4fcf1 , rgb(0, 255, 213));
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.formulario{
+  width: 30%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+  background-color: #24303c
+}
+
+.formulario h2{
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  color: rgb(255, 255, 255);
+  font-family: 'Calibri';
+  font-size: 2em;
+}
+
+.form{
+  padding: 15px;
+  display: block;
+}
+
+.form *{
+  width: 100%;
+}
+
+.campos{
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  background-color: #24303c;
+  border: 2px solid #1f53c5;
+  font-family: 'Calibri';
+  font-size: 1.2em;
+  color: rgb(255, 255, 255);
+}
+
+.estudiante,.docente{
+  margin-top: 15px;
+  font-size: 1.4em;
+  padding: 10px;
+  background-color: #1f53c5;
+  color: rgb(255, 255, 255);
+  font-family: 'Calibri';
+  border: none;
+  border-radius: 5px;
+}
+
+.docente{
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.estudiante:hover,.docente:hover{
+  background-color: #16377e;
+}
+
+.regresar{
+  text-decoration: none;
+  font-family: 'Calibri';
+  font-size: 1.5em;
+  color: rgb(255, 255, 255);
+}
+
+.regresar:hover{
+  color: #8798bd;
+  font-size: 2em;
+}

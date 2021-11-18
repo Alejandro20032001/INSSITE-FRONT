@@ -1,0 +1,218 @@
+/* v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* No olvides definir estilos para focus */
+:focus {
+  outline: 0;
+}
+
+/* No olvides resaltar de alguna manera el texto insertado/borrado */
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+
+/* En el código HTML es necesario añadir cellspacing="0" */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+.barra-superior{
+  background-color: #70c0b7;
+  display: block;
+  height: 5%;
+  width: 100%;
+}
+
+.barra-lateral{
+  display: inline-block;
+  height: 95%;
+  width: 15%;
+  background-color: rgb(178, 182, 196);
+}
+
+.barra-lateral img{
+  display: block;
+  height: 30%;
+  width: 100%;
+}
+
+.barra-lateral ul{
+  display: block;
+  height: 40%;
+  background-color: rgb(178, 182, 196);
+}
+
+.barra-lateral li{
+  display: flex;
+  background-color: rgb(178, 182, 196);
+  height: 20%;
+  align-items: center;
+  justify-content: center;
+}
+
+.barra-lateral li:hover{
+  background-color: black;
+}
+
+.barra-lateral li a{
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+.barra-lateral *{
+  text-decoration: none;
+}
+
+.seccion-cursos{
+  display: block;
+  height: 95%;
+  width: 85%;
+  float: right;
+}
+
+.seccion-cursos-superior{
+  display: block;
+  width: 100%;
+  height: 20%;
+  background-color: rgb(238, 238, 234);
+}
+
+.scs-iz{
+  display: flex;
+  height: 100%;
+  width: 20%;
+  float: left;
+  align-items: center;
+  justify-content: center;
+}
+
+.scs-iz h2{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 3em;
+}
+
+.scs-centro{
+  display: flex;
+  height: 100%;
+  width: 60%;
+  float: left;
+}
+
+.scs-der{
+  display: flex;
+  height: 100%;
+  width: 20%;
+  align-items: center;
+  justify-content: center;
+}
+
+.scs-der a{
+  display: flex;
+  height: 30%;
+  width: 60%;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 1.5em;
+  background-color: rgb(255, 255, 255);
+}
+
+.scs-der a:hover{
+  background-color: rgb(184, 184, 184);
+}
+
+.seccion-cursos-inferior{
+  display: flex;
+  background-color: rgb(238, 238, 234);
+  height: 80%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursos{
+  display: block;
+  background-color: rgb(255, 255, 255);
+  height: 95%;
+  width: 95%;
+  border: 2px solid rgb(0, 0, 0);
+  overflow-y: scroll;
+}
+
+.curso{
+  display: inline-block;
+  width: 30%;
+  height: 60%;
+  background-color: #70c0b7;
+  margin-top: 15px;
+  border-radius: 10px;
+  margin-left: 25px;
+}
+
+.nombre-curso{
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nombre-curso h3{
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.descripcion-curso{
+  height: 80%;
+  overflow-y: scroll;
+  text-align: justify;
+  background-color: #90ece2;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.descripcion-curso p{
+  padding: 10px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
