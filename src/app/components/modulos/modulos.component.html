@@ -1,0 +1,38 @@
+<div class="container-sm mt-5">
+  <nav class="navbar-sm navbar-light">
+    <app-modulos-header></app-modulos-header>
+  </nav>
+  <br />
+  <div class="col-11">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button
+        class="btn btn-outline-light me-md-2"
+        data-bs-toggle="modal"
+        data-bs-target="#crearModulo"
+        type="button"
+      >
+        <img
+          src="https://icons555.com/images/icons-black/image_icon_add_pic_512x512.png"
+          alt=""
+          width="30"
+          height="30"
+        />
+        Nuevo modulo
+      </button>
+    </div>
+    <div *ngFor = "let modulo of listaModulos">
+      <app-modulo [modulo] = "modulo"></app-modulo>
+    </div>
+    
+  </div>
+
+  <app-crear-modulo (clickGuardar) = "guardarModulo($event)"></app-crear-modulo><br />
+
+  <div class="col-11">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button class="btn btn-outline-light" type="button" (click)= "terminarCurso()">Terminar</button>
+    </div>
+  </div>
+  <br /><br />
+</div>
+<br /><br />
