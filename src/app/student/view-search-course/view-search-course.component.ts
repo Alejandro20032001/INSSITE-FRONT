@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseService } from 'src/app/courses/services/course.service';
-import { Course } from 'src/app/courses/interfaces/course.interface';
 import { tap } from 'rxjs/operators';
 import { CoursesService } from '../services/courses.service';
 import { Router } from '@angular/router';
+import {Course} from 'src/app/student/interfaces/course.interface'
+
 @Component({
   selector: 'app-view-search-course',
   templateUrl: './view-search-course.component.html',
@@ -21,7 +22,7 @@ export class ViewSearchCourseComponent implements OnInit {
     ).subscribe();
 
     this.mycourses.getProducts().pipe(
-        tap((mycourse: Course[]) => this.mycourse = mycourse)
+      tap((mycourse: Course[]) => this.mycourse = mycourse)
     ).subscribe();
 
     this.mycourses.getProducts().subscribe(data => console.log(data));
