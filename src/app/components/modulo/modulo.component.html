@@ -1,0 +1,27 @@
+<div class="row">
+  <br />
+
+  <div class="col-1"></div>
+  <div class="col-11">
+    <h3 class="fst-normal text-start py-5">Nombre modulo : {{ modulo.nombre }}</h3>
+    <h5 class="fst-normal text-start py-5">Duracion en dias : {{ modulo.duracion }} </h5>
+    <br />
+
+    <div class="row mb-1">
+      
+      <div class="col-12">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-dark me-md-2" type="button" (click) = "modificarModulo(modulo.idModulo)">
+            <img
+              src="http://www.lkl18.com/wp-content/uploads/2017/06/158-icono-de-una-tuerca.png"
+              alt=""
+              width="20"
+              height="20"
+            />
+          </button>
+          <button class="btn btn-outline-dark" type="button" (click)="borrarModulo(modulo.idModulo)">Eliminar</button>
+        </div>
+      </div>
+    </div><br>
+  </div>
+</div>

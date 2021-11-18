@@ -1,69 +1,44 @@
-<div style="text-align:center; background-color: #559A95;  height: 30px;">
-  <p  >
-    REGISTRO DE NUEVO CURSO
-  </p>
-</div>
+<p style="text-align:center;" >
+  REGISTRO DE NUEVO CURSO
+</p>
 <div class="fondo">
-  <div >
-    <!--form FormTemplate="ngForm" class="form" (submit)=" validar()"-->
-     <!--form  class ="form" ng-submit= "validar()"-->
-     <form class="form"  [formGroup]="signupForm" (ngSubmit)="guardarDatos(signupForm.value);funcion()">
+  <div class="formulario">
+    <form FormTemplate="ngForm" class="form" >
+
       <div>
-          <label for="nombre" class="text">Nombre de Curso </label>
-          <input formControlName="nomM" id= "nombreM" type="text" class="campos" placeholder="Nombre">
-          <!--div *ngIf="signupForm.controls['nomM'].errors?.required && signupForm.controls['nomM'].touched">es reqerido</div-->
-          <span class="help-block form-error text-danger small"
-          *ngIf="signupForm.controls['nomM'].errors?.required&&
-          signupForm.controls['nomM'].touched">
-            El nombre es requerido y no debe pasar los 30 caracteres</span>
+          <label for="nombre" class="text">nombre: </label>
+          <input type="text" class="campos" placeholder="Nombre completo">
+          <!--input type="text" [formControl]='name'-->
 
       </div>
       <div>
-          <label for="descripcion" class="text">Descripcion: </label>
-          <textarea formControlName="descM" type="text" id="nc" col="0" rows="5"
+          <label for="descripcion" class="text">descripcion: </label>
+          <textarea  type="text" id="nc" cols="20" rows="6"
           class="campos" placeholder="ingrese una descripcion">
+
           </textarea>
-          <span class="help-block form-error text-danger small"
-          *ngIf="signupForm.controls['descM'].errors?.required&&
-          signupForm.controls['descM'].touched">
-            La descripcion es obligatoria!...</span>
+          <!--input type="text" [formControl]='name' cols="30"-->
+
       </div>
-      <div  >
-        <label for="area" class="text">Area del Curso</label>
-        <select formControlName="areaM" name="area" id="form-selected" class="campos" >
-          <!--option selected> seleccione una area</option-->
-          <option value="Matematicas">matematicas</option>
-          <option value="Biologia">biologia</option>
-          <option value="Fisica">fisica</option>
-        </select>
-      </div>
-      <div><h4></h4></div>
-      <!-- fecha de inicio de inscripciones --/-->
+      <-- fecha de inicio de inscripciones --/>
       <div>
         <label for="nombre" class="text">fecha de inicio de inscripciones: </label>
-        <input formControlName="fII" matInput [matDatepicker]="picker" class="campos">
+        <input matInput [matDatepicker]="picker" >
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
 
       </div>
       <div>
           <label for="nombre" class="text">fecha de inicio de curso: </label>
-          <input formControlName="fIC" matInput [matDatepicker]="picker2" class="campos" >
+          <input matInput [matDatepicker]="picker2" >
             <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
             <mat-datepicker #picker2></mat-datepicker>
 
       </div>
       <div>
-        <hr>
-      </div>
-      <div>
-          <button mat-flat-button (click)="goToTeacher()" class="logout" >cancelar</button>
-          <hr>
-          <!--button mat-flat-button (click)="goToTeacher()" class="logout">siguiente</button-->
-          <!--button mat-flat-button [disabled]="signupForm.invalid" class="logout" type="submit" (click)="gotToAddModule()">siguiente</button-->
-          <button mat-flat-button class="logout" type="submit" (click)="gotToAddModule()">siguiente</button>
+          <button mat-flat-button (click)="mostrar()" class="logout">cancelar</button>
+          <button mat-flat-button (click)="mostrar()" class="logout">siguiente</button>
       </div>
     </form>
   </div>
 </div>
-

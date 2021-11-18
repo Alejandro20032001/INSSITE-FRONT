@@ -1,0 +1,24 @@
+<div class="nombre-modulo">
+  <span>Modulo X</span>
+</div>
+
+<div class="seccion-material">
+  <div class="materiales">
+    <div class="material"  *ngFor= "let material of materiales">
+        <h3>{{material.resourceType}}</h3>
+        <mat-icon (click) = 'eliminar(material.idResource)'>delete_forever</mat-icon>
+    </div>
+  </div>
+</div>
+
+<div class="seccion-anadir">
+  <span>Añadir:</span>
+  <a class="boton-anadir" (click)='nuevaLectura()'>Lectura</a>
+  <a class="boton-anadir" (click)='nuevoMaterial()'>Link a material</a>
+  <a class="boton-anadir" (click)='nuevaTarea()'>Tarea</a>
+  <a class="boton-anadir" (click)='nuevaVideollamada()'>Video llamada</a>
+</div>
+
+<div class="seccion-guardar">
+  <a (click)="guardar()">Guardar</a>
+</div>

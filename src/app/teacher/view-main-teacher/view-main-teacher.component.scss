@@ -1,10 +1,14 @@
 .espacio {
   flex: 1 1 auto;
 }
+.toolbar {
+  height: 30px;
+  background-color: #97ABAE
+}
 
 .container-courses {
   height: 600px;
-  background-color: #e8e9e9;
+  background-color: #F7F7F7;
   .textUp{
     margin: 12px 12px 12px 12px;
   }
@@ -15,7 +19,7 @@
   height: 30px;
   align-content: center;
   justify-content: left;
-  background-color: #54938e;
+  background-color: #559A95;
   .button{
     height: 30px;
   }
@@ -31,7 +35,7 @@
     border: 0px;
   }
   .logout{
-    background-color: #54938e;
+    background-color: #559A95;
     width: 175px;
     height: 50px;
   }
@@ -40,11 +44,9 @@
   
   cursor: pointer;
   text-align: center;
-
-  width: 300px;
   height: 100px;
   line-height: 100px;
-  background-color: #54938e;
+  background-color: #559A95;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -64,7 +66,7 @@ section.courses{
   .card{
   width: 300px;
   height: 200px;
-  background-color: #f4f4f4;
+  background-color: #F7F7F7;
   margin-top: 20px;
   margin-right: 15px;
   margin-bottom: 20px;
