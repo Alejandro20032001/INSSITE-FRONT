@@ -32,25 +32,30 @@ export class ViewSearchCourseComponent implements OnInit {
         if (resultado === true) {
            console.log(course);
             this.mycourses.createCourse(course);
-            window.alert('Tu inscripcion ha sido exitosa')
+            location.reload();
+            window.alert('Tu inscripcion ha sido exitosa');
         } else { 
             window.alert('Inscripcion cancelada');
         }
      }
      enrollPrevious(course:Course): boolean {
        var res:boolean =false;
-       if(this.mycourse !== undefined)
+       if(this.mycourse!==undefined){
        for(let courseAux of this.mycourse ){
           //if(courseAux.idCourse === course.idCourse){
           if(courseAux.courseName === course.courseName && courseAux.descriptionCourse===course.descriptionCourse){//prueba
               res= true;
           }
+       };
        }
-       console.log(course.courseName);
+       //console.log(course.courseName);
        return res;
      }
      logOut():void{
       this.router.navigate(['./login']);
+    }
+    miscursos():void{
+      this.router.navigate(['./studentCourse']);
     }
   
     goHome():void{
@@ -61,7 +66,7 @@ export class ViewSearchCourseComponent implements OnInit {
       var res:boolean=false;
       let date: Date = new Date();
       let dateEnrole: Date =new Date(course.dateStartEnrole);
-        console.log(course.dateStartEnrole);
+      //  console.log(course.dateStartEnrole);
 
      if (dateEnrole.getFullYear()> date.getFullYear())  
        {  
