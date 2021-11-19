@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { User } from 'src/app/registro/interfaces/user.interface';
-import { Lectura } from '../ventana-principal-anadir-material-modulo/entities/lectura';
+import { Lectura } from '../ventana-principal-anadir-material-modulo/entities/Lectura';
 import { enviarMaterial } from '../ventana-principal-anadir-material-modulo/interfaces/material.interface';
-import { ResourceEnum } from "../../anadirMaterialModulo/ventana-principal-anadir-material-modulo/entities/ResourceEnum";
+import { ResourceEnum } from "../ventana-principal-anadir-material-modulo/entities/ResourceEnum";
 import { ModuleServices } from '../ventana-principal-anadir-material-modulo/services/module.service';
 
 @Component({

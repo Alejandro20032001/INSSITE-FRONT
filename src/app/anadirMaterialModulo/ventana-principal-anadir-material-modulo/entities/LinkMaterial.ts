@@ -1,4 +1,4 @@
-import { Material } from "./material";
+import { Material } from "./Material";
 
 export class LinkMaterial extends Material{
 
