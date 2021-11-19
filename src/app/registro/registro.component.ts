@@ -16,14 +16,14 @@ export class RegistroComponent implements OnInit {
     userName: '',
     password: '',
     password2: '',
-    roles: ['']
+    userRoll: ''
   };
 
   userSend: userSend = {
     completeName: '',
     username: '',
     password: '',
-    roles:['']
+    userRoll: ''
   }
 
   //ESTUDIANTE , DOCENTE
@@ -37,11 +37,11 @@ export class RegistroComponent implements OnInit {
 
   submitEstudiante():void{
     if (this.validar()) {
-      this.user.roles[0] = 'ESTUDIANTE';
+      this.user.userRoll = 'ESTUDIANTE';
       this.userSend.completeName = this.user.name;
       this.userSend.username = this.user.userName;
       this.userSend.password = this.user.password;
-      this.userSend.roles[0] = this.user.roles[0];
+      this.userSend.userRoll = this.user.userRoll;
       this.register.registrar(this.userSend).subscribe(data => console.log(data));
       alert('Usuario registrado como estudiante');
       this.router.navigate(['./login']);
@@ -51,11 +51,11 @@ export class RegistroComponent implements OnInit {
 
   submitDocente():void{
     if (this.validar()) {
-      this.user.roles[0] = 'DOCENTE';
+      this.user.userRoll = 'DOCENTE';
       this.userSend.completeName = this.user.name;
       this.userSend.username = this.user.userName;
       this.userSend.password = this.user.password;
-      this.userSend.roles[0] = this.user.roles[0];
+      this.userSend.userRoll = this.user.userRoll;
       this.register.registrar(this.userSend).subscribe(data => console.log(data));
       alert('Usuario registrado como docente');
       this.router.navigate(['./login']);

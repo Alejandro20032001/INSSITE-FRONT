@@ -7,7 +7,7 @@
   <div >
     <!--form FormTemplate="ngForm" class="form" (submit)=" validar()"-->
      <!--form  class ="form" ng-submit= "validar()"-->
-     <form class="form"  [formGroup]="signupForm" (ngSubmit)="guardarDatos(signupForm.value);funcion()">
+     <form class="form"  [formGroup]="signupForm" (ngSubmit)="guardarDatos(signupForm.value)">
       <div>
           <label for="nombre" class="text">Nombre de Curso </label>
           <input formControlName="nomM" id= "nombreM" type="text" class="campos" placeholder="Nombre">
@@ -60,8 +60,8 @@
           <button mat-flat-button (click)="goToTeacher()" class="logout" >cancelar</button>
           <hr>
           <!--button mat-flat-button (click)="goToTeacher()" class="logout">siguiente</button-->
-          <button mat-flat-button [disabled]="signupForm.invalid" class="logout" type="submit" (click)="gotToAddModule()">siguiente</button>
-          <!--button mat-flat-button class="logout" type="submit" (click)="gotToAddModule()">siguiente</button-->
+          <!--button mat-flat-button [disabled]="signupForm.invalid" class="logout" type="submit" (click)="gotToAddModule()">siguiente</button-->
+          <button mat-flat-button class="logout" type="submit" (click)="gotToAddModule()">siguiente</button>
       </div>
     </form>
   </div>

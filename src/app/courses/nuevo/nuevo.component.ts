@@ -48,8 +48,8 @@ export class NuevoComponent implements OnInit {
     this.router.navigate(['/teacher']);
 
   }gotToAddModule():void{
-    this.router.navigate(['/materialModulo']);
-    //console.log("el metodo ir a addModule a sido llamado");
+    //this.router.navigate(['/materialModulo']);
+    console.log("el metodo ir a addModule a sido llamado");
   }
   convertirAMayuscula(ii:any):String{
      return ii.toUpperCase();
