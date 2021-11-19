@@ -1,0 +1,93 @@
+.join{
+    background-color:#559A95;
+}
+thead{
+    align-content: center;
+}
+.input1{
+    height: 70px;
+    width: 100%;
+    opacity: 0.7;
+}
+
+.form-control{
+    width: 100%;
+}
+
+.encabezado{
+  background-image: url(../../../assets/images/Classroom3.jpg);
+  height: 300px;
+  padding: 10%;
+  }
+  
+  h1{
+    color: rgb(0, 0, 0);
+    font-size: 70px;
+    text-align: center;
+  }
+  h2{
+      text-align: center;
+  }
+.courses{
+    margin: 12px 12px 12px 12px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    max-height: 350px;
+    justify-content: center;
+}
+li{
+    list-style: none;
+    text-align: center;
+}
+.card{
+  height: 150px;
+  width: 80%;
+  margin-top: 30px;
+  margin-left: 10%;
+}
+.names{
+  font-size: 20px;
+}
+
+
+
+
+.container-courses {
+  background-color: #F7F7F7;
+  height: 100%;
+  .textUp{
+    margin: 12px 12px 12px 12px;
+  }
+}
+
+.toolbar {
+  display: flex;
+  height: 30px;
+  align-content: center;
+  justify-content: left;
+  background-color: #559A95;
+  .button{
+    height: 30px;
+  }
+}
+
+.barra-lateral{
+  background-color: #97ABAE;
+  padding: 10px;
+  width: 200px;
+  img{
+    width: 175px;
+    height: 220px;
+    border: 0px;
+  }
+  .logout{
+    background-color: #559A95;
+    width: 175px;
+    height: 50px;
+  }
+}
+span{
+  font-size: 15px;
+  color:#559A95
+}

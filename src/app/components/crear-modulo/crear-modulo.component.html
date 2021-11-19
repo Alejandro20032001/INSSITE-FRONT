@@ -1,0 +1,72 @@
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="crearModulo"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Crear modulo</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <br />
+
+          <div class="col-1"></div>
+          <div class="col-11">
+            <h2 class="fst-normal text-start py-2">{{ moduloName }}</h2>
+
+            <div class="col-12 mb-1">
+              <label
+                for="colFormLabelSm"
+                class="col-sm-10 col-form-label col-form-label-sm text-start"
+                >Nombre del modulo :</label
+              >
+            </div>
+            <div class="col-sm-8">
+              <input
+                type="text"
+                class="form-control form-control-12"
+                id="colFormLabelSm"
+                [(ngModel)]="moduloName"
+              />
+            </div>
+            <br />
+
+            <div class="row mb-1">
+              <label
+                for="colFormLabelSm"
+                class="col-sm-10 col-form-label col-form-label-sm text-start"
+                >Cantidad de dias :</label
+              >
+            </div>
+            <div class="col-sm-5">
+              <input
+                type="number"
+                class="form-control form-control-5"
+                id="colFormLabelSm"
+                [(ngModel)]= "duracion"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="guardarModulo()">
+          Guardar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

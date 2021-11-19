@@ -12,6 +12,9 @@ import { CourseService } from 'src/app/courses/services/course.service';
 export class ViewMainTeacherComponent implements OnInit {
   showFiller = false;
 
+  centered = false;
+  disabled = false;
+  unbounded = false;
   goHome(){}
   goAddCourse():void{
     this.router.navigate(['./newC']);
