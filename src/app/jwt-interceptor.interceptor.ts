@@ -25,11 +25,13 @@ export class JwtInterceptor implements HttpInterceptor {
       //req.clone({ headers: req.headers.set('x-access-token', 'Bearer' +token) });
       //req.headers.set('x-access-token',`Bearer ${token}`)
       request = request.clone({
-        setHeaders: { 
+        setHeaders: {
           authorization: `Bearer ${token}`
         }
       });
       //console.log(request)
+    }else{
+      this.router.navigate((['./login']));
     }
     //console.log(req);
     return next.handle(request);
