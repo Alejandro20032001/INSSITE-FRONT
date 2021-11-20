@@ -51,7 +51,11 @@ export class VentanaPrincipalAnadirMaterialModuloComponent implements OnInit {
   }
 
   guardar():void{
-    console.log(this.materiales[0].resourceType);
+    if(this.materiales.length == 0){
+      alert("No puedes guardar un modulo si no contiene ningun material");
+    }else{
+      this.router.navigate(["/modulosConfig"]);
+    }
   }
 
   eliminar(id:string):void{

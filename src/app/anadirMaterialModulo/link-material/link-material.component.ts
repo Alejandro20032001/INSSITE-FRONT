@@ -38,9 +38,20 @@ export class LinkMaterialComponent implements OnInit {
 
   async guardar():Promise<void>{
 
+    let bandera = false;
+    try {
+      const url = new URL(this.linkMaterial.link);
+    } catch (error) {
+      console.log(error);
+      bandera = true; // => TypeError, "Failed to construct URL: Invalid URL"
+    }
     if(this.linkMaterial.link.length === 0){
       alert("La URL es obligatoria");
-    }else if(this.linkMaterial.descripcion.length === 0){
+
+    }else if(bandera){
+      alert("Debes ingresar una URL valida");
+    }
+    else if(this.linkMaterial.descripcion.length === 0){
       alert("La descripcion es obligatoria");
     }else{
 

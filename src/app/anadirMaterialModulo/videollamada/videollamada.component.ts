@@ -39,9 +39,20 @@ export class VideollamadaComponent implements OnInit {
   }
 
   async guardar():Promise<void>{
+    let bandera = false;
+    try {
+      const url = new URL(this.videollamada.link);
+    } catch (error) {
+      console.log(error);
+      bandera = true; // => TypeError, "Failed to construct URL: Invalid URL"
+    }
+
     if (this.videollamada.link.length === 0) {
       alert("La URL es obligatoria");
-    } else if(this.videollamada.fecha.length === 0){
+    } else if(bandera){
+      alert("Debes ingresar a una URL valida");
+    }
+    else if(this.videollamada.fecha.length === 0){
       alert("La fecha es obligatoria");
     } else if(this.videollamada.hora.length === 0){
       alert("La hora es obligatoria");
