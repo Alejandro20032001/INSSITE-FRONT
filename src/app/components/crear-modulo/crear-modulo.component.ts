@@ -8,8 +8,8 @@ import { Modulo } from 'src/app/models/modulo';
 })
 export class CrearModuloComponent implements OnInit {
 
-  idModulo : string = '';
-  moduloName : string = '';
+  idModulo : string = ' ';
+  moduloName : string = " ";
   duracion : number = 0;
   @Output() clickGuardar = new EventEmitter<Modulo>();
 
@@ -19,6 +19,10 @@ export class CrearModuloComponent implements OnInit {
   }
 
   guardarModulo(){
+   
     this.clickGuardar.emit(new Modulo(this.idModulo, this.moduloName, this.duracion));
+    this.moduloName = '';
+    this.duracion = 0;
+   
   }
 }

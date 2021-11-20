@@ -12,7 +12,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class ModuloComponent implements OnInit {
 
-  @Input() modulo : Modulo = new Modulo("","Mates",2);
+  @Input() modulo : Modulo = new Modulo("","",0);
 
   modul: Modulo={idModulo: " ",nombre: '', duracion: 0};
 
