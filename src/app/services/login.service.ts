@@ -23,6 +23,6 @@ export class LoginService {
   }*/
 
   borrarModulo(nom: string): Observable<Modulo>{
-    return this.http.delete<Modulo>('${this.base_url}?nombre=${nom}');
+    return this.http.delete<Modulo>(this.base_url + '/coursemodule/'+nom);
   }
 }

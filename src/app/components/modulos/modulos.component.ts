@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Modulo } from 'src/app/models/modulo';
-import * as bootstrap from 'bootstrap';
 
 @Component({
   selector: 'app-modulos',

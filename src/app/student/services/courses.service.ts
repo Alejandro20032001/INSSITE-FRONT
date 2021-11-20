@@ -20,7 +20,7 @@ export class CoursesService {
    // return this.http.put<Course>(this.apiURL+'/products', course); //pruebas
    
    console.log("LLego service");
-   let con = this.http.put<any>('https://inssite-database.herokuapp.com/course/672d7d24-0194-4569-b354-75b4e94950c0',{}).subscribe({
+   let con = this.http.put<any>(this.apiURL + '/course/'+course.idCourse,{}).subscribe({
     error: error => {
         console.error('There was an error!', error);
     }
