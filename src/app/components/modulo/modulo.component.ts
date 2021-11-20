@@ -29,7 +29,7 @@ export class ModuloComponent implements OnInit {
 
   modificarModulo(id:string){
     this.cookieService.set('idModulo',id);
-    this.router.navigate(['materialModulo']);
+    this.router.navigate(['./materialModulo']);
   }
 
 }
