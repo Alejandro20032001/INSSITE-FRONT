@@ -18,6 +18,7 @@ import { ModuleServices } from './services/module.service';
 export class VentanaPrincipalAnadirMaterialModuloComponent implements OnInit {
 
   materiales:MaterialLista[] = [];
+  nombreModulo!:string;
 
   constructor(
     private router:Router,
@@ -26,12 +27,12 @@ export class VentanaPrincipalAnadirMaterialModuloComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cookieService.set('idModulo',"0be18942-b6a2-48cf-8cfc-2edf1b8e5d5a");
     this.servicios.obtenerMaterialModulo(this.cookieService.get('idModulo')).
     pipe(
       tap((materiales:MaterialLista[]) => this.materiales = materiales.reverse())
     )
     .subscribe();
+    this.nombreModulo = this.cookieService.get('nombreModulo');
   }
 
   nuevaLectura():void{
