@@ -21,7 +21,7 @@
   <div class="encabezado">
     <div><h1>Inssite</h1></div>
     <div><h2>Buscar cursos</h2></div>
-    <input type="text" class="form-control" name="filterPost" placeholder="Busca el curso por su nombre o el area al que pertenece" [(ngModel)]="filterPost">
+    <input type="text" class="form-control" maxlength="30" name="filterPost" placeholder="Busca el curso por su nombre o el area al que pertenece" [(ngModel)]="filterPost" onclick="if(this.value !='') this.value=''">
   </div>
   
     

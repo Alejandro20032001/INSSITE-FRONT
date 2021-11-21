@@ -8,7 +8,7 @@ export class FilterPipe implements PipeTransform {
   transform(value: any, arg: any): any {
     let cont:number=0;
     let date: Date = new Date();
-    if (arg === '' || arg.length < 3)  return value;
+    if (arg === '' || arg.length < 1)  return value;
     const resultPosts = [];
     console.log(date.getDate()+'/'+(date.getMonth()+1)+'/'+date.getFullYear());
     if (arg.length<30){
@@ -47,33 +47,17 @@ export class FilterPipe implements PipeTransform {
     
         };
     }else{
+      location.reload();
       window.alert('Tu busqueda no debe contener mas de 30 caracteres');
+      return value;
     }
-   
     if(resultPosts.length!=0){
-      cont=0;
-       return resultPosts;
+      return resultPosts;
     }else{
-      cont=cont+1;
-     this.message(cont);
-    }
-  }
-  
-  message(cont : number){   
-    if(cont===1) {
-      alert('El curso esta cerrado o no existe');
-    }else{
-      this.transform({},"")
+      location.reload();
+      alert("El curso no existe")
     }
   }
 }
 
 
-/*
- if (course.courseName.toLowerCase().indexOf(arg.toLowerCase()) > -1 ) {
-            resultPosts.push(course);
-          };
-          if (course.areaCourse.toLowerCase().indexOf(arg.toLowerCase()) > -1 ) {
-            resultPosts.push(course);
-          };  
-          */

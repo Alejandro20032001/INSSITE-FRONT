@@ -13,6 +13,7 @@ import {Course} from 'src/app/student/interfaces/course.interface'
 export class ViewSearchCourseComponent implements OnInit {
   constructor(private courseService: CourseService, private mycourses: CoursesService, private router: Router) { }
   filterPost = '';
+  limpio=false;
   courses!: Course[];
   mycourse!: Course[];
 
