@@ -2,67 +2,67 @@
   {
     "areaCourse": "Informatica",
     "courseName": "Programacion",
-    "dateStartEnroles":"2021-11-14",
-    "description": "Este es el texto que debe mostrarse en el lugar de la description"
+    "dateStartEnrole":"2021-11-14",
+    "descriptionCourse": "Este es el texto que debe mostrarse en el lugar de la descriptionCourse"
   },
   {
     "areaCourse": "Informatica",
     "courseName": "Base de Datos",
     
-    "dateStartEnroles":"2021-10-26",
-    "description": "Este es el texto que debe mostrarse en el lugar de la description"
+    "dateStartEnrole":"2021-10-26",
+    "descriptionCourse": "Este es el texto que debe mostrarse en el lugar de la descriptionCourse"
   },
   {
     "areaCourse": "Matematica",
     "courseName": "Algebra",
     
-    "dateStartEnroles":"2020-3-1",
-    "description": "Este es el texto que debe mostrarse en el lugar de la description"
+    "dateStartEnrole":"2021-11-30",
+    "descriptionCourse": "Este es el texto que debe mostrarse en el lugar de la descriptionCourse"
   },{
     "areaCourse": "Informatica",
     "courseName": "Sistemas Operativos",
-    "dateStartEnroles":"2021-11-29",
-    "description": "Este es el texto que debe mostrarse en el lugar de la description"
+    "dateStartEnrole":"2021-11-29",
+    "descriptionCourse": "Este es el texto que debe mostrarse en el lugar de la descriptionCourse"
   },
   {
     "areaCourse": "Administracion",
     "courseName": "Contabilidad Basica",
     
-    "dateStartEnroles":"2021-5-6",
-    "description": "Este es el texto que debe mostrarse en el lugar de la description"
+    "dateStartEnrole":"2021-5-6",
+    "descriptionCourse": "Este es el texto que debe mostrarse en el lugar de la descriptionCourse"
   },
   {
     "areaCourse": "Matematica",
     "courseName": "Calculo",
     
-    "dateStartEnroles":"2021-9-6",
-    "description": "Este es el texto que debe mostrarse en el lugar de la description"
+    "dateStartEnrole":"2021-9-6",
+    "descriptionCourse": "Este es el texto que debe mostrarse en el lugar de la descriptionCourse"
   },{
     "areaCourse": "Administracion",
     "courseName": "Costos",
     
-    "dateStartEnroles":"2022-8-7",
-    "description": "Este es el texto que debe mostrarse en el lugar de la description"
+    "dateStartEnrole":"2022-8-7",
+    "descriptionCourse": "Este es el texto que debe mostrarse en el lugar de la descriptionCourse"
   },
   {
     "areaCourse": "Matematica",
     "courseName": "Computers",
     
-    "dateStartEnroles":"2021-10-4",
-    "description": "Este es el texto que debe mostrarse en el lugar de la description"
+    "dateStartEnrole":"2021-10-4",
+    "descriptionCourse": "Este es el texto que debe mostrarse en el lugar de la descriptionCourse"
   },{
     "areaCourse": "Informatica",
     "courseName": "Redes",
     
-    "dateStartEnroles":"2022-1-31",
-    "description": "Este es el texto que debe mostrarse en el lugar de la description"
+    "dateStartEnrole":"2022-1-31",
+    "descriptionCourse": "Este es el texto que debe mostrarse en el lugar de la descriptionCourse"
   },
   {
     "areaCourse": "Matematica",
     "courseName": "Calculo II",
     
-    "dateStartEnroles":"2020-11-29",
-    "description": "Este es el texto que debe mostrarse en el lugar de la description"
+    "dateStartEnrole":"2020-11-29",
+    "descriptionCourse": "Este es el texto que debe mostrarse en el lugar de la descriptionCourse"
   }
 ],
 "products":[
@@ -70,15 +70,15 @@
     "areaCourse": "Informatica",
     "courseName": "Programacion",
     
-    "dateStartEnroles":"2021-11-14",
-    "description": "Este es el texto que debe mostrarse en el lugar de la description"
+    "dateStartEnrole":"2021-11-14",
+    "descriptionCourse": "Este es el texto que debe mostrarse en el lugar de la descriptionCourse"
   },
   {
     "areaCourse": "Matematica",
     "courseName": "Calculo",
     
-    "dateStartEnroles":"2021-9-6",
-    "description": "Este es el texto que debe mostrarse en el lugar de la description"
+    "dateStartEnrole":"2021-9-6",
+    "descriptionCourse": "Este es el texto que debe mostrarse en el lugar de la descriptionCourse"
   }
 ]
 }
