@@ -43,8 +43,8 @@ export class ViewSearchCourseComponent implements OnInit {
     var res: boolean = false;
     if (this.mycourse !== undefined) {
       for (let courseAux of this.mycourse) {
-        //if(courseAux.idCourse === course.idCourse){
-        if (courseAux.courseName === course.courseName && courseAux.descriptionCourse === course.descriptionCourse) {//prueba
+        if(courseAux.idCourse === course.idCourse){
+        //if (courseAux.courseName === course.courseName && courseAux.descriptionCourse === course.descriptionCourse) {//prueba
           res = true;
         }
       };
@@ -88,4 +88,8 @@ export class ViewSearchCourseComponent implements OnInit {
     };
     return res;
   }
+  shortDescription(course:Course): any{
+     return course.descriptionCourse.substring(0,25);
+  }
 }
+
