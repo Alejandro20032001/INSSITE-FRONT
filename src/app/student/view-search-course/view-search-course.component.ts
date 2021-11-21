@@ -80,7 +80,7 @@ export class ViewSearchCourseComponent implements OnInit {
           res = true;
         }
         else {
-          if (dateEnrole.getMonth() == date.getMonth() + 1) {
+          if (dateEnrole.getMonth()+1 == date.getMonth() + 1) {
             if (dateEnrole.getDate() > date.getDate())
               res = true;
           };
@@ -90,7 +90,7 @@ export class ViewSearchCourseComponent implements OnInit {
     return res;
   }
   shortDescription(course:Course): any{
-     return course.descriptionCourse.substring(0,25);
+     return course.descriptionCourse.substring(0,50);
   }
 }
 

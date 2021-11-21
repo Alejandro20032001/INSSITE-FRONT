@@ -13,10 +13,9 @@ export class FilterPipe implements PipeTransform {
     console.log(date.getDate()+'/'+(date.getMonth()+1)+'/'+date.getFullYear());
     if (arg.length<30){
       for (const course of value) {
-      
         let dateEnrole: Date =new Date(course.dateStartEnrole);
          console.log(course.dateStartEnrole);
-      if (dateEnrole.getFullYear()> date.getFullYear())  
+      /* if (dateEnrole.getFullYear()> date.getFullYear())  
         {  
           if (course.courseName.toLowerCase().indexOf(arg.toLowerCase()) > -1 || course.areaCourse.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
             resultPosts.push(course);
@@ -43,8 +42,10 @@ export class FilterPipe implements PipeTransform {
                };  
               }; 
             };
+          };*/
+          if (course.courseName.toLowerCase().indexOf(arg.toLowerCase()) > -1 || course.areaCourse.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
+            resultPosts.push(course);
           };
-    
         };
     }else{
       location.reload();
@@ -54,7 +55,6 @@ export class FilterPipe implements PipeTransform {
     if(resultPosts.length!=0){
       return resultPosts;
     }else{
-      location.reload();
       alert("El curso no existe")
     }
   }

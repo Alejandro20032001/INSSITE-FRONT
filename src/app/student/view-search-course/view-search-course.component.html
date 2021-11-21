@@ -28,7 +28,7 @@
       <div class="courses">
             <div *ngFor="let course of courses | filter:filterPost ">
                <mat-card class="card">
-                  <div  style= "background-color: #97ABAE; height: 40px;" >
+                  <div  style= "background-color: #97ABAE; height: 35px;" >
                   <li class="names"><strong>{{course.courseName}}</strong></li>
                   </div>
 
@@ -39,9 +39,7 @@
                 <div *ngIf=" !enrollPrevious(course)&&lateEnroll(course) else late">
                   <button mat-flat-button (click)="enroll(course)" class="join">Inscribirse</button>
                 </div>
-
-                
-                  <ng-template #late > <div *ngIf="!lateEnroll(course)&& !enrollPrevious(course) else inscrito"><span><strong>Cerrado</strong></span></div>
+                  <ng-template #late > <div *ngIf="!lateEnroll(course) && !enrollPrevious(course) else inscrito"><span><strong>Cerrado</strong></span></div>
                   </ng-template>
                   <ng-template  #inscrito ><span><strong>Inscrito</strong></span>
                   </ng-template>

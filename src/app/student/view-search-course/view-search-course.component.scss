@@ -33,7 +33,7 @@ thead{
     display: flex;
     flex-wrap: wrap;
     overflow: auto;
-    max-height: 350px;
+    max-height: 45%;
     justify-content: center;
 }
 li{
@@ -43,7 +43,9 @@ li{
 .card{
   width: 350px;
   height: 180px;
-
+  margin-top: 20px;
+  margin-left: 20px;
+  
 }
 .names{
   font-size: 25px;
@@ -51,9 +53,6 @@ li{
 .area{
    font-size: 10px;
 }
-
-
-
 
 .container-courses {
   background-color: #F7F7F7;
