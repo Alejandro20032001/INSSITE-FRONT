@@ -69,8 +69,8 @@ export class ViewSearchCourseComponent implements OnInit {
     var res: boolean = false;
     let date: Date = new Date();
     let dateEnrole: Date = new Date(course.dateStartEnrole);
-    //  console.log(course.dateStartEnrole);
-
+    console.log(date.getDate());
+    console.log(dateEnrole.getDate());
     if (dateEnrole.getFullYear() > date.getFullYear()) {
       res = true;
     }
@@ -80,8 +80,8 @@ export class ViewSearchCourseComponent implements OnInit {
           res = true;
         }
         else {
-          if (dateEnrole.getMonth()+1 == date.getMonth() + 1) {
-            if (dateEnrole.getDate() > date.getDate())
+          if (dateEnrole.getMonth()+1 == date.getMonth()+1) {
+            if (dateEnrole.getDate()+1 > date.getDate() || dateEnrole.getDate()+1 === date.getDate())
               res = true;
           };
         };
