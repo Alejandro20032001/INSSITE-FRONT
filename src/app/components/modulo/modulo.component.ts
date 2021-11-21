@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Modulo } from 'src/app/models/modulo';
 import { LoginService } from 'src/app/services/login.service';
 import { CookieService } from 'ngx-cookie-service';
+import { ModulosComponent } from '../modulos/modulos.component';
 
 @Component({
   selector: 'app-modulo',
@@ -16,19 +17,24 @@ export class ModuloComponent implements OnInit {
 
   modul: Modulo={idModulo: " ",nombre: '', duracion: 0};
 
-  constructor(private moduleService: LoginService, private router: Router, private cookieService: CookieService) { 
-    
+  constructor(private moduleService: LoginService, private router: Router, private cookieService: CookieService) {
+
   }
 
   ngOnInit(): void {
   }
 
   borrarModulo(id:string){
-    this.moduleService.borrarModulo(id).subscribe(res => {alert("Modulo eliminado")})
+    this.moduleService.borrarModulo(id).subscribe(res => {
+        alert("Modulo eliminado");
+        window.location.reload();
+     }
+    )
   }
 
-  modificarModulo(id:string){
+  modificarModulo(nombre:string, id:string){
     this.cookieService.set('idModulo',id);
+    this.cookieService.set('nombreModulo',nombre);
     this.router.navigate(['./materialModulo']);
   }
 
