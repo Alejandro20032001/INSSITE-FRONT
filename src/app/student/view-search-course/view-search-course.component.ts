@@ -13,6 +13,7 @@ import {Course} from 'src/app/student/interfaces/course.interface'
 export class ViewSearchCourseComponent implements OnInit {
   constructor(private courseService: CourseService, private mycourses: CoursesService, private router: Router) { }
   filterPost = '';
+  limpio=false;
   courses!: Course[];
   mycourse!: Course[];
 
@@ -43,8 +44,8 @@ export class ViewSearchCourseComponent implements OnInit {
     var res: boolean = false;
     if (this.mycourse !== undefined) {
       for (let courseAux of this.mycourse) {
-        //if(courseAux.idCourse === course.idCourse){
-        if (courseAux.courseName === course.courseName && courseAux.descriptionCourse === course.descriptionCourse) {//prueba
+        if(courseAux.idCourse === course.idCourse){
+        //if (courseAux.courseName === course.courseName && courseAux.descriptionCourse === course.descriptionCourse) {//prueba
           res = true;
         }
       };
@@ -68,8 +69,8 @@ export class ViewSearchCourseComponent implements OnInit {
     var res: boolean = false;
     let date: Date = new Date();
     let dateEnrole: Date = new Date(course.dateStartEnrole);
-    //  console.log(course.dateStartEnrole);
-
+    console.log(date.getDate());
+    console.log(dateEnrole.getDate());
     if (dateEnrole.getFullYear() > date.getFullYear()) {
       res = true;
     }
@@ -79,8 +80,8 @@ export class ViewSearchCourseComponent implements OnInit {
           res = true;
         }
         else {
-          if (dateEnrole.getMonth() == date.getMonth() + 1) {
-            if (dateEnrole.getDate() > date.getDate())
+          if (dateEnrole.getMonth()+1 == date.getMonth()+1) {
+            if (dateEnrole.getDate()+1 > date.getDate() || dateEnrole.getDate()+1 === date.getDate())
               res = true;
           };
         };
@@ -88,4 +89,8 @@ export class ViewSearchCourseComponent implements OnInit {
     };
     return res;
   }
+  shortDescription(course:Course): any{
+     return course.descriptionCourse.substring(0,50);
+  }
 }
+

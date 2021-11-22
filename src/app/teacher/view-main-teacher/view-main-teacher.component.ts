@@ -39,4 +39,7 @@ export class ViewMainTeacherComponent implements OnInit {
   logout():void{
     this.router.navigate(['./login']);
   }
+  shortDescription(course:Course): any{
+    return course.descriptionCourse.substring(0,50);
+ }
 }

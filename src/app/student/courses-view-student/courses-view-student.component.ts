@@ -31,8 +31,7 @@ export class CoursesViewStudentComponent implements OnInit {
   goHome():void{
     this.router.navigate(['./studentWelcomeView']);
   }
-
-  searchCourse():void{
+  search():void{
     this.router.navigate(['./searchCourse']);
   }
 }

@@ -3,7 +3,7 @@
      <mat-icon>menu</mat-icon>
   </button> 
   <h2>Estudiante</h2>
-  </div>
+</div>
 <mat-drawer-container class="container-courses" autosize>
   <mat-drawer #drawer class="barra-lateral" mode="side">
    <img src="../../../assets/images/logo.jpeg"/>
@@ -16,27 +16,34 @@
   <button  mat-flat-button (click)="logOut()" class="logout">
    Cerrar sesion
   </button>
+  
 </mat-drawer>
   <div class="encabezado">
     <div><h1>Inssite</h1></div>
     <div><h2>Buscar cursos</h2></div>
-    <input type="text" class="form-control" name="filterPost" placeholder="Busca el curso por su nombre o el area al que pertenece" [(ngModel)]="filterPost">
+    <input type="text" class="form-control" maxlength="30" name="filterPost" placeholder="Busca el curso por su nombre o el area al que pertenece" [(ngModel)]="filterPost" onclick="if(this.value !='') this.value=''">
   </div>
   
     
       <div class="courses">
             <div *ngFor="let course of courses | filter:filterPost ">
                <mat-card class="card">
+                  <div  style= "background-color: #97ABAE; height: 35px;" >
                   <li class="names"><strong>{{course.courseName}}</strong></li>
-                  <li><small>{{course.areaCourse}}</small></li>
-                  <li>{{course.description}}</li>
+                  </div>
+
+                  <li class="area">{{course.areaCourse}}</li>
+                  <li><strong>Acerca del curso: </strong>{{shortDescription(course)}}...</li>
+                  <li class="area"><strong>Fecha limite de inscripcion: </strong>{{course.dateStartEnrole}}</li>
+
                 <div *ngIf=" !enrollPrevious(course)&&lateEnroll(course) else late">
                   <button mat-flat-button (click)="enroll(course)" class="join">Inscribirse</button>
                 </div>
-                <ng-template #late> <div *ngIf="!lateEnroll(course)&& !enrollPrevious(course) else inscrito"><span><strong>Cerrado</strong></span></div>
-                </ng-template>
-                <ng-template #inscrito><span><strong>Inscrito</strong></span>
-                </ng-template>
+                  <ng-template #late > <div *ngIf="!lateEnroll(course) && !enrollPrevious(course) else inscrito"><span><strong>Cerrado</strong></span></div>
+                  </ng-template>
+                  <ng-template  #inscrito ><span><strong>Inscrito</strong></span>
+                  </ng-template>
+
                </mat-card>
             </div>
       </div>
