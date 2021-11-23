@@ -48,9 +48,7 @@ export class FilterPipe implements PipeTransform {
           };
         };
     }else{
-      location.reload();
       window.alert('Tu busqueda no debe contener mas de 30 caracteres');
-      return value;
     }
     if(resultPosts.length!=0){
       return resultPosts;
