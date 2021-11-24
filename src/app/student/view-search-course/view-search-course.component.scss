@@ -45,21 +45,22 @@ li{
   height: 180px;
   margin-top: 20px;
   margin-left: 20px;
-  vertical-align: center;
+  align-items: center;
   justify-content: center;
+  display: flex;
+  text-align: left;
+  background-color: #F7F7F7;
 }
 .names{
   font-size: 25px;
   vertical-align: center;
   justify-content: center;
-  margin-top: 10px;
 }
 .area{
    font-size: 10px;
 }
 
 .container-courses {
-  background-color: #F7F7F7;
   height: 90%;
   .textUp{
     margin: 12px 12px 12px 12px;
