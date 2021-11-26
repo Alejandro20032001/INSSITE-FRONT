@@ -1,0 +1,55 @@
+.seccion-descripcion{
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  background-color: white;
+}
+
+.regresar{
+  display: flex;
+  width: 100%;
+  height: 10%;
+  background-color: aquamarine;
+}
+
+.titulo{
+  display: flex;
+  width: 100%;
+  height: 20%;
+  background-color: aqua;
+}
+
+.descripcion{
+  display: flex;
+  width: 100%;
+  height: 55%;
+  background-color: bisque;
+}
+
+.guardar{
+  display: flex;
+  width: 100%;
+  height: 15%;
+  background-color: blueviolet;
+}
+
+.seccion-respuesta{
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  background-color: white;
+}
+
+.titulo-respuesta{
+  display: flex;
+  width: 100%;
+  height: 15%;
+  background-color: rgb(117, 114, 121);
+}
+
+.respuesta{
+  display: flex;
+  width: 100%;
+  height: 85%;
+  background-color: rgb(143, 89, 39);
+}
