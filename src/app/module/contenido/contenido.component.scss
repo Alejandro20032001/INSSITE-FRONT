@@ -1,0 +1,49 @@
+
+.barra-lateral{
+    background-color: #97ABAE;
+    padding: 10px;
+    width: 210px;
+    img{
+      width: 100%;
+      border: 0px;
+    }
+    .logout{
+      background-color: #559A95;
+      width: 95%;
+      height: 50px;
+    }
+  }
+.container-courses {
+    height: 95%;
+    .textUp{
+      margin: 12px 12px 12px 12px;
+    }
+  }
+  
+  .toolbar {
+    display: flex;
+    height: 30px;
+    align-content: center;
+    justify-content: left;
+    background-color: #559A95;
+    .button{
+      height: 30px;
+    }
+  }
+  .modules{
+    margin: 12px 12px 12px 12px;
+  }
+
+  .NameMod{
+    width: 100%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    height:100%;
+    .tarea{
+        width:100%;
+        background-color: #559A95;
+
+    }
+  }
