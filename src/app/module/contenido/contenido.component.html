@@ -21,28 +21,79 @@
   
 
   <mat-tab-group class="modules">
-    <mat-tab label="Modulo 1"> 
-      <mat-grid-list cols="4" >
-        <mat-grid-tile  [colspan]=1 [rowspan]=2>
+    <mat-tab  *ngFor="let module of listModule; index as i" label="Modulo {{i+1}}"> 
+      <mat-grid-list cols="4" rowHeight="270px" style="display: flex; ">
+        <mat-grid-tile  [colspan]=1 [rowspan]= 3>
           <mat-card class="NameMod">
-            <h1>Nombre del Modulo</h1>
-            <button class="tarea" mat-flat-button (click)="goTask()"> Tareas</button>
+            <h1>{{module.nameModule}}</h1>
+            <button class="tarea" mat-flat-button (click)="goTask()" style="font-size: 20px; color: #ffffff;"> Tareas</button>
           </mat-card>
         </mat-grid-tile>
-        <mat-grid-tile [colspan]=3 [rowspan]=1>
-          2
+        <mat-grid-tile [colspan]=2 [rowspan]=1>
+          <mat-card class="caja2">
+            <div class="progress" style="height:40px;" >
+              <div class="progress-bar progress-bar-success" style="width: nivel()" style="background-color: #559A95;">
+                <span class="sr-only" style="font-size:large;">{{nivel()}}% completado (éxito)</span>
+              </div>
+              </div>
+            <div style="height: 80%;  margin: 12px 12px 12px 12px; font-size: x-large; " >
+              {{"El valor de una idea radica en el uso de la misma – Thomas Edison." }}
+            </div> 
+            <div>
+              <button mat-icon-button class="video-icon" style="background-color: #559A95; position: relative;" aria-label="Example icon-button with heart icon">
+                <mat-icon>videocam</mat-icon>
+              </button>
+              <button mat-icon-button class="video-icon" style="background-color: #559A95; position: relative;" aria-label="Example icon-button with heart icon">
+              <mat-icon> sentiment_satisfied_alt</mat-icon>
+              </button>
+              <button mat-icon-button class="video-icon" style="background-color: #559A95; position: relative;" aria-label="Example icon-button with heart icon">
+                <mat-icon>book</mat-icon>
+              </button>
+            </div>
+          </mat-card>
+          
         </mat-grid-tile>
         <mat-grid-tile [colspan]=1 [rowspan]=1>
-          3
+          <div class="d">
+            <mat-card class="demo-inline-calendar-card">
+              <mat-calendar (selectedChange)="selected = $event"></mat-calendar>
+            </mat-card>
+          </div>
         </mat-grid-tile>
-        <mat-grid-tile  [colspan]=2 [rowspan]=1>
-          4
+        <mat-grid-tile  [colspan]=3 [rowspan]= 2>
+          <mat-accordion class="resource" >
+            <mat-expansion-panel style="text-align: center;" (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false" *ngFor="let material of materiales">
+              <mat-expansion-panel-header>
+                <mat-panel-title style="font-size: x-large;">
+                 <strong>{{material.title}} </strong>
+                </mat-panel-title>
+                <mat-panel-description>
+                  El contenido esta {{panelOpenState ? 'abierto' : 'oculto'}}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <div class="material">{{material.descriptionResource}}</div>
+             <!--<span style="align-self: baseline; font-size: large;"><strong>Calificacion: </strong> {{material.score}}</span> --> 
+            </mat-expansion-panel>
+          </mat-accordion>
         </mat-grid-tile>
       </mat-grid-list>
-    
-    
     </mat-tab>
-    <mat-tab label="Modulo 2"> contenido 2 </mat-tab>
-    <mat-tab label="Modulo 3"> contenido 3 </mat-tab>
   </mat-tab-group>
 </mat-drawer-container>
+<!--
+          
+           <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>First campaign</mat-label>
+                <mat-date-range-input
+                  [formGroup]="campaignOne"
+                  [rangePicker]="campaignOnePicker"
+                  [comparisonStart]="campaignTwo.value.start"
+                  [comparisonEnd]="campaignTwo.value.end">
+                  <input matStartDate placeholder="Start date" formControlName="start">
+                  <input matEndDate placeholder="End date" formControlName="end">
+                </mat-date-range-input>
+                <mat-datepicker-toggle matSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
+                <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
+              </mat-form-field>
+        -->
