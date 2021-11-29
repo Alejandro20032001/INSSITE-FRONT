@@ -13,9 +13,9 @@ import { ModulosComponent } from '../modulos/modulos.component';
 })
 export class ModuloComponent implements OnInit {
 
-  @Input() modulo : Modulo = new Modulo("","",0);
+  @Input() modulo : Modulo = new Modulo("","",0,0);
 
-  modul: Modulo={idModulo: " ",nombre: '', duracion: 0};
+  modul: Modulo={idModulo: " ",nombre: '', duracion: 0, order: 0};
 
   constructor(private moduleService: LoginService, private router: Router, private cookieService: CookieService) {
 

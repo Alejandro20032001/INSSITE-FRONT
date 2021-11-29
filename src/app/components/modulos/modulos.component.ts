@@ -14,8 +14,6 @@ import { LoginService } from 'src/app/services/login.service';
 export class ModulosComponent implements OnInit {
 
   listaModulos: Modulo[] = [];
-  tamanioLista : number = 0;
-  router: any;
   intermedioModulos!:RespuestaModulo[];
 
   constructor(private servicios:LoginService){
@@ -29,21 +27,27 @@ export class ModulosComponent implements OnInit {
           this.intermedioModulos = modulos;
           this.listaModulos = [];
           modulos.forEach(element => {
-            this.listaModulos.push(new Modulo(element.idModule,element.nameModule, element.durationModule))
+            this.listaModulos.push(new Modulo(element.idModule,element.nameModule, element.durationModule, element.orderModule))
           });
+          this.ordenarLista(this.listaModulos);
         })
     ).subscribe();
   }
 
-  guardarModulo(respuesta: Modulo){
-    let enviar = new CreacionModulo("672d7d24-0194-4569-b354-75b4e94950c0",respuesta.nombre, respuesta.duracion);
+  guardarModulo(respuesta: Modulo):void{
+    let orden = 0;
+    if(this.listaModulos.length > 0){
+      orden = this.listaModulos[this.listaModulos.length - 1].order;
+    }
+
+    let enviar = new CreacionModulo("672d7d24-0194-4569-b354-75b4e94950c0",respuesta.nombre, respuesta.duracion, orden);
     this.servicios.crearModulo(enviar).subscribe(data => {
       console.log(data);
       this.ngOnInit();
     });
   }
 
-  terminarCurso(){
+  terminarCurso():void{
     if(this.listaModulos.length == 1){
       alert("Curso creado con exito");
     }else{
@@ -51,9 +55,19 @@ export class ModulosComponent implements OnInit {
     }
   }
 
+  ordenarLista(lista:Modulo[]):void{
 
+    let k,i,aux;
+    let n = lista.length;
 
-
-
-
+    for (k = 1; k < n; k++) {
+      for (i = 0; i < (n - k); i++) {
+          if (lista[i].order > lista[i + 1].order) {
+              aux = lista[i];
+              lista[i] = lista[i + 1];
+              lista[i + 1] = aux;
+          }
+      }
+  }
+  }
 }
