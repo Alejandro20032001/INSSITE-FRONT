@@ -1,24 +1,24 @@
 <div class="seccion-descripcion">
 
   <div class="regresar">
-    <a> < Regresar</a>
+    <a (click) = "regresar()"> < Regresar</a>
   </div>
 
   <div class="titulo">
-    <h2>{{tarea.titulo}}</h2>
+    <h2>{{tarea.title}}</h2>
   </div>
 
   <div class="descripcion">
-    <p>{{tarea.descripcion}}</p>
+    <p>{{tarea.descriptionResource}}</p>
   </div>
 
   <div class="guardar">
     <div class="guardar-iz">
-      <a>Enviar</a>
+      <a (click) = "enviar()">Enviar</a>
     </div>
 
     <div class="guardar-der">
-      <span>Valor tarea: {{tarea.nota}} puntos</span>
+      <span>Valor tarea: {{tarea.score}} puntos</span>
     </div>
   </div>
 
