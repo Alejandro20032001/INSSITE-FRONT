@@ -21,7 +21,6 @@ export class JwtInterceptor implements HttpInterceptor {
     const token: string = this.cookieService.get('token');
     let req = request;
     if(token){
-      console.log('hay token')
       //req.clone({ headers: req.headers.set('x-access-token', 'Bearer' +token) });
       //req.headers.set('x-access-token',`Bearer ${token}`)
       request = request.clone({
