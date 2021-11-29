@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Course } from '../../student/interfaces/course.interface';
 import { Observable } from 'rxjs/internal/Observable';
+import { CreateCourse } from '../interfaces/create-course.interface';
+import { ResponseCourse } from '../interfaces/response-create-course';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,17 +17,11 @@ export class CourseService {
     //return this.http.get<Course[]>('http://localhost:3000'+'/courses');//prueba
     return this.http.get<Course[]>('https://inssite-database.herokuapp.com/course');
   }
-
-  getCourse(id: number):Observable<Course>{
-    return this.http.get<Course>('$(this.BASE_URL)/courses/${id}');
+  getCourse(id: string):Observable<Course>{
+    return this.http.get<Course>('$(this.BASE_URL)/course/${id}');
   }
-  createCourse(course:Course):Observable<Course>{
-    return this.http.post<Course>('$(this.BASE_URL)/courses/create', course);
-  }
-  deleteCourse(id:number):Observable<Course>{
-    return this.http.delete<Course>('$(this.BASE_URL)/courses/delete?courseID=${id}');
-  }
-  updateCourse(id:number ,course :Course):Observable<Course>{
-    return this.http.put<Course>('$(this.BASE_URL)/courses/update?courseId=${id}',course);
+  createCourse(course:CreateCourse):Observable<ResponseCourse>{
+    console.log(course);
+    return this.http.post<ResponseCourse>(this.BASE_URL + '/course', course);
   }
 }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Course} from '../interfaces/course.interface';
 import {Router} from '@angular/router'
 import { CookieService } from 'ngx-cookie-service';
+import { CourseService } from '../services/course.service';
+import { CreateCourse } from '../interfaces/create-course.interface';
 
 @Component({
   selector: 'app-nuevo',
@@ -18,7 +20,14 @@ export class NuevoComponent implements OnInit {
     registrationStartDate: new(Date)
   }
 
-  constructor(private router:Router, private cookie :CookieService){}
+  createCourse: CreateCourse = {
+    courseName:"",
+    descriptionCourse:"",
+    areaCourse: "",
+    dateStartEnrole: new(Date),
+    dateStartCourse: new(Date)
+  }
+  constructor(private router:Router, private cookie :CookieService, private courseService:CourseService){}
 
   ngOnInit(): void {
   }
@@ -62,7 +71,17 @@ export class NuevoComponent implements OnInit {
       if(diferenciaDias < 7){
         alert("Debe existir al menos una semana de inscripcion");
       }else{
-
+        let courseForm = this.nuevoCurso;
+        
+        this.createCourse.courseName = courseForm.courseName;
+        this.createCourse.descriptionCourse = courseForm.descriptionCourse;
+        this.createCourse.areaCourse = courseForm.areaCourse;
+        this.createCourse.dateStartCourse = courseForm.courseStartDate;
+        this.createCourse.dateStartEnrole = courseForm.registrationStartDate;
+        
+        this.courseService.createCourse(this.createCourse).subscribe((data) =>
+          console.log(data)
+        )
       }
     }
   }
