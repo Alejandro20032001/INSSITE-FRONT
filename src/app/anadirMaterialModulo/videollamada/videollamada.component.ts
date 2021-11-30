@@ -14,10 +14,10 @@ import { ModuleServices } from '../ventana-principal-anadir-material-modulo/serv
 export class VideollamadaComponent implements OnInit {
 
   videollamada: Videollamada = {
-    link:"",
-    fecha:"",
-    hora:"",
-    descripcion:""
+    link: "",
+    fecha: "",
+    hora: "",
+    descripcion: ""
   };
 
   enviar: enviarMaterial = {
@@ -31,14 +31,14 @@ export class VideollamadaComponent implements OnInit {
   }
 
   constructor(
-    private router:Router,
+    private router: Router,
     private cookieService: CookieService,
     private servicio: ModuleServices) { }
 
   ngOnInit(): void {
   }
 
-  async guardar():Promise<void>{
+  async guardar(): Promise<void> {
     let bandera = false;
     try {
       const url = new URL(this.videollamada.link);
@@ -49,16 +49,16 @@ export class VideollamadaComponent implements OnInit {
 
     if (this.videollamada.link.length === 0) {
       alert("La URL es obligatoria");
-    } else if(bandera){
+    } else if (bandera) {
       alert("Debes ingresar a una URL valida");
     }
-    else if(this.videollamada.fecha.length === 0){
+    else if (this.videollamada.fecha.length === 0) {
       alert("La fecha es obligatoria");
-    } else if(this.videollamada.hora.length === 0){
+    } else if (this.videollamada.hora.length === 0) {
       alert("La hora es obligatoria");
-    } else if(this.videollamada.descripcion.length === 0){
+    } else if (this.videollamada.descripcion.length === 0) {
       alert("La descripcion es obligatoria");
-    } else{
+    } else {
 
       let anio = parseInt(this.videollamada.fecha.split("-")[0]);
       let mes = parseInt(this.videollamada.fecha.split("-")[1]) - 1;
@@ -69,18 +69,30 @@ export class VideollamadaComponent implements OnInit {
 
       this.enviar.content = this.videollamada.link;
       this.enviar.descriptionResource = this.videollamada.descripcion;
-      this.enviar.date = new Date(anio, mes, dia, hora, minuto,0);
+      this.enviar.date = new Date(anio, mes, dia, hora, minuto, 0);
       this.enviar.module = this.cookieService.get('idModulo');
 
-      (await this.servicio.registrar(this.enviar)).subscribe( (data) =>
-        {
-          if(data.message === "created"){
-            console.log(data);
-            this.router.navigate(['materialModulo']);
-          }
-        }
-      );
+      let fechaInicio = new Date(this.cookieService.get("inicioModulo"));
 
+      let fechaFin = new Date(this.cookieService.get("inicioModulo"));
+      fechaFin.setHours(24 * parseInt(this.cookieService.get("duracionModulo")));
+      this.enviar.date = fechaFin;
+
+      if (this.enviar.date < fechaInicio) {
+        alert("La fecha no puede ser menor a " + fechaInicio);
+      } else {
+        if (this.enviar.date > fechaFin) {
+          alert("La fecha no puede ser mayor a " + fechaFin);
+        } else {
+
+          (await this.servicio.registrar(this.enviar)).subscribe((data) => {
+            if (data.message === "created") {
+              console.log(data);
+              this.router.navigate(['materialModulo']);
+            }
+          });
+        }
+      }
     }
   }
 }

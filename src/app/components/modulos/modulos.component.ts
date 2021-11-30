@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { CreacionModulo } from 'src/app/models/creacion.modulo.interface';
@@ -16,18 +17,20 @@ export class ModulosComponent implements OnInit {
   listaModulos: Modulo[] = [];
   intermedioModulos!:RespuestaModulo[];
 
-  constructor(private servicios:LoginService){
+  constructor(private servicios:LoginService, private cookie: CookieService){
 
   }
 
   ngOnInit(): void {
-    this.servicios.obtenerModulos("672d7d24-0194-4569-b354-75b4e94950c0").
+    this.servicios.obtenerModulos(this.cookie.get("idCourse")).
     pipe(
         tap((modulos:RespuestaModulo[]) => {
           this.intermedioModulos = modulos;
           this.listaModulos = [];
+          let contador = 0;
           modulos.forEach(element => {
-            this.listaModulos.push(new Modulo(element.idModule,element.nameModule, element.durationModule, element.orderModule))
+            this.listaModulos.push(new Modulo(element.idModule,element.nameModule, element.durationModule, element.orderModule, contador))
+            contador = element.durationModule + contador;
           });
           this.ordenarLista(this.listaModulos);
         })
@@ -37,12 +40,11 @@ export class ModulosComponent implements OnInit {
   guardarModulo(respuesta: Modulo):void{
     let orden = 0;
     if(this.listaModulos.length > 0){
-      orden = this.listaModulos[this.listaModulos.length - 1].order;
+      orden = this.listaModulos[this.listaModulos.length - 1].order + 1;
     }
 
-    let enviar = new CreacionModulo("672d7d24-0194-4569-b354-75b4e94950c0",respuesta.nombre, respuesta.duracion, orden);
+    let enviar = new CreacionModulo(this.cookie.get("idCourse"),respuesta.nombre, respuesta.duracion, orden);
     this.servicios.crearModulo(enviar).subscribe(data => {
-      console.log(data);
       this.ngOnInit();
     });
   }
@@ -68,6 +70,6 @@ export class ModulosComponent implements OnInit {
               lista[i + 1] = aux;
           }
       }
-  }
+    }
   }
 }

@@ -16,16 +16,16 @@ export class NuevoComponent implements OnInit {
     courseName:"",
     descriptionCourse:"",
     areaCourse: "",
-    courseStartDate:new(Date),
-    registrationStartDate: new(Date)
+    courseStartDate:new Date(),
+    registrationStartDate: new Date()
   }
 
   createCourse: CreateCourse = {
     courseName:"",
     descriptionCourse:"",
     areaCourse: "",
-    dateStartEnrole: new(Date),
-    dateStartCourse: new(Date)
+    dateStartEnrole: new Date(),
+    dateStartCourse: new Date()
   }
   constructor(private router:Router, private cookie :CookieService, private courseService:CourseService){}
 
@@ -38,7 +38,7 @@ export class NuevoComponent implements OnInit {
 
   }
   gotToAddModule():void{
-    this.router.navigate(['/materialModulo']);
+    this.router.navigate(['/modulosConfig']);
   }
 
   guardar():void{
@@ -72,15 +72,20 @@ export class NuevoComponent implements OnInit {
         alert("Debe existir al menos una semana de inscripcion");
       }else{
         let courseForm = this.nuevoCurso;
-        
+
         this.createCourse.courseName = courseForm.courseName;
         this.createCourse.descriptionCourse = courseForm.descriptionCourse;
         this.createCourse.areaCourse = courseForm.areaCourse;
-        this.createCourse.dateStartCourse = courseForm.courseStartDate;
-        this.createCourse.dateStartEnrole = courseForm.registrationStartDate;
-        
-        this.courseService.createCourse(this.createCourse).subscribe((data) =>
-          console.log(data)
+        this.createCourse.dateStartCourse = fechaInicio;
+        this.createCourse.dateStartEnrole = fechaInscripcion;
+
+        this.courseService.createCourse(this.createCourse).subscribe((data) =>{
+            if(data.message === "created"){
+              this.cookie.set("idCourse",data.courseCreated.idCourse);
+              this.cookie.set("dateStart",this.createCourse.dateStartCourse.toUTCString());
+              this.gotToAddModule();
+            }
+          }
         )
       }
     }

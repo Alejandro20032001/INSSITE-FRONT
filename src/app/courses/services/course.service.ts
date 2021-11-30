@@ -4,6 +4,8 @@ import { Course } from '../../student/interfaces/course.interface';
 import { Observable } from 'rxjs/internal/Observable';
 import { CreateCourse } from '../interfaces/create-course.interface';
 import { ResponseCourse } from '../interfaces/response-create-course';
+import { materialAnswer } from 'src/app/anadirMaterialModulo/ventana-principal-anadir-material-modulo/interfaces/materialAnswer.interface';
+import { courseAnswer } from '../interfaces/response.course';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,8 +22,7 @@ export class CourseService {
   getCourse(id: string):Observable<Course>{
     return this.http.get<Course>('$(this.BASE_URL)/course/${id}');
   }
-  createCourse(course:CreateCourse):Observable<ResponseCourse>{
-    console.log(course);
-    return this.http.post<ResponseCourse>(this.BASE_URL + '/course', course);
+  createCourse(course:CreateCourse):Observable<courseAnswer>{
+    return this.http.post<courseAnswer>(this.BASE_URL + '/course', course);
   }
 }
