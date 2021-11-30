@@ -27,9 +27,10 @@ export class ModulosComponent implements OnInit {
   }
 
   guardarModulo(respuesta: Modulo){
+    //console.log(respuesta.nombre.trim.length)
     
-    this.listaModulos.push(respuesta);
-    console.log(this.listaModulos.length);
+      this.listaModulos.push(respuesta);
+      console.log(this.listaModulos.length);
     
   }
 

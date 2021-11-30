@@ -18,11 +18,11 @@ export class CrearModuloComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  guardarModulo(){
-   
+  guardarModulo(){  
+      
     this.clickGuardar.emit(new Modulo(this.idModulo, this.moduloName, this.duracion));
     this.moduloName = '';
     this.duracion = 0;
-   
+    
   }
 }
