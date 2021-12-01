@@ -48,8 +48,11 @@ export class TareaComponent implements OnInit {
       this.enviar.title = this.tarea.titulo;
       this.enviar.descriptionResource = this.tarea.descripcion;
       this.enviar.score = this.tarea.puntuacion;
-      this.enviar.date =this.tarea.fecha
       this.enviar.module = this.cookieService.get('idModulo');
+
+      let fecha = new Date(this.cookieService.get("inicioModulo"));
+      fecha.setHours(24 * parseInt(this.cookieService.get("duracionModulo")));
+      this.enviar.date = fecha;
 
       (await this.servicio.registrar(this.enviar)).subscribe( (data) =>
         {

@@ -1,68 +1,154 @@
-<div style="text-align:center; background-color: #559A95;  height: 30px;">
-  <p  >
-    REGISTRO DE NUEVO CURSO
-  </p>
-</div>
-<div class="fondo">
-  <div >
-    <!--form FormTemplate="ngForm" class="form" (submit)=" validar()"-->
-     <!--form  class ="form" ng-submit= "validar()"-->
-     <form class="form"  [formGroup]="signupForm" (ngSubmit)="guardarDatos(signupForm.value)">
-      <div>
-          <label for="nombre" class="text">Nombre de Curso </label>
-          <input formControlName="nomM" id= "nombreM" type="text" class="campos" placeholder="Nombre">
-          <!--div *ngIf="signupForm.controls['nomM'].errors?.required && signupForm.controls['nomM'].touched">es reqerido</div-->
-          <span class="help-block form-error text-danger small"
-          *ngIf="signupForm.controls['nomM'].errors?.required&&
-          signupForm.controls['nomM'].touched">
-            El nombre es requerido y no debe pasar los 30 caracteres</span>
+<div class="container-sm w-75 mt-5 ml-5">
+  <nav class="navbar-sm navbar-light">
+    <div class="container-fluid">
+      <span class="navbar-text mb-0 h1 fw-bold fs-5"
+        >Registro de nuevo curso</span
+      >
+    </div>
+  </nav>
+  <div class="col-12-sm">
+    <div class="row">
+      <br />
+      <div class="col-1"></div>
+      <div class="col-10">
+        <h3 class="fst-normal text-start py-5">Nombre curso :</h3>
+        <div class="input-group input-group-sm">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+          <input
+            type="text"
+            class="form-control"
+            aria-describedby="inputGroup-sizing-sm"
+            maxlength="30"
+            [(ngModel)]="nuevoCurso.courseName"
+          />
+        </div>
+      </div>
+    </div>
 
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <h3 class="fst-normal text-start py-5">Descripcion :</h3>
+        <div class="input-group input-group-sm">
+          <span class="input-group-text" id="inputGroup-sizing-sm"
+            >Ingrese una descripcion</span
+          >
+          <input
+            type="text"
+            class="form-control"
+            maxlength="1000"
+            aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="nuevoCurso.descriptionCourse"
+          />
+        </div>
       </div>
-      <div>
-          <label for="descripcion" class="text">Descripcion: </label>
-          <textarea formControlName="descM" type="text" id="nc" col="0" rows="5"
-          class="campos" placeholder="ingrese una descripcion">
-          </textarea>
-          <span class="help-block form-error text-danger small"
-          *ngIf="signupForm.controls['descM'].errors?.required&&
-          signupForm.controls['descM'].touched">
-            La descripcion es obligatoria!...</span>
-      </div>
-      <div  >
-        <label for="area" class="text">Area del Curso</label>
-        <select formControlName="areaM" name="area" id="form-selected" class="campos" >
-          <!--option selected> seleccione una area</option-->
-          <option value="Matematicas">matematicas</option>
-          <option value="Biologia">biologia</option>
-          <option value="Fisica">fisica</option>
-        </select>
-      </div>
-      <div><h4></h4></div>
-      <!-- fecha de inicio de inscripciones --/-->
-      <div>
-        <label for="nombre" class="text">fecha de inicio de inscripciones: </label>
-        <input formControlName="fII" matInput [matDatepicker]="picker" class="campos">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
+    </div>
 
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <h3 class="fst-normal text-start py-5">Area del curso :</h3>
+        <div class="input-group input-group-sm">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Area</span>
+          <input
+            type="text"
+            class="form-control"
+            maxlength="20"
+            aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="nuevoCurso.areaCourse"
+          />
+        </div>
       </div>
-      <div>
-          <label for="nombre" class="text">fecha de inicio de curso: </label>
-          <input formControlName="fIC" matInput [matDatepicker]="picker2" class="campos" >
-            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-            <mat-datepicker #picker2></mat-datepicker>
+    </div>
+    <!-- fecha de inicio de inscripciones --/-->
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <h3 class="fst-normal text-start py-5">
+          Fecha de inicio de inscripciones :
+        </h3>
+        <div class="input-group input-group-sm">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Inicio</span>
+          <input
+            type="date"
+            class="form-control"
+            aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="nuevoCurso.registrationStartDate"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- fecha de inicio de curso --/-->
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <h3 class="fst-normal text-start py-5">Fecha de inicio de curso :</h3>
+        <div class="input-group input-group-sm">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Inicio</span>
+          <input
+            type="date"
+            class="form-control"
+            aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="nuevoCurso.courseStartDate"
+          />
+        </div>
+        <br /><br />
 
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-outline-light me-md-2" type="button">
+            Cancelar
+          </button>
+          <button
+            class="btn btn-outline-light"
+            (click)="guardar()"
+            type="button"
+          >
+            Guardar
+          </button>
+        </div>
       </div>
-      <div>
-        <hr>
-      </div>
-      <div>
-          <button mat-flat-button (click)="goToTeacher()" class="logout" >cancelar</button>
-          <hr>
-          <!--button mat-flat-button (click)="goToTeacher()" class="logout">siguiente</button-->
-          <!--button mat-flat-button [disabled]="signupForm.invalid" class="logout" type="submit" (click)="gotToAddModule()">siguiente</button-->
-          <button mat-flat-button class="logout" [disabled]="signupForm.invalid" type="submit" (click)="gotToAddModule()">siguiente</button>
-      </div>
-    </form>
+    </div>
+    <br /><br />
   </div>
 </div>
+<!--
+  <div>
+    <div>
+      <div>
+        <p>Nombre curso:</p>
+        <input
+          type="text"
+          placeholder="Nombre"
+          maxlength="30"
+          [(ngModel)]="nuevoCurso.courseName"
+        />
+      </div>
+      <div>
+        <p>Descripcion:</p>
+        <textarea
+          type="text"
+          placeholder="ingrese una descripcion"
+          maxlength="1000"
+          [(ngModel)]="nuevoCurso.descriptionCourse"
+        ></textarea>
+      </div>
+      <div>
+        <p>Area del curso:</p>
+      </div>
+      
+      <div>
+        <p>Fecha de inicio de inscripciones:</p>
+        <input type="date" [(ngModel)]="nuevoCurso.registrationStartDate" />
+      </div>
+      <div>
+        <p>Fecha de inicio de curso:</p>
+        <input type="date" [(ngModel)]="nuevoCurso.courseStartDate" />
+      </div>
+
+      <div>
+        <a>Cancelar</a>
+        <a (click)="guardar()">Siguiente</a>
+      </div>
+    </div>
+  </div>
+-->
