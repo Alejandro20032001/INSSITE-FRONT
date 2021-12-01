@@ -7,7 +7,6 @@ import {tap} from 'rxjs/operators';
 import { FormControl, FormGroup } from '@angular/forms';
 import { CoursesService } from 'src/app/student/services/courses.service';
 import { Module } from 'src/app/models/modulo.inteface';
-import { isCallChain } from 'typescript';
 
 @Component({
   selector: 'app-contenido',
@@ -22,7 +21,8 @@ export class ContenidoComponent implements OnInit {
   panelOpenState = false;
   campaignOne: FormGroup;
   campaignTwo: FormGroup;
-
+  aleatorio!: String;
+  link!:string;
 
 
   Frases:string[]= ["Si en los inicios no puedes alimentar a tu equipo con 2 pizzas, es que es demasiado grande – Jeff Bezos de Amazon.",
@@ -60,13 +60,13 @@ export class ContenidoComponent implements OnInit {
 
     this.courseService.getModules().
     pipe(
-      tap((listModule:Module[]) => this.listModule = listModule.reverse())
+      tap((listModule:Module[]) => this.listModule = listModule.sort( (a, b) => (a.order < b.order) ? 1 : -1))
     )
     .subscribe();
     console.log(this.listModule);
+    console.log(this.materiales);
   }
    verTemas(){
-
    }
    subirTareas(){
 
@@ -83,11 +83,35 @@ export class ContenidoComponent implements OnInit {
   goHome(): void {
     this.router.navigate(['./studentWelcomeView']);
   }
-
   goTask(){
     
   }
   nivel(): number {
-   return this.listModule.length
+   return 1*10;
+  }
+  randomF(): String{
+   this.aleatorio = this.Frases[Math.floor(Math.random() * this.Frases.length)];
+   return this.aleatorio;
+  }
+  ultimoLink():void{
+    //for(let material of this.materiales){
+      //if (material.resourceType=="LINK A MATERIAL"){
+        
+        this.link='www.google.com'//material.content;
+        var a=document.getElementById('link');
+        if(a!=null){
+          a.setAttribute("href",this.link); 
+          console.log("aqui");
+        }
+      //}
+    //}
+  }
+  esTarea(mat:MaterialLista):boolean{
+    for(let material of this.materiales){
+      if (material.resourceType=='TAREA'){
+        return true;
+      }
+    }
+    return false;
   }
 }

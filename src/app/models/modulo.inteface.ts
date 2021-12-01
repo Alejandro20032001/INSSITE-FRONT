@@ -6,5 +6,6 @@ export interface Module{
   "nameModule":string, 
   "descriptionModule": string,
    "durationModule": number, 
-   "course": Course
+   "course": Course,
+   "order":number
 }

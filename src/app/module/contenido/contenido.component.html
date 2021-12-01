@@ -31,19 +31,14 @@
         </mat-grid-tile>
         <mat-grid-tile [colspan]=2 [rowspan]=1>
           <mat-card class="caja2">
-            <div class="progress" style="height:40px;" >
-              <div class="progress-bar progress-bar-success" style="width: nivel()" style="background-color: #559A95;">
-                <span class="sr-only" style="font-size:large;">{{nivel()}}% completado (éxito)</span>
-              </div>
-              </div>
             <div style="height: 80%;  margin: 12px 12px 12px 12px; font-size: x-large; " >
-              {{"El valor de una idea radica en el uso de la misma – Thomas Edison." }}
+              {{randomF()}} 
             </div> 
             <div>
-              <button mat-icon-button class="video-icon" style="background-color: #559A95; position: relative;" aria-label="Example icon-button with heart icon">
-                <mat-icon>videocam</mat-icon>
-              </button>
-              <button mat-icon-button class="video-icon" style="background-color: #559A95; position: relative;" aria-label="Example icon-button with heart icon">
+                <button mat-icon-button class="video-icon" (click)="ultimoLink()" style="background-color: #559A95; position: relative;" aria-label="Example icon-button with heart icon">
+                  <mat-icon> videocam </mat-icon>
+                  </button>
+              <button mat-icon-button class="video-icon" (click)="randomF()" style="background-color: #559A95; position: relative;" aria-label="Example icon-button with heart icon">
               <mat-icon> sentiment_satisfied_alt</mat-icon>
               </button>
               <button mat-icon-button class="video-icon" style="background-color: #559A95; position: relative;" aria-label="Example icon-button with heart icon">
@@ -63,24 +58,31 @@
         <mat-grid-tile  [colspan]=3 [rowspan]= 2>
           <mat-accordion class="resource" >
             <mat-expansion-panel style="text-align: center;" (opened)="panelOpenState = true"
-                                 (closed)="panelOpenState = false" *ngFor="let material of materiales">
-              <mat-expansion-panel-header>
-                <mat-panel-title style="font-size: x-large;">
-                 <strong>{{material.title}} </strong>
-                </mat-panel-title>
-                <mat-panel-description>
-                  El contenido esta {{panelOpenState ? 'abierto' : 'oculto'}}
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-              <div class="material">{{material.descriptionResource}}</div>
-             <!--<span style="align-self: baseline; font-size: large;"><strong>Calificacion: </strong> {{material.score}}</span> --> 
-            </mat-expansion-panel>
+                                 (closed)="panelOpenState = false"*ngFor="let material of materiales" >
+              <div *ngIf="!esTarea(material)" >
+                <mat-expansion-panel-header >
+                  <mat-panel-title style="font-size: x-large;">
+                   <strong>{{material.title}} </strong>
+                  </mat-panel-title>
+                  <mat-panel-description >
+                    <div>
+                      El contenido esta {{panelOpenState ? 'abierto' : 'oculto'}}
+                    </div>
+                  </mat-panel-description>
+                  
+                </mat-expansion-panel-header>
+                <div class="material" >{{material.descriptionResource}}</div>
+               <!--<span style="align-self: baseline; font-size: large;"><strong>Calificacion: </strong> {{material.score}}</span> -->   
+              </div>
+                </mat-expansion-panel>
           </mat-accordion>
+         
         </mat-grid-tile>
       </mat-grid-list>
     </mat-tab>
   </mat-tab-group>
 </mat-drawer-container>
+
 <!--
           
            <mat-form-field class="example-form-field" appearance="fill">
