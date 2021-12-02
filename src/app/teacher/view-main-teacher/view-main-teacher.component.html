@@ -3,13 +3,6 @@
      <mat-icon>menu</mat-icon>
   </button>
   <h2>Docente</h2>
-  <!---<span class="espacio"></span>
-  <button mat-icon-button class="analitics-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>assessment</mat-icon>
-  </button>
-  <button mat-icon-button class="delete-icon" aria-label="Example icon-button with share icon">
-    <mat-icon>delete_outline</mat-icon>
-  </button>-->
  </div>
 
 
@@ -30,7 +23,7 @@
   </div>
  <section class="courses"  *ngIf="courses.length!=0; else sinCursos">
     <mat-card class="card"*ngFor="let course of courses">
-      <div class="rippleCourse" matRipple >
+      <div class="rippleCourse" matRipple (click)="goModule()" >
      <span class="cssCourse"><strong>
       {{course.courseName}}
      </strong>

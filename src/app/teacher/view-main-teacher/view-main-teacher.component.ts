@@ -42,4 +42,7 @@ export class ViewMainTeacherComponent implements OnInit {
   shortDescription(course:Course): any{
     return course.descriptionCourse.substring(0,50);
  }
+ goModule(){
+    this.router.navigate(['./modulosConfig']);
+ }
 }
