@@ -44,7 +44,7 @@ export class ModulosComponent implements OnInit {
   }
 
   terminarCurso(){
-    if(this.listaModulos.length == 1){
+    if(this.listaModulos.length > 0){
       alert("Curso creado con exito");
     }else{
       alert("Debe existir al menos un curso")
