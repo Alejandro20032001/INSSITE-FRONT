@@ -31,6 +31,7 @@ import { TareaComponent } from './anadirMaterialModulo/tarea/tarea.component';
 import { CoursesModule } from './courses/courses.module';
 import { FilterPipe } from './pipes/filter.pipe';
 import { ViewSearchCourseComponent } from './student/view-search-course/view-search-course.component';
+import { ProgresoComponent } from './teacher/progreso/progreso.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { ViewSearchCourseComponent } from './student/view-search-course/view-sea
     VideollamadaComponent,
     TareaComponent,
     ViewSearchCourseComponent,
-    FilterPipe
+    FilterPipe,
+    ProgresoComponent
   ],
   imports: [
     BrowserModule,
