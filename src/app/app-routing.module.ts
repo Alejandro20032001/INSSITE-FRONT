@@ -16,10 +16,12 @@ import { TareaComponent } from './anadirMaterialModulo/tarea/tarea.component';
 import { CoursesModule } from './courses/courses.module';
 import { NuevoComponent } from './courses/nuevo/nuevo.component';
 import { ViewSearchCourseComponent } from './student/view-search-course/view-search-course.component';
+import { ProgresoComponent } from './teacher/progreso/progreso.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'login', component: LoginComponent },
+  { path: 'progreso', component: ProgresoComponent},
   { path: 'modulosConfig', component: ModulosComponent },
   { path: 'teacher', component: ViewMainTeacherComponent, canActivate: [UserGuardGuard]},
   { path: 'home', component: HomeComponent},
