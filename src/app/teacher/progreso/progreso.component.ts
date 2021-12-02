@@ -42,4 +42,7 @@ export class ProgresoComponent implements OnInit {
   logout():void{
     this.router.navigate(['./login']);
   }
+  goCourses(){
+    this.router.navigate(['./teacher']);
+  }
 }
