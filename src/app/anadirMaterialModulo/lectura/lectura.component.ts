@@ -48,10 +48,14 @@ export class LecturaComponent implements OnInit {
       this.enviar.title = this.lectura.titulo;
       this.enviar.content = this.lectura.contenido;
       this.enviar.module = this.cookieService.get('idModulo');
+      let fecha = new Date(this.cookieService.get("inicioModulo"));
+      fecha.setHours(24 * parseInt(this.cookieService.get("duracionModulo")));
+      this.enviar.date = fecha;
 
       (await this.servicio.registrar(this.enviar)).subscribe( (data) =>
         {
           if(data.message === "created"){
+            console.log(this.enviar.date);
             this.router.navigate(['materialModulo']);
           }
         }

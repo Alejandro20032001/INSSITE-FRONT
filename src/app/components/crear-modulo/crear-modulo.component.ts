@@ -11,6 +11,7 @@ export class CrearModuloComponent implements OnInit {
   idModulo : string = ' ';
   moduloName : string = " ";
   duracion : number = 0;
+  order: number = 0;
   @Output() clickGuardar = new EventEmitter<Modulo>();
 
   constructor() { }
@@ -19,10 +20,10 @@ export class CrearModuloComponent implements OnInit {
   }
 
   guardarModulo(){
-   
-    this.clickGuardar.emit(new Modulo(this.idModulo, this.moduloName, this.duracion));
+
+    this.clickGuardar.emit(new Modulo(this.idModulo, this.moduloName, this.duracion, this.order, 0));
     this.moduloName = '';
     this.duracion = 0;
-   
+
   }
 }
