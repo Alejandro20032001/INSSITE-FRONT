@@ -56,7 +56,7 @@ export class LecturaComponent implements OnInit {
         {
           if(data.message === "created"){
             console.log(this.enviar.date);
-            //this.router.navigate(['materialModulo']);
+            this.router.navigate(['materialModulo']);
           }
         }
       );
