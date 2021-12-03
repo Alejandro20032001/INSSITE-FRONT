@@ -36,6 +36,7 @@ import { ModulosVEHeaderComponent } from './modulosVistaEstudiante/modulos-vehea
 import { ModuloCardComponent } from './modulosVistaEstudiante/modulo-card/modulo-card.component';
 import { HeaderTareasComponent } from './calificarTareas/header-tareas/header-tareas.component';
 import { VistaTareasDocenteComponent } from './calificarTareas/vista-tareas-docente/vista-tareas-docente.component';
+import { CuerpoTareaComponent } from './calificarTareas/cuerpo-tarea/cuerpo-tarea.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { VistaTareasDocenteComponent } from './calificarTareas/vista-tareas-doce
     ModulosVEHeaderComponent,
     ModuloCardComponent,
     HeaderTareasComponent,
-    VistaTareasDocenteComponent
+    VistaTareasDocenteComponent,
+    CuerpoTareaComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Modulo } from 'src/app/models/modulo';
+import { RespuestaModulo } from 'src/app/models/respuesta.modulo.interface';
 import { LoginService } from 'src/app/services/login.service';
 
 
@@ -13,6 +14,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class VistaEstudianteComponent implements OnInit {
 
   listaModulos: Modulo[] = [];
+  listaModulos2: RespuestaModulo[] = [];
   @Input() modulo : Modulo = new Modulo("","",0,0,0);
 
   modul: Modulo={idModulo: " ",nombre: '', duracion: 0, order: 0, diasPrevios: 0};

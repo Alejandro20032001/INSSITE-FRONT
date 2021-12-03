@@ -1,1 +1,29 @@
-<p>vista-tareas-docente works!</p>
+<div class="container-sm p-0">
+  <nav class="navbar-sm navbar-light">
+    <app-header-tareas></app-header-tareas>
+  </nav>
+  <div class="row">
+    <div class="col-12-sm">
+      <img
+        src="../../../assets/h.jpg"
+        width="1320"
+        class="img-fluid"
+        alt="log img"
+      />
+    </div>
+    <div class="row">
+        <br />
+        <div class="col-1"></div>
+        <div class="col-10">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+              <app-cuerpo-tarea></app-cuerpo-tarea>
+            <!--<div *ngFor="let modulo of listaModulos">
+              <app-modulo-card [modulo]="modulo"></app-modulo-card>
+            </div>-->
+          </div>
+          <br />
+        </div>
+      </div>
+  </div>
+  <br />
+</div>
