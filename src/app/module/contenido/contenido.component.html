@@ -26,7 +26,7 @@
               {{randomF()}} 
             </div> 
             <div>
-              <button mat-icon-button class="video-icon" (click)="randomF()" style="background-color: #559A95; " aria-label="Example icon-button with heart icon">
+              <button mat-icon-button class="video-icon" (click)="randomF()" style="background-color: #559A95; bottom: 0px; " aria-label="Example icon-button with heart icon">
               <mat-icon> sentiment_satisfied_alt</mat-icon>
               </button>
             </div>
@@ -61,7 +61,7 @@
           <mat-accordion style="width: 90%;  margin: 12px 12px 12px 12px;">
             <mat-expansion-panel style="text-align: center;" *ngFor="let material of materiales" >
               
-                <mat-expansion-panel-header style="height: 80px;">
+                <mat-expansion-panel-header style="height: 80px;"*ngIf="!esTarea(material.resourceType)">
                   <mat-panel-title style="font-size: large; color: #559A95;">
                    <strong>{{material.title}} </strong>
                   </mat-panel-title>
@@ -76,7 +76,7 @@
                 </mat-expansion-panel>
           </mat-accordion>
         </div>
-        <ng-template #nomat ><div style="font-size: x-large; text-align: center; margin-top: 80px;">
+        <ng-template #nomat ><div style="padding:20px; font-size: x-large; text-align: center; margin-top: 30px;">
          <strong>Este modulo aun no tiene material</strong> 
         </div></ng-template>
         </div>
