@@ -37,27 +37,11 @@
     margin: 12px 12px 12px 12px;
  }
 
-  .NameMod{
-    width: 100%;
-    display: block;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-    height:90%;
-    margin: 0px 30px 0px 30px;
-    
-    .tarea{
-        width:100%;
-        background-color: #559A95;
-        text-align: center;
-        vertical-align: relative;
-    }
-  }
+  
   .resource{
-    width: 100%;
-   
+    width: 92%;
     height:90%;
-    margin: 0px 30px 0px 30px;
+    margin: 12px 50px 12px 50px;
     overflow:auto;
   }
   .material{
@@ -71,10 +55,15 @@
     word-wrap: break-word;
     border-radius: 7px;
   }
-  .caja2{
+  .NameMod{
     text-align: center;
     margin: 0px 50px 0px 50px;
-    .video-icon{
-      margin: 0px 30px 0px 30px;
-    }     
+    width: 90%;
+    height: 90%;
+      .tarea{
+        margin-top: 8px;
+        width:100%;
+        background-color: #559A95;
+        text-align: center;
+    }
   }
