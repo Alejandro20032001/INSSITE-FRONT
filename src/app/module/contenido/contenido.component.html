@@ -19,7 +19,7 @@
   
 </mat-drawer>
   
-      <mat-grid-list cols="4" rowHeight="250px" style="display: flex; ">
+      <mat-grid-list cols="4" rowHeight="250px" style="display: flex; margin-top: 10px;">
         <mat-grid-tile  [colspan]=1 [rowspan]= 1>
           <mat-card class="NameMod">
             <div style="height: 50%;  margin: 12px 12px 12px 12px; font-size:auto; " >
@@ -59,8 +59,7 @@
       <div style="width: 100%; background-color: #97ABAE;">
         <div class="resource" *ngIf="materiales.length!=0; else nomat">
           <mat-accordion style="width: 90%;  margin: 12px 12px 12px 12px;">
-            <mat-expansion-panel style="text-align: center;" (opened)="panelOpenState = true"
-                                 (closed)="panelOpenState = false"*ngFor="let material of materiales" >
+            <mat-expansion-panel style="text-align: center;" *ngFor="let material of materiales" >
               
                 <mat-expansion-panel-header style="height: 80px;">
                   <mat-panel-title style="font-size: large; color: #559A95;">
@@ -68,7 +67,6 @@
                   </mat-panel-title>
                   <mat-panel-description >
                     <div><span style="color: #559A95;">{{material.resourceType}}</span>
-                       {{panelOpenState ? 'abierta' : 'oculta'}}
                     </div>
                   </mat-panel-description>
                   
@@ -78,27 +76,13 @@
                 </mat-expansion-panel>
           </mat-accordion>
         </div>
-        <ng-template #nomat >Este modulo aun no tiene material</ng-template>
+        <ng-template #nomat ><div style="font-size: x-large; text-align: center; margin-top: 80px;">
+         <strong>Este modulo aun no tiene material</strong> 
+        </div></ng-template>
         </div>
 </mat-drawer-container>
 
 <!--
-          
-           <mat-form-field class="example-form-field" appearance="fill">
-                <mat-label>First campaign</mat-label>
-                <mat-date-range-input
-                  [formGroup]="campaignOne"
-                  [rangePicker]="campaignOnePicker"
-                  [comparisonStart]="campaignTwo.value.start"
-                  [comparisonEnd]="campaignTwo.value.end">
-                  <input matStartDate placeholder="Start date" formControlName="start">
-                  <input matEndDate placeholder="End date" formControlName="end">
-                </mat-date-range-input>
-                <mat-datepicker-toggle matSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
-                <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
-              </mat-form-field>
-              
-            <div style="height: 80%;  margin: 12px 12px 12px 12px; font-size: x-large; " >
-              {{randomF()}} 
-            </div> 
+           (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false"
         -->
