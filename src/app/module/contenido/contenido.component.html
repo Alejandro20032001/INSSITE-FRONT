@@ -19,34 +19,34 @@
   
 </mat-drawer>
   
-
-  <mat-tab-group class="modules">
-    <mat-tab  *ngFor="let module of listModule; index as i" label="Modulo {{i+1}}"> 
-      <mat-grid-list cols="4" rowHeight="270px" style="display: flex; ">
-        <mat-grid-tile  [colspan]=1 [rowspan]= 3>
+      <mat-grid-list cols="4" rowHeight="250px" style="display: flex; ">
+        <mat-grid-tile  [colspan]=1 [rowspan]= 1>
           <mat-card class="NameMod">
-            <h1>{{module.nameModule}}</h1>
-            <button class="tarea" mat-flat-button (click)="goTask()" style="font-size: 20px; color: #ffffff;"> Tareas</button>
-          </mat-card>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]=2 [rowspan]=1>
-          <mat-card class="caja2">
-            <div style="height: 80%;  margin: 12px 12px 12px 12px; font-size: x-large; " >
+            <div style="height: 50%;  margin: 12px 12px 12px 12px; font-size:auto; " >
               {{randomF()}} 
             </div> 
             <div>
-                <button mat-icon-button class="video-icon" (click)="ultimoLink()" style="background-color: #559A95; position: relative;" aria-label="Example icon-button with heart icon">
-                  <mat-icon> videocam </mat-icon>
-                  </button>
-              <button mat-icon-button class="video-icon" (click)="randomF()" style="background-color: #559A95; position: relative;" aria-label="Example icon-button with heart icon">
+              <button mat-icon-button class="video-icon" (click)="randomF()" style="background-color: #559A95; " aria-label="Example icon-button with heart icon">
               <mat-icon> sentiment_satisfied_alt</mat-icon>
-              </button>
-              <button mat-icon-button class="video-icon" style="background-color: #559A95; position: relative;" aria-label="Example icon-button with heart icon">
-                <mat-icon>book</mat-icon>
               </button>
             </div>
           </mat-card>
-          
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]=2 [rowspan]=1>
+          <mat-card class="NameMod">
+            <div>
+              <button class="tarea" mat-flat-button (click)="volver()" style="font-size: 20px; color: #ffffff;"> Modulos</button>
+            <button class="tarea" mat-flat-button (click)="goTask()" style="font-size: 20px; color: #ffffff;"> Tareas</button>
+            </div>
+            <div style="height: 50%; overflow: auto;">
+              <mat-list  *ngFor="let material of materiales">
+                <div *ngIf="esTarea(material.resourceType)">
+                <mat-list-item>{{material.title}} </mat-list-item>
+                <mat-divider></mat-divider>
+                </div>
+              </mat-list>
+            </div>
+          </mat-card>
         </mat-grid-tile>
         <mat-grid-tile [colspan]=1 [rowspan]=1>
           <div class="d">
@@ -55,32 +55,31 @@
             </mat-card>
           </div>
         </mat-grid-tile>
-        <mat-grid-tile  [colspan]=3 [rowspan]= 2>
-          <mat-accordion class="resource" >
+      </mat-grid-list>
+      <div style="width: 100%; background-color: #97ABAE;">
+        <div class="resource" *ngIf="materiales.length!=0; else nomat">
+          <mat-accordion style="width: 90%;  margin: 12px 12px 12px 12px;">
             <mat-expansion-panel style="text-align: center;" (opened)="panelOpenState = true"
                                  (closed)="panelOpenState = false"*ngFor="let material of materiales" >
-              <div *ngIf="!esTarea(material)" >
-                <mat-expansion-panel-header >
-                  <mat-panel-title style="font-size: x-large;">
+              
+                <mat-expansion-panel-header style="height: 80px;">
+                  <mat-panel-title style="font-size: large; color: #559A95;">
                    <strong>{{material.title}} </strong>
                   </mat-panel-title>
                   <mat-panel-description >
-                    <div>
-                      El contenido esta {{panelOpenState ? 'abierto' : 'oculto'}}
+                    <div><span style="color: #559A95;">{{material.resourceType}}</span>
+                       {{panelOpenState ? 'abierta' : 'oculta'}}
                     </div>
                   </mat-panel-description>
                   
                 </mat-expansion-panel-header>
                 <div class="material" >{{material.descriptionResource}}</div>
-               <!--<span style="align-self: baseline; font-size: large;"><strong>Calificacion: </strong> {{material.score}}</span> -->   
-              </div>
+                <div class="material" >{{material.content}}</div>
                 </mat-expansion-panel>
           </mat-accordion>
-         
-        </mat-grid-tile>
-      </mat-grid-list>
-    </mat-tab>
-  </mat-tab-group>
+        </div>
+        <ng-template #nomat >Este modulo aun no tiene material</ng-template>
+        </div>
 </mat-drawer-container>
 
 <!--
@@ -98,4 +97,8 @@
                 <mat-datepicker-toggle matSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
                 <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
               </mat-form-field>
+              
+            <div style="height: 80%;  margin: 12px 12px 12px 12px; font-size: x-large; " >
+              {{randomF()}} 
+            </div> 
         -->
