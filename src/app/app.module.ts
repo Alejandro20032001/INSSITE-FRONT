@@ -31,6 +31,11 @@ import { TareaComponent } from './anadirMaterialModulo/tarea/tarea.component';
 import { CoursesModule } from './courses/courses.module';
 import { FilterPipe } from './pipes/filter.pipe';
 import { ViewSearchCourseComponent } from './student/view-search-course/view-search-course.component';
+import { VistaEstudianteComponent } from './modulosVistaEstudiante/vista-estudiante/vista-estudiante.component';
+import { ModulosVEHeaderComponent } from './modulosVistaEstudiante/modulos-veheader/modulos-veheader.component';
+import { ModuloCardComponent } from './modulosVistaEstudiante/modulo-card/modulo-card.component';
+import { HeaderTareasComponent } from './calificarTareas/header-tareas/header-tareas.component';
+import { VistaTareasDocenteComponent } from './calificarTareas/vista-tareas-docente/vista-tareas-docente.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +56,12 @@ import { ViewSearchCourseComponent } from './student/view-search-course/view-sea
     VideollamadaComponent,
     TareaComponent,
     ViewSearchCourseComponent,
-    FilterPipe
+    FilterPipe,
+    VistaEstudianteComponent,
+    ModulosVEHeaderComponent,
+    ModuloCardComponent,
+    HeaderTareasComponent,
+    VistaTareasDocenteComponent
   ],
   imports: [
     BrowserModule,
