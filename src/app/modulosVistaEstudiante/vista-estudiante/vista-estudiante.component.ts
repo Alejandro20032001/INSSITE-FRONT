@@ -19,16 +19,16 @@ export class VistaEstudianteComponent implements OnInit {
 
   modul: Modulo={idModulo: " ",nombre: '', duracion: 0, order: 0, diasPrevios: 0};
 
-  constructor(private moduleService: LoginService, private router: Router, private cookieService: CookieService) {
+  //constructor(private moduleService: LoginService, private router: Router, private cookieService: CookieService) {
 
-  }
+  //}
   
-  /*constructor() { 
+  constructor() { 
     this.listaModulos.push(new Modulo("", "Infor", 15, 2, 0));
     this.listaModulos.push(new Modulo("", "Mates", 15, 2, 0));
     this.listaModulos.push(new Modulo("", "Compu", 15, 2, 0));
     this.listaModulos.push(new Modulo("", "Intro", 15, 2, 0));
-  }*/
+  }
 
   ngOnInit(): void {
   }
