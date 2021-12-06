@@ -37,6 +37,7 @@ import { ModuloCardComponent } from './modulosVistaEstudiante/modulo-card/modulo
 import { HeaderTareasComponent } from './calificarTareas/header-tareas/header-tareas.component';
 import { VistaTareasDocenteComponent } from './calificarTareas/vista-tareas-docente/vista-tareas-docente.component';
 import { CuerpoTareaComponent } from './calificarTareas/cuerpo-tarea/cuerpo-tarea.component';
+import { ContenidoComponent } from './module/contenido/contenido.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { CuerpoTareaComponent } from './calificarTareas/cuerpo-tarea/cuerpo-tare
     ModuloCardComponent,
     HeaderTareasComponent,
     VistaTareasDocenteComponent,
-    CuerpoTareaComponent
+    CuerpoTareaComponent,
+    ContenidoComponent
   ],
   imports: [
     BrowserModule,
