@@ -38,6 +38,6 @@ export class CoursesViewStudentComponent implements OnInit {
 
   irCurso(id: string):void{
     this.router.navigate(['./modulosVistaEstudiante']);
-    this.cookieService.set('idModulo',id);
+    this.cookieService.set('idCurso',id);
   }
 }
