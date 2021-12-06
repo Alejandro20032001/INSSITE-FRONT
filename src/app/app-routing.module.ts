@@ -16,6 +16,8 @@ import { TareaComponent } from './anadirMaterialModulo/tarea/tarea.component';
 import { CoursesModule } from './courses/courses.module';
 import { NuevoComponent } from './courses/nuevo/nuevo.component';
 import { ViewSearchCourseComponent } from './student/view-search-course/view-search-course.component';
+import { VistaEstudianteComponent } from './modulosVistaEstudiante/vista-estudiante/vista-estudiante.component';
+import { VistaTareasDocenteComponent } from './calificarTareas/vista-tareas-docente/vista-tareas-docente.component';
 import { ContenidoComponent } from './module/contenido/contenido.component';
 
 const routes: Routes = [
@@ -36,6 +38,8 @@ const routes: Routes = [
   { path: 'studentCourses', component: CoursesViewStudentComponent},
   { path: 'newC',component: NuevoComponent},
   { path: 'searchCourse', component: ViewSearchCourseComponent},
+  { path: 'modulosVistaEstudiante', component: VistaEstudianteComponent},
+  { path: 'calificacionTareas', component: VistaTareasDocenteComponent},
   { path: 'moduleContent',component: ContenidoComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ]
