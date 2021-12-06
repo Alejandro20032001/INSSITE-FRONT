@@ -59,6 +59,10 @@ export class LinkMaterialComponent implements OnInit {
       this.enviar.descriptionResource = this.linkMaterial.descripcion;
       this.enviar.module = this.cookieService.get('idModulo');
 
+      let fecha = new Date(this.cookieService.get("inicioModulo"));
+      fecha.setHours(24 * parseInt(this.cookieService.get("duracionModulo")));
+      this.enviar.date = fecha;
+
       (await this.servicio.registrar(this.enviar)).subscribe( (data) =>
       {
         if(data.message === "created"){

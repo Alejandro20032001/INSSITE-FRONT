@@ -13,9 +13,9 @@ import { ModulosComponent } from '../modulos/modulos.component';
 })
 export class ModuloComponent implements OnInit {
 
-  @Input() modulo : Modulo = new Modulo("","",0);
+  @Input() modulo : Modulo = new Modulo("","",0,0,0);
 
-  modul: Modulo={idModulo: " ",nombre: '', duracion: 0};
+  modul: Modulo={idModulo: " ",nombre: '', duracion: 0, order: 0, diasPrevios: 0};
 
   constructor(private moduleService: LoginService, private router: Router, private cookieService: CookieService) {
 
@@ -32,9 +32,15 @@ export class ModuloComponent implements OnInit {
     )
   }
 
-  modificarModulo(nombre:string, id:string){
+  modificarModulo(nombre:string, id:string, duracion: number){
     this.cookieService.set('idModulo',id);
     this.cookieService.set('nombreModulo',nombre);
+
+    let fecha = new Date(this.cookieService.get("dateStart"));
+    fecha.setHours(24 * this.modulo.diasPrevios);
+
+    this.cookieService.set('inicioModulo',fecha.toUTCString());
+    this.cookieService.set('duracionModulo', duracion+"");
     this.router.navigate(['./materialModulo']);
   }
 

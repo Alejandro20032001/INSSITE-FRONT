@@ -1,115 +1,93 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import {Course} from '../interfaces/course.interface';
 import {Router} from '@angular/router'
 import { CookieService } from 'ngx-cookie-service';
-import { UpperCasePipe } from '@angular/common';
-let palabra="como Estas1";
+import { CourseService } from '../services/course.service';
+import { CreateCourse } from '../interfaces/create-course.interface';
+
 @Component({
   selector: 'app-nuevo',
   templateUrl: './nuevo.component.html',
   styleUrls: ['./nuevo.component.scss']
 })
 export class NuevoComponent implements OnInit {
-  signupForm: FormGroup
 
   nuevoCurso: Course = {
     courseName:"",
     descriptionCourse:"",
     areaCourse: "",
-    courseStartDate:new(Date),
-    registrationStartDate: new(Date)
+    courseStartDate:new Date(),
+    registrationStartDate: new Date()
   }
 
-  constructor(
-    private router:Router,
-    private _builder: FormBuilder,
-    private cookie :CookieService
-    )
-    {
-      this.signupForm = this._builder.group({
-        nomM:['',Validators.compose([Validators.required,Validators.minLength(3),Validators.maxLength(30)])],
-        descM:['',Validators.compose([Validators.required,Validators.minLength(50),Validators.maxLength(200)])],
-        areaM:['',Validators.required],
-        fII:[''],
-        fIC:['']
-
-
-      })
-    }
+  createCourse: CreateCourse = {
+    courseName:"",
+    descriptionCourse:"",
+    areaCourse: "",
+    dateStartEnrole: new Date(),
+    dateStartCourse: new Date()
+  }
+  constructor(private router:Router, private cookie :CookieService, private courseService:CourseService){}
 
   ngOnInit(): void {
-    this.cookie.set('myCookie','cookie prueba');
-    this.cookie.get('myCookie');
   }
 
 
   goToTeacher():void{
     this.router.navigate(['/teacher']);
 
-  }gotToAddModule():void{
-    this.router.navigate(['/materialModulo']);
-    //console.log("el metodo ir a addModule a sido llamado");
   }
-  convertirAMayuscula(ii:any):String{
-     return ii.toUpperCase();
+  gotToAddModule():void{
+    this.router.navigate(['/modulosConfig']);
   }
 
-  pal2="1234";
+  guardar():void{
+    let fechaActual:Date;
+    fechaActual = new Date();
+    fechaActual = new Date(fechaActual.getFullYear() + "-" + (fechaActual.getMonth() + 1) + "-" + fechaActual.getDate());
+    fechaActual.setHours( fechaActual.getHours() + 4);
 
-  guardarDatos(valDatos: any): void{
-    console.log(valDatos);
-    //console.log(this.convertirAMayuscula(palabra));
-    this.nuevoCurso.courseName=this.signupForm.get('nomM')?.value;
-    this.nuevoCurso.descriptionCourse=this.signupForm.get('descM')?.value;
-    this.nuevoCurso.areaCourse=this.signupForm.get('areaM')?.value;
-    this.nuevoCurso.courseStartDate=this.signupForm.get('fII')?.value;
-    this.nuevoCurso.registrationStartDate=this.signupForm.get('fIC')?.value;
-    console.log(this.nuevoCurso.courseName);
-  }
-  mostrar(): void{
-    console.log("como estas");
-    //console.log(this.getStringValue(document.getElementById("nombreM")?.nodeValue));
-    //console.log(this.getStringValue(this.signupForm.get.length));
-    console.log(this.convertirAMayuscula(palabra));
-  }
-  verificarDatos():void{
-    if(this.validar()){
-      this.nuevoCurso.courseName=this.nuevoCurso.courseName;
-      console.log(this.nuevoCurso.courseName);
-      alert('esto es una prueba');
+    let fechaInscripcion = new Date(this.nuevoCurso.registrationStartDate);
+    let fechaInicio = new Date(this.nuevoCurso.courseStartDate);
+
+    fechaInscripcion.setHours( fechaInscripcion.getHours() + 4);
+    fechaInicio.setHours(fechaInicio.getHours() + 4);
+
+    console.log(fechaActual);
+    console.log(fechaInscripcion);
+    console.log(fechaInicio);
+
+    if(this.nuevoCurso.courseName === ""){
+      alert("El nombre es obligatorio");
+    }else if(this.nuevoCurso.descriptionCourse.length < 100){
+      alert("La descripcion debe tener al menos 100 caracteres, actualmente llevas " + (this.nuevoCurso.descriptionCourse.length));
+    }else if(this.nuevoCurso.areaCourse === ""){
+      alert("El area del curso es obligatoria");
+    }else if(fechaInscripcion < fechaActual){
+      alert("Las incripciones deben iniciar como minimo el dia de hoy, no puede escoger una fecha menor a esta.");
+    }else{
+      let diferenciaDias = fechaInicio.valueOf() - fechaInscripcion.valueOf();
+      diferenciaDias = diferenciaDias / (1000 * 60 * 60 * 24);
+      if(diferenciaDias < 7){
+        alert("Debe existir al menos una semana de inscripcion");
+      }else{
+        let courseForm = this.nuevoCurso;
+
+        this.createCourse.courseName = courseForm.courseName;
+        this.createCourse.descriptionCourse = courseForm.descriptionCourse;
+        this.createCourse.areaCourse = courseForm.areaCourse;
+        this.createCourse.dateStartCourse = fechaInicio;
+        this.createCourse.dateStartEnrole = fechaInscripcion;
+
+        this.courseService.createCourse(this.createCourse).subscribe((data) =>{
+            if(data.message === "created"){
+              this.cookie.set("idCourse",data.courseCreated.idCourse);
+              this.cookie.set("dateStart",this.createCourse.dateStartCourse.toUTCString());
+              this.gotToAddModule();
+            }
+          }
+        )
+      }
     }
   }
-  funcion():boolean{
-    let r:boolean=false;
-    console.log(this.nuevoCurso.courseStartDate>new(Date));
-    console.log('este es una nueva funcion');
-    return r;
-  }
-  validar():boolean{
-    if(!this.nuevoCurso.courseName.match('^[a-zA-Z1-9 ]{3,30}$')){
-      alert('El nombre debe contener entre 3 y 50 caracteres, y solo se permite el uso del espacio como caracter especial')
-      return false;
-    }else if (!this.nuevoCurso.descriptionCourse.match('^[a-zA-Z][a-zA-Z0-9]{4,}$')) {
-      alert('la descripcion debe tener un minimo de 50 palabras y un maximo de 50 palabras')
-      return false;
-    } else if (!this.nuevoCurso.areaCourse.match('^(?=\\w*\\d)(?=\\w*[A-Z])(?=\\w*[a-z])\\S{8,}$')) {
-      alert('')
-      return false;
-    } else if (this.nuevoCurso.registrationStartDate > this.nuevoCurso.courseStartDate ){
-      alert('la fecha de inscripcion debe ser menor a la fecha de inicio de curso')
-      return false;
-    } else if (this.nuevoCurso.courseStartDate < new(Date)) {
-      alert('la fecha debe ser mayor a la fecha actual')
-      return false;
-    } else {
-      return true;
-    }
-
-  }
-  fechaMenor():boolean{
-
-    return false;
-  }
-
 }

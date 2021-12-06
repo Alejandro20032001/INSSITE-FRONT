@@ -31,7 +31,7 @@ export class ViewMainTeacherComponent implements OnInit {
 
     this.courseService.getCourses()
     .pipe(
-      tap(res => console.log(res))
+      tap()
       )
     .subscribe();
   }
