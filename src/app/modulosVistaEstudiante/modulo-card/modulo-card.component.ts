@@ -15,11 +15,11 @@ export class ModuloCardComponent implements OnInit {
   moduloName : string = " ";
   duracion : number = 0;
   order: number = 0;
-  
+
   @Input() modulo : Modulo = new Modulo("","",0,0,0);
 
   modul: Modulo={idModulo: " ",nombre: '', duracion: 0, order: 0, diasPrevios: 0};
-  
+
 
   constructor(private moduleService: LoginService, private router: Router, private cookieService: CookieService)
   {}
@@ -27,5 +27,8 @@ export class ModuloCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
+  verMaterialModulo(id:string):void{
+    this.cookieService.set('idModulo',id);
+    this.router.navigate(['./moduleContent']);
+  }
 }

@@ -38,7 +38,7 @@ export class ContenidoComponent implements OnInit {
   "Cuando algo es lo suficientemente importante, lo haces incluso si las probabilidades de que salga bien no te acompañan - Elon Musk",
   "Escoge un trabajo que te guste, y nunca tendrás que trabajar ni un solo día de tu vida - Confucio",
   "Un sueño no se hace realidad por arte de magia, necesita sudor, determinación y trabajo duro - Colin Powell",
-  "Cuéntamelo y me olvidaré. enséñamelo y lo recordaré. involúcrame y lo aprenderé - Benjamin Franklin", 
+  "Cuéntamelo y me olvidaré. enséñamelo y lo recordaré. involúcrame y lo aprenderé - Benjamin Franklin",
   "La lógica te llevará de la a a la z. la imaginación te llevará a cualquier lugar - Albert Einstein"];
 
 
@@ -49,7 +49,7 @@ export class ContenidoComponent implements OnInit {
       const today = new Date();
       const month = today.getMonth();
       const year = today.getFullYear();
-  
+
       this.campaignOne = new FormGroup({
         start: new FormControl(new Date(year, month, 13)),
         end: new FormControl(new Date(year, month, 16)),
@@ -66,7 +66,6 @@ export class ContenidoComponent implements OnInit {
       tap((listModule:Module[]) => this.listModule = listModule.sort( (a, b) => (a.orderModule > b.orderModule) ? 1 : -1))
     )
     .subscribe();
-    this.cookieService.set('idModulo',"23fb49d0-c51b-4dc8-9a39-cb8ca66a295e");
     this.servicios.obtenerMaterialModulo(this.cookieService.get('idModulo')).
     pipe(
       tap((materiales:MaterialLista[]) => this.materiales = materiales.reverse())
@@ -74,7 +73,7 @@ export class ContenidoComponent implements OnInit {
     .subscribe();
   }
    subirTareas(){}
-   
+
    logOut(): void {
     this.router.navigate(['./login']);
   }
@@ -86,7 +85,7 @@ export class ContenidoComponent implements OnInit {
     this.router.navigate(['./studentWelcomeView']);
   }
   goTask(){
-    
+
   }
   nivel(): number {
    return 1*10;
@@ -95,11 +94,11 @@ export class ContenidoComponent implements OnInit {
    this.aleatorio = this.Frases[Math.floor(Math.random() * this.Frases.length)];
    return this.aleatorio;
   }
-  
+
   llenarM(id:string){
-   
+
   }
-  
+
  mostrarF(){
    this.mostrar=!this.mostrar;
  }
@@ -110,6 +109,6 @@ export class ContenidoComponent implements OnInit {
      return false;
  }
  volver(){
-
+  this.router.navigate(['./modulosVistaEstudiante']);
  }
 }
