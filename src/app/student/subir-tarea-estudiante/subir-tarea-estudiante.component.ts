@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Tarea } from '../interfaces/tarea.recibir.interface';
+import { EnviarTarea } from '../interfaces/envio.tarea.interface';
 import { ResourceEnum } from "src/app/anadirMaterialModulo/ventana-principal-anadir-material-modulo/entities/ResourceEnum";
 import { ResourcesService } from '../services/resources.service';
+import { HomeworkService } from '../services/homework.service';
+
 
 @Component({
   selector: 'app-subir-tarea-estudiante',
@@ -21,13 +24,21 @@ export class SubirTareaEstudianteComponent implements OnInit {
     score: 5,
     idResource: ''
   }
-
-  constructor(private resourceService: ResourcesService) { }
+  enviarTarea: EnviarTarea = {
+    content:"",
+    resource : ""
+  }
+  constructor(
+    private resourceService: ResourcesService,
+    private homeworkService: HomeworkService
+    ) { }
 
   ngOnInit(): void {
-    let idTarea = "b68e82e3-d726-4505-966b-e778bb730265";// falta implementar
-    this.resourceService.getResourceId(idTarea).subscribe((data) =>
-      this.tarea = data  
+    let idTarea = "88c6ceda-ecb4-433f-a5d8-a2165dd687dd";// falta implementar
+    this.resourceService.getResourceId(idTarea).subscribe((data) =>{
+      this.tarea = data 
+      console.log(data)
+    }
     )
   }
 
@@ -36,7 +47,10 @@ export class SubirTareaEstudianteComponent implements OnInit {
   }
 
   enviar():void{
-
+    this.enviarTarea.resource = "88c6ceda-ecb4-433f-a5d8-a2165dd687dd";
+    this.homeworkService.postHomework(this.enviarTarea).subscribe((data) =>
+      console.log()
+    );
   }
 
 }
