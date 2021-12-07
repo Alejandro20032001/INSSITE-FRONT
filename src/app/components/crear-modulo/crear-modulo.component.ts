@@ -20,10 +20,14 @@ export class CrearModuloComponent implements OnInit {
   }
 
   guardarModulo(){
-
-    this.clickGuardar.emit(new Modulo(this.idModulo, this.moduloName, this.duracion, this.order, 0));
-    this.moduloName = '';
-    this.duracion = 0;
+    console.log("Hola");
+    if(this.moduloName.replace(" ","") === ""){
+      alert("Debes ingresar un nombre para el modulo");
+    }else{
+      this.clickGuardar.emit(new Modulo(this.idModulo, this.moduloName, this.duracion, this.order, 0));
+      this.moduloName = '';
+      this.duracion = 0;
+    }
 
   }
 }
