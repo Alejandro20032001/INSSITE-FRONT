@@ -41,6 +41,10 @@ export class NuevoComponent implements OnInit {
     this.router.navigate(['/modulosConfig']);
   }
 
+  cancelar():void{
+    this.goToTeacher();
+  }
+
   guardar():void{
     let fechaActual:Date;
     fechaActual = new Date();
