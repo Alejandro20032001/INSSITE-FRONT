@@ -49,7 +49,6 @@ export class NuevoComponent implements OnInit {
     let fechaActual:Date;
     fechaActual = new Date();
     fechaActual = new Date(fechaActual.getFullYear() + "-" + (fechaActual.getMonth() + 1) + "-" + fechaActual.getDate());
-    fechaActual.setHours( fechaActual.getHours() + 4);
 
     let fechaInscripcion = new Date(this.nuevoCurso.registrationStartDate);
     let fechaInicio = new Date(this.nuevoCurso.courseStartDate);
