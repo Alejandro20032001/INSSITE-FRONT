@@ -44,7 +44,10 @@ export class TareaComponent implements OnInit {
       alert("El titulo es obligatorio");
     }else if(this.tarea.puntuacion < 1 || this.tarea.puntuacion > 10){
       alert("La calificacion debe ser mayor que 0 y menor que 11");
-    }else{
+    }else if(this.tarea.descripcion.length === 0){
+      alert("La descripcion es obligatoria");
+    }
+    else{
       this.enviar.title = this.tarea.titulo;
       this.enviar.descriptionResource = this.tarea.descripcion;
       this.enviar.score = this.tarea.puntuacion;
