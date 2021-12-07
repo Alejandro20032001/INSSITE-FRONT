@@ -20,10 +20,14 @@ export class CrearModuloComponent implements OnInit {
   }
 
   guardarModulo(){
-    console.log("Hola");
     if(this.moduloName.replace(" ","") === ""){
       alert("Debes ingresar un nombre para el modulo");
-    }else{
+    }else if(this.duracion < 7){
+      alert("Un modulo debe durar al menos 7 dias");
+    }else if(this.duracion > 30){
+      alert("Un modulo no puede durar mas de 30 dias");
+    }
+    else{
       this.clickGuardar.emit(new Modulo(this.idModulo, this.moduloName, this.duracion, this.order, 0));
       this.moduloName = '';
       this.duracion = 0;
