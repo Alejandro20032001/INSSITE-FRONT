@@ -33,13 +33,13 @@
           <span class="input-group-text" id="inputGroup-sizing-sm"
             >Ingrese una descripcion</span
           >
-          <input
+          <textarea
             type="text"
             class="form-control"
             maxlength="1000"
             aria-describedby="inputGroup-sizing-sm"
             [(ngModel)]="nuevoCurso.descriptionCourse"
-          />
+          ></textarea>
         </div>
       </div>
     </div>
@@ -95,7 +95,7 @@
         <br /><br />
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button class="btn btn-outline-light me-md-2" type="button">
+          <button class="btn btn-outline-light me-md-2" type="button" (click)="cancelar()">
             Cancelar
           </button>
           <button
@@ -135,7 +135,7 @@
       <div>
         <p>Area del curso:</p>
       </div>
-      
+
       <div>
         <p>Fecha de inicio de inscripciones:</p>
         <input type="date" [(ngModel)]="nuevoCurso.registrationStartDate" />

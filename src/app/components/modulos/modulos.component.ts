@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
@@ -17,7 +18,7 @@ export class ModulosComponent implements OnInit {
   listaModulos: Modulo[] = [];
   intermedioModulos!:RespuestaModulo[];
 
-  constructor(private servicios:LoginService, private cookie: CookieService){
+  constructor(private router:Router, private servicios:LoginService, private cookie: CookieService){
 
   }
 
@@ -52,6 +53,7 @@ export class ModulosComponent implements OnInit {
   terminarCurso(){
     if(this.listaModulos.length > 0){
       alert("Curso creado con exito");
+      this.router.navigate(['/teacher']);
     }else{
       alert("Debe existir al menos un curso")
     }
