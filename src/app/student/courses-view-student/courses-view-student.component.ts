@@ -24,6 +24,9 @@ export class CoursesViewStudentComponent implements OnInit {
     )
     .subscribe();
   }
+  shortDescription(course:Course): any{
+    return course.descriptionCourse.substring(0,50);
+ }
 
   logOut():void{
     this.router.navigate(['./login']);

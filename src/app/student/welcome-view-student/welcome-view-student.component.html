@@ -1,10 +1,15 @@
 <header>
+  <img src="../../../assets/images/logo.jpeg" alt="" style="height: max-content; margin: 30px 0px 30px 0px;">
+  
   <div class="menu">
-    <img src="../../../assets/images/logo.jpeg" alt="">
     <nav>
       <ul>
-        <li><a (click) = 'irCursos()'>Mis Cursos</a></li>
-        <li><a (click) = 'salir()'>Cerrar Sesión</a></li>
+        <li><button style="background-color:#559A95; color: #ffffff; height: 80px;" mat-flat-button (click)="irCursos()" class="logout">
+          Mis Cursos
+        </button></li>
+        <li><button style="background-color:#559A95; color:#ffffff; height: 80px;" mat-flat-button (click)="salir()" class="logout">
+          Cerrar sesion
+        </button></li>
       </ul>
     </nav>
   </div>
