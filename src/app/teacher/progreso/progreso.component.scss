@@ -62,15 +62,18 @@ tr.example-element-row:not(.example-expanded-row):active {
 .example-element-detail {
   overflow: hidden;
   display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
-.example-element-diagram {
-  min-width: 80px;
-  border: 2px solid black;
+.frame{
   padding: 8px;
   font-weight: lighter;
   margin: 8px 0;
-  height: 104px;
+  background-color: #559A95;
+  border-radius: 8px;
+  color: #ffffff;
+  width: 30%;
 }
 
 .example-element-symbol {
@@ -81,6 +84,9 @@ tr.example-element-row:not(.example-expanded-row):active {
 
 .example-element-description {
   padding: 16px;
+  text-align: right;
+  float: right;
+
 }
 
 .example-element-description-attribution {

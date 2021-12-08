@@ -5,6 +5,7 @@ import { tap } from 'rxjs/operators';
 import { CourseService } from 'src/app/courses/services/course.service';
 import { Student } from 'src/app/student/interfaces/student.interface';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import { userSend } from 'src/app/registro/interfaces/userSend.interface';
 
 @Component({
   selector: 'app-progreso',
@@ -19,21 +20,25 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
   ],
 })
 export class ProgresoComponent implements OnInit {
-  dataSource!: Student[];
-  columnsTo =['Nombre', 'Tarea', 'Fecha', 'estado'] ;
-  columnsToDisplay = ['courseName', 'areaCourse', 'dateStartEnrole', 'estado'] ;
-  expandedElement!: Student | null;
+  dataSource!:userSend[];
+  columnsTo =['Nombre','Estado'] ;
+  columnsToDisplay = ['completeName', 'Estado'] ;
+  expandedElement!: userSend | null;
+  numTareas:number=3;
   constructor(private router : Router,
     private cookieService: CookieService,
     private servicios: CourseService) { }
 
   ngOnInit(): void {
-    this.servicios.getStudents(this.cookieService.get('idModulo')).
-    pipe(
-      tap((dataSource:Student[]) => this.dataSource = dataSource.reverse())
+    this.servicios.getStudents('ac16e052-d0cb-45c9-a7c5-c97ad093b298').pipe(
+      tap((dataSource:userSend[]) => this.dataSource = dataSource.reverse())
     )
     .subscribe();
-  }
+    console.group();
+    console.log(this.dataSource);
+    console.groupEnd();
+  }//this.cookieService.get('idModulo')).
+  
 
   goAddCourse():void{
     this.router.navigate(['./newC']);
@@ -45,4 +50,5 @@ export class ProgresoComponent implements OnInit {
   goCourses(){
     this.router.navigate(['./teacher']);
   }
+
 }
