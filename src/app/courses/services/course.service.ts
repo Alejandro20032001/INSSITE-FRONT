@@ -6,7 +6,6 @@ import { CreateCourse } from '../interfaces/create-course.interface';
 import { ResponseCourse } from '../interfaces/response-create-course';
 import { materialAnswer } from 'src/app/anadirMaterialModulo/ventana-principal-anadir-material-modulo/interfaces/materialAnswer.interface';
 import { courseAnswer } from '../interfaces/response.course';
-import { Student } from 'src/app/student/interfaces/student.interface';
 import { userSend } from 'src/app/registro/interfaces/userSend.interface';
 @Injectable({
   providedIn: 'root'

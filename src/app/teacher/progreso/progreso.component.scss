@@ -88,17 +88,28 @@ tr.example-element-row:not(.example-expanded-row):active {
   float: right;
 
 }
-
-.example-element-description-attribution {
-  opacity: 0.5;
-}
 .mat-elevation-z8{
   margin: 12px 12px 12px 12px;
   width: 98%;
 }
 .container{
   margin: 12px 12px 12px 12px;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-content: stretch;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+}
+.example-element-detail.ng-tns-c152-0.ng-trigger.ng-trigger-detailExpand {
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
 }
 .encabezado{
   background-color: #559A95;
+}
+.big{
+  font-size: 20px;
 }
