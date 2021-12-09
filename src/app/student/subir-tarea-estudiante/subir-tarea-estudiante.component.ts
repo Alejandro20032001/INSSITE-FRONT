@@ -53,9 +53,10 @@ export class SubirTareaEstudianteComponent implements OnInit {
   enviar():void{
     let idTarea = this.cookieService.get('idTarea');
     this.enviarTarea.resource = idTarea;
-    this.homeworkService.postHomework(this.enviarTarea).subscribe((data) =>
-      console.log()
-    );
+    this.homeworkService.postHomework(this.enviarTarea).subscribe((data) =>{
+          this.router.navigate(['./moduleContent']);
+        }
+      );
   }
 
 }
