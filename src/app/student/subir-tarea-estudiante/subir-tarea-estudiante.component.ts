@@ -4,6 +4,7 @@ import { EnviarTarea } from '../interfaces/envio.tarea.interface';
 import { ResourceEnum } from "src/app/anadirMaterialModulo/ventana-principal-anadir-material-modulo/entities/ResourceEnum";
 import { ResourcesService } from '../services/resources.service';
 import { HomeworkService } from '../services/homework.service';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @Component({
@@ -30,13 +31,14 @@ export class SubirTareaEstudianteComponent implements OnInit {
   }
   constructor(
     private resourceService: ResourcesService,
-    private homeworkService: HomeworkService
+    private homeworkService: HomeworkService,
+    private cookieService: CookieService
     ) { }
 
   ngOnInit(): void {
-    let idTarea = "88c6ceda-ecb4-433f-a5d8-a2165dd687dd";// falta implementar
+    let idTarea = this.cookieService.get('idTarea');// falta implementar
     this.resourceService.getResourceId(idTarea).subscribe((data) =>{
-      this.tarea = data 
+      this.tarea = data
       console.log(data)
     }
     )
