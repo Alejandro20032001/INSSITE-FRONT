@@ -84,8 +84,9 @@ export class ContenidoComponent implements OnInit {
   goHome(): void {
     this.router.navigate(['./studentWelcomeView']);
   }
-  goTask(){
-
+  goTask(id:string){
+    this.cookieService.set('idTarea',id);
+    this.router.navigate(['./subirTarea']);
   }
   nivel(): number {
    return 1*10;
