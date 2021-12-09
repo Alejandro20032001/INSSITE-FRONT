@@ -21,50 +21,47 @@
         Cerrar sesion
       </button>
      </mat-drawer>
+
      
-     <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
-        <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay ; index as i">
-        <th style="background-color: #559A95; color: #ffffff; font-style: bold; font-size: 20px;" mat-header-cell *matHeaderCellDef> {{columnsTo[i]}} </th>
-        <td mat-cell style="background-color: #f7f7f7;" *matCellDef="let student" >{{student[column]}}</td>
+<div style="display: flex;  justify-content: center;">
+  <div style="width: 40%; margin: 30px 30px 30px 100px;">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="completeName">
+        <th mat-header-cell *matHeaderCellDef style=" color: #ffffff; font-size: 20px; font-style: bold;">{{columns}}</th>
+        <td mat-cell *matCellDef="let element">{{element.completeName}}</td>
         
-        </ng-container>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" style="background-color: #559A95;"></tr>
+      <tr  mat-row
+          (click)="studentU(row.idUser)"
+          *matRowDef="let row; columns: displayedColumns;"
+      ></tr>
+    </table>
+   </div>
 
-  <ng-container matColumnDef="expandedDetail" class="container">
-    <td mat-cell *matCellDef="let student" [attr.colspan]="columnsToDisplay.length">
-      <div class="example-element-detail" [@detailExpand]="student == expandedElement ? 'expanded' : 'collapsed'">
-        <div class="frame">
-          <div class="example-element-position"> Datos: </div>
-          <div class="example-element-symbol"> {{student.completeName}} </div>
-          <div class="example-element-name"> {{student.roles}} </div>
-          <div class="example-element-weight"> {{student.username}} </div>
-        </div>
-        <div style="display:inline-block; width: 50%;">
-          <div style="padding: 20px; width: 100%; color: black;" *ngFor="let tarea of tareasHechas">
-           <li style="list-style: none;"> {{tarea.resource.title}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{tarea.score}}/{{tarea.resource.score}}</li>
-           <mat-divider></mat-divider>
-          </div>
-        </div>
-       
-        <div class="example-element-description" > <strong>Tareas totales: &nbsp; &nbsp; </strong>
-        <span class="big">{{cantidad(tareas.tareasTotales)}}</span> <br> 
-        <strong>Tareas faltantes:&nbsp; &nbsp;</strong> <span class="big">{{cantidad(tareas.tareasFaltantes)}} </span> <br>
-        <strong>Tareas entregadas: &nbsp; &nbsp;</strong> <span class="big">{{cantidad(tareas.tareasHechas)}}</span> <br>
-        <strong> Nota acumulada:  &nbsp; &nbsp;</strong> <span class="big">{{tareas.notaAcumulada}}</span><br>
-        <strong> Nota general:  &nbsp; &nbsp;</strong> <span class="big">{{tareas.notaGeneral}}</span><br>
-        </div>
-      </div>
-    </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-    <tr mat-row *matRowDef="let student; columns: columnsToDisplay;" class="example-element-row"
-    [class.example-expanded-row]="expandedElement === student" 
-    (click)="expandedElement = expandedElement === student ? null : student" (click)="studentU(student.idUser)" >
-   </tr>
-  <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
-</table>
-
+   <div style="width: 60%; margin: 30px 30px 30px 30px;">
+<div *ngIf="mostrar">
+  <h1>Tareas Hechas</h1>
+  <div style="padding: 10px;">    
+    <div *ngFor="let tarea of tareasHechas">
+      <span>{{tarea.resource.title}} &nbsp; &nbsp;{{tarea.score}}/{{tarea.resource.score}}
+       </span><mat-divider></mat-divider>
+     </div>
+  </div>
+  <h1>Estadisticas</h1>
+  <div class="description" > <strong>Tareas totales: &nbsp; &nbsp; </strong>
+  <span class="big">{{cantidad(tareas.tareasTotales)}}</span> <br> 
+  <strong>Tareas faltantes:&nbsp; &nbsp;</strong> <span class="big">{{cantidad(tareas.tareasFaltantes)}} </span> <br>
+  <strong>Tareas entregadas: &nbsp; &nbsp;</strong> <span class="big">{{cantidad(tareas.tareasHechas)}}</span> <br>
+  <strong> Nota acumulada:  &nbsp; &nbsp;</strong> <span class="big">{{tareas.notaAcumulada}}</span><br>
+  <strong> Nota general:  &nbsp; &nbsp;</strong> <span class="big">{{tareas.notaGeneral}}</span><br>
+  </div>
+</div>
+</div>
+</div>
+     
 
    </mat-drawer-container>
 
