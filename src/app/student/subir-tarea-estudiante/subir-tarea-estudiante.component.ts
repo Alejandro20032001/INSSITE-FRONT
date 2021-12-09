@@ -5,6 +5,7 @@ import { ResourceEnum } from "src/app/anadirMaterialModulo/ventana-principal-ana
 import { ResourcesService } from '../services/resources.service';
 import { HomeworkService } from '../services/homework.service';
 import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,8 +18,8 @@ export class SubirTareaEstudianteComponent implements OnInit {
 
   tarea:Tarea = {
     resourceType: ResourceEnum.HOMEWORK,
-    title: 'Este es el titulo de la tarea',
-    descriptionResource: 'Lorem ipsum',
+    title: '',
+    descriptionResource: '',
     content: '',
     module: '',
     date: new(Date),
@@ -32,7 +33,8 @@ export class SubirTareaEstudianteComponent implements OnInit {
   constructor(
     private resourceService: ResourcesService,
     private homeworkService: HomeworkService,
-    private cookieService: CookieService
+    private cookieService: CookieService,
+    private router:Router
     ) { }
 
   ngOnInit(): void {
@@ -45,11 +47,12 @@ export class SubirTareaEstudianteComponent implements OnInit {
   }
 
   regresar():void{
-
+    this.router.navigate(['./moduleContent']);
   }
 
   enviar():void{
-    this.enviarTarea.resource = "88c6ceda-ecb4-433f-a5d8-a2165dd687dd";
+    let idTarea = this.cookieService.get('idTarea');
+    this.enviarTarea.resource = idTarea;
     this.homeworkService.postHomework(this.enviarTarea).subscribe((data) =>
       console.log()
     );
