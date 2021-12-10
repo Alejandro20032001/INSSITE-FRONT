@@ -34,8 +34,8 @@ export class ProgresoComponent implements OnInit {
     private servicios: CourseService, private userservice: RegisterServices) { }
 
   ngOnInit(): void {
-    this.cookieService.set('idCourse','ac16e052-d0cb-45c9-a7c5-c97ad093b298');
-    this.servicios.getStudents('ac16e052-d0cb-45c9-a7c5-c97ad093b298').pipe(
+    let id = this.cookieService.get("idCurso");
+    this.servicios.getStudents(id).pipe(
       tap((dataSource:userSend[]) => this.dataSource = dataSource.sort())
     )
     .subscribe();
@@ -44,7 +44,7 @@ export class ProgresoComponent implements OnInit {
   goAddCourse():void{
     this.router.navigate(['./newC']);
   }
-  
+
   logout():void{
     this.router.navigate(['./login']);
   }
@@ -54,12 +54,12 @@ export class ProgresoComponent implements OnInit {
 
   studentU(idU:string){
     this.tareasHechas=[];
-    let idC:string =this.cookieService.get('idCourse');
+    let idC:string =this.cookieService.get('idCurso');
     this.userservice.getprogreso(idC,idU).pipe(
       tap((tareas:any) => this.tareas = tareas)
     )
-    .subscribe(); 
-    this.mostrar=false;  
+    .subscribe();
+    this.mostrar=false;
 
   }
   cantidad(id:string){

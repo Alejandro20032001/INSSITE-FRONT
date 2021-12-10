@@ -21,7 +21,7 @@
     <h1>Cursos</h1>
     <span></span>
   </div>
- <section class="courses"  *ngIf="courses.length!=0; else sinCursos">
+ <section class="courses"  *ngIf="courses.length != 0; else sinCursos">
     <mat-card class="card"*ngFor="let course of courses">
       <div class="rippleCourse" matRipple (click)="goModule()" >
      <span class="cssCourse"><strong>
@@ -31,7 +31,7 @@
      </div>
       <span><strong> Acerca del curso: </strong>{{shortDescription(course)}}...</span>
       <div>
-         <button mat-flat-button style="background-color: #559A95; margin: 2px 5px 10px 5px;" (click)="progreso()" class="logout">
+         <button mat-flat-button style="background-color: #559A95; margin: 2px 5px 10px 5px;" (click)="progreso(course.idCourse)" class="logout">
         Estudiantes
         </button>
         <button mat-flat-button style="background-color: #97aaae; margin: 2px 5px 10px 5px;" (click)="calificar()" class="logout">
