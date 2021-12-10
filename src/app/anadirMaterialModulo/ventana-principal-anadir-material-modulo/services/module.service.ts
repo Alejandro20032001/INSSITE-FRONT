@@ -31,7 +31,7 @@ export class ModuleServices {
     }
 
     obtenerTareasSinHacer(id:string):Observable<MaterialLista[]>{
-      let url = this.base_url + "coursemodule/resources/" + id;
+      let url = this.base_url + "user/getMissingHomeworks/" + id;
       return this.http.get<MaterialLista[]>(url);
     }
 }

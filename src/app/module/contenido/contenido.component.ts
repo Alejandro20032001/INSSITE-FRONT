@@ -72,6 +72,7 @@ export class ContenidoComponent implements OnInit {
       tap((materiales:MaterialLista[]) => this.materiales = materiales.reverse())
     )
     .subscribe();
+
     this.servicios.obtenerTareasSinHacer(this.cookieService.get('idModulo')).
     pipe(
       tap((tareas:MaterialLista[]) => this.tareas = tareas.reverse())
