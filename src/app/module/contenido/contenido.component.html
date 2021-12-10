@@ -39,11 +39,11 @@
             <button class="tarea" mat-flat-button  style="font-size: 20px; color: #ffffff;"> Tareas</button>
             </div>
             <div style="height: 50%; overflow: auto;">
-              <mat-list  *ngFor="let material of materiales">
-                <div *ngIf="esTarea(material.resourceType)">
+              <mat-list  *ngFor="let tarea of tareas">
+                <div *ngIf="esTarea(tarea.resourceType)">
                 <mat-list-item>
-                  {{material.title}}
-                  <mat-icon (click)="goTask(material.idResource)" style="cursor: pointer;">edit</mat-icon></mat-list-item>
+                  {{tarea.title}}
+                  <mat-icon (click)="goTask(tarea.idResource)" style="cursor: pointer;">edit</mat-icon></mat-list-item>
                 <mat-divider></mat-divider>
                 </div>
               </mat-list>

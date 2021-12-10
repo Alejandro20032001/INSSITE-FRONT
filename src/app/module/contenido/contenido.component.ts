@@ -17,6 +17,7 @@ import { ResourceEnum } from 'src/app/anadirMaterialModulo/ventana-principal-ana
 export class ContenidoComponent implements OnInit {
 
   materiales:MaterialLista[] = [];
+  tareas:MaterialLista[] = [];
   listModule:Module[] = [];
   selected !: Date;
   panelOpenState = false;
@@ -71,10 +72,17 @@ export class ContenidoComponent implements OnInit {
       tap((materiales:MaterialLista[]) => this.materiales = materiales.reverse())
     )
     .subscribe();
-  }
-   subirTareas(){}
 
-   logOut(): void {
+    this.servicios.obtenerTareasSinHacer(this.cookieService.get('idModulo')).
+    pipe(
+      tap((tareas:MaterialLista[]) => this.tareas = tareas.reverse())
+    )
+    .subscribe();
+  }
+
+  subirTareas(){}
+
+  logOut(): void {
     this.router.navigate(['./login']);
   }
   miscursos(): void {

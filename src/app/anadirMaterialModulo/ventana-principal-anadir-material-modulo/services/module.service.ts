@@ -29,4 +29,9 @@ export class ModuleServices {
       let url = this.base_url + "resource/" + idResource
       return this.http.delete<materialAnswer>(url);
     }
+
+    obtenerTareasSinHacer(id:string):Observable<MaterialLista[]>{
+      let url = this.base_url + "user/getMissingHomeworks/" + id;
+      return this.http.get<MaterialLista[]>(url);
+    }
 }
