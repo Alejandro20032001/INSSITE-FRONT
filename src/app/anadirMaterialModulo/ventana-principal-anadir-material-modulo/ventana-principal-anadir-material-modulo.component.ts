@@ -21,6 +21,7 @@ export class VentanaPrincipalAnadirMaterialModuloComponent implements OnInit {
 
   materiales:MaterialListaNombreCorreto[] = [];
 
+  orden:Number = 0;
   nombreModulo!:string;
 
   constructor(
@@ -49,8 +50,14 @@ export class VentanaPrincipalAnadirMaterialModuloComponent implements OnInit {
             tipo = "TAREA";
           }
 
-          this.materiales.push(new MaterialListaNombreCorreto(tipo, element.title, element.descriptionResource, element.content, element.module, element.date, element.score, element.idResource));
-        });
+          if(element.orderResource > this.orden){
+            this.orden = element.orderResource;
+          }
+          this.materiales.push(new MaterialListaNombreCorreto(tipo, element.title, element.descriptionResource, element.content, element.module, element.date, element.score, element.idResource, element.orderResource));
+        }
+        );
+
+        materiales.sort((a, b) => (a.orderResource > b.orderResource) ? 1 : -1);
       })
     )
     .subscribe();
@@ -58,18 +65,22 @@ export class VentanaPrincipalAnadirMaterialModuloComponent implements OnInit {
   }
 
   nuevaLectura():void{
+    this.cookieService.set("orden", (parseInt(this.orden.toString()) + 1) + "");
     this.router.navigate(["/nuevaLectura"]);
   }
 
   nuevoMaterial():void{
+    this.cookieService.set("orden", (parseInt(this.orden.toString()) + 1) + "");
     this.router.navigate(["/nuevoMaterial"]);
   }
 
   nuevaTarea():void{
+    this.cookieService.set("orden", (parseInt(this.orden.toString()) + 1) + "");
     this.router.navigate(["/nuevaTarea"]);
   }
 
   nuevaVideollamada():void{
+    this.cookieService.set("orden", (parseInt(this.orden.toString()) + 1) + "");
     this.router.navigate(["/nuevaVideollamada"]);
   }
 

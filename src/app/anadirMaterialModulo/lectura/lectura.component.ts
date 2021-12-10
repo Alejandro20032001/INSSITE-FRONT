@@ -26,7 +26,8 @@ export class LecturaComponent implements OnInit {
     content: '',
     module: '',
     date: new Date(),
-    score: 0
+    score: 0,
+    orderResource: 0
   }
 
   constructor(
@@ -48,6 +49,7 @@ export class LecturaComponent implements OnInit {
       this.enviar.title = this.lectura.titulo;
       this.enviar.content = this.lectura.contenido;
       this.enviar.module = this.cookieService.get('idModulo');
+      this.enviar.orderResource = parseInt(this.cookieService.get("orden"));
       let fecha = new Date(this.cookieService.get("inicioModulo"));
       fecha.setHours(24 * parseInt(this.cookieService.get("duracionModulo")));
       this.enviar.date = fecha;

@@ -27,7 +27,8 @@ export class VideollamadaComponent implements OnInit {
     content: '',
     module: '',
     date: new Date(),
-    score: 0
+    score: 0,
+    orderResource: 0
   }
 
   constructor(
@@ -71,6 +72,7 @@ export class VideollamadaComponent implements OnInit {
       this.enviar.descriptionResource = this.videollamada.descripcion;
       this.enviar.date = new Date(anio, mes, dia, hora, minuto, 0);
       this.enviar.module = this.cookieService.get('idModulo');
+      this.enviar.orderResource = parseInt(this.cookieService.get("orden"));
 
       let fechaInicio = new Date(this.cookieService.get("inicioModulo"));
 

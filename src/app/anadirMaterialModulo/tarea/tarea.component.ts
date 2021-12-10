@@ -27,7 +27,8 @@ export class TareaComponent implements OnInit {
     content: '',
     module: '',
     date: new Date(),
-    score: 0
+    score: 0,
+    orderResource: 0
   }
 
   constructor(
@@ -52,6 +53,7 @@ export class TareaComponent implements OnInit {
       this.enviar.descriptionResource = this.tarea.descripcion;
       this.enviar.score = this.tarea.puntuacion;
       this.enviar.module = this.cookieService.get('idModulo');
+      this.enviar.orderResource = parseInt(this.cookieService.get("orden"));
 
       let fecha = new Date(this.cookieService.get("inicioModulo"));
       fecha.setHours(24 * parseInt(this.cookieService.get("duracionModulo")));
