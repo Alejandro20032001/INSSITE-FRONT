@@ -5,8 +5,10 @@ import { tap } from 'rxjs/operators';
 import { Lectura } from './entities/Lectura';
 import { LinkMaterial } from './entities/LinkMaterial';
 import { Material } from './entities/Material';
+import { ResourceEnum } from './entities/ResourceEnum';
 import { Tarea } from './entities/Tarea';
 import { Videollamada } from './entities/Videollamada';
+import { MaterialListaNombreCorreto } from './interfaces/material.vistaModulos.interface';
 import { MaterialLista } from './interfaces/materialMenu.interface';
 import { ModuleServices } from './services/module.service';
 
@@ -17,7 +19,8 @@ import { ModuleServices } from './services/module.service';
 })
 export class VentanaPrincipalAnadirMaterialModuloComponent implements OnInit {
 
-  materiales:MaterialLista[] = [];
+  materiales:MaterialListaNombreCorreto[] = [];
+
   nombreModulo!:string;
 
   constructor(
@@ -29,7 +32,26 @@ export class VentanaPrincipalAnadirMaterialModuloComponent implements OnInit {
   ngOnInit(): void {
     this.servicios.obtenerMaterialModulo(this.cookieService.get('idModulo')).
     pipe(
-      tap((materiales:MaterialLista[]) => this.materiales = materiales.reverse())
+      tap((materiales:MaterialLista[]) => {
+
+        materiales.forEach(element => {
+          let tipo = "";
+          if(element.resourceType === ResourceEnum.DOCUMENTATION){
+            tipo = "LECTURA";
+          }
+          if(element.resourceType === ResourceEnum.LINK_MATERIAL){
+            tipo = "LINK A MATERIAL";
+          }
+          if(element.resourceType === ResourceEnum.LINK_MEET){
+            tipo = "VIDEO LLAMADA";
+          }
+          if(element.resourceType === ResourceEnum.HOMEWORK){
+            tipo = "TAREA";
+          }
+
+          this.materiales.push(new MaterialListaNombreCorreto(tipo, element.title, element.descriptionResource, element.content, element.module, element.date, element.score, element.idResource));
+        });
+      })
     )
     .subscribe();
     this.nombreModulo = this.cookieService.get('nombreModulo');
