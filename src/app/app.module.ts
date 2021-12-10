@@ -31,6 +31,7 @@ import { TareaComponent } from './anadirMaterialModulo/tarea/tarea.component';
 import { CoursesModule } from './courses/courses.module';
 import { FilterPipe } from './pipes/filter.pipe';
 import { ViewSearchCourseComponent } from './student/view-search-course/view-search-course.component';
+import { ProgresoComponent } from './teacher/progreso/progreso.component';
 import { SubirTareaEstudianteComponent } from './student/subir-tarea-estudiante/subir-tarea-estudiante.component';
 import { VistaEstudianteComponent } from './modulosVistaEstudiante/vista-estudiante/vista-estudiante.component';
 import { ModulosVEHeaderComponent } from './modulosVistaEstudiante/modulos-veheader/modulos-veheader.component';
@@ -60,6 +61,7 @@ import { ContenidoComponent } from './module/contenido/contenido.component';
     TareaComponent,
     ViewSearchCourseComponent,
     FilterPipe,
+    ProgresoComponent,
     SubirTareaEstudianteComponent,
     VistaEstudianteComponent,
     ModulosVEHeaderComponent,

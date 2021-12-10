@@ -3,13 +3,6 @@
      <mat-icon>menu</mat-icon>
   </button>
   <h2>Docente</h2>
-  <!---<span class="espacio"></span>
-  <button mat-icon-button class="analitics-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>assessment</mat-icon>
-  </button>
-  <button mat-icon-button class="delete-icon" aria-label="Example icon-button with share icon">
-    <mat-icon>delete_outline</mat-icon>
-  </button>-->
  </div>
 
 
@@ -30,13 +23,21 @@
   </div>
  <section class="courses"  *ngIf="courses.length!=0; else sinCursos">
     <mat-card class="card"*ngFor="let course of courses">
-      <div class="rippleCourse" matRipple >
+      <div class="rippleCourse" matRipple (click)="goModule()" >
      <span class="cssCourse"><strong>
       {{course.courseName}}
      </strong>
      </span>
      </div>
       <span><strong> Acerca del curso: </strong>{{shortDescription(course)}}...</span>
+      <div>
+         <button mat-flat-button style="background-color: #559A95; margin: 2px 5px 10px 5px;" (click)="progreso()" class="logout">
+        Estudiantes
+        </button>
+        <button mat-flat-button style="background-color: #97aaae; margin: 2px 5px 10px 5px;" (click)="calificar()" class="logout">
+         Calificar tareas
+        </button>
+        </div>
     </mat-card>
 </section>
 <ng-template #sinCursos><h3>Tu no tienes cursos creados aun</h3></ng-template>

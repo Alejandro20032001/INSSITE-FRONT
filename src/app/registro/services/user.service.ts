@@ -19,4 +19,14 @@ export class RegisterServices {
       let url = this.base_url + "user"
       return this.http.post<userAnswer>(url, form)
     }
+    getprogreso(idC:string,idU: string):Observable<any>{
+      try{
+      let res:Observable<any>=this.http.get<any>('https://inssite-database.herokuapp.com/user/processOf/'+idC+'?idStudent='+idU);
+      return res;      
+    }catch(err){
+      console.log('llego');
+      
+      return new Observable<any>();
+    }
+    }
 }

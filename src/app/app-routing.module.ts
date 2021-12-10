@@ -16,6 +16,7 @@ import { TareaComponent } from './anadirMaterialModulo/tarea/tarea.component';
 import { CoursesModule } from './courses/courses.module';
 import { NuevoComponent } from './courses/nuevo/nuevo.component';
 import { ViewSearchCourseComponent } from './student/view-search-course/view-search-course.component';
+import { ProgresoComponent } from './teacher/progreso/progreso.component';
 import { SubirTareaEstudianteComponent } from './student/subir-tarea-estudiante/subir-tarea-estudiante.component';
 import { VistaEstudianteComponent } from './modulosVistaEstudiante/vista-estudiante/vista-estudiante.component';
 import { VistaTareasDocenteComponent } from './calificarTareas/vista-tareas-docente/vista-tareas-docente.component';
@@ -24,6 +25,7 @@ import { ContenidoComponent } from './module/contenido/contenido.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'login', component: LoginComponent },
+  { path: 'progreso', component: ProgresoComponent},
   { path: 'modulosConfig', component: ModulosComponent },
   { path: 'teacher', component: ViewMainTeacherComponent, canActivate: [UserGuardGuard]},
   { path: 'home', component: HomeComponent},

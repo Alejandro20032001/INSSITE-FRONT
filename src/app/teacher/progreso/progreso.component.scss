@@ -1,0 +1,107 @@
+.toolbar {
+    height: 30px;
+    background-color: #97ABAE
+  }
+  
+  .container-courses {
+    height: 600px;
+    background-color: #F7F7F7;
+    .textUp{
+      margin: 50px 12px 12px 50px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .toolbar {
+    display: flex;
+    height: 30px;
+    align-content: center;
+    justify-content: left;
+    background-color: #559A95;
+    .button{
+      height: 30px;
+    }
+  }
+  
+  .lateral {
+    background-color: #97aaae;
+    padding: 10px;
+    width: 200px;
+    img{
+      width: 175px;
+      height: 175px;
+      border: 0px;
+    }
+    .logout{
+      background-color: #559A95;
+      width: 175px;
+      height: 50px;
+    }
+  }
+
+  table {
+  width: 100%;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background-color: #97abae8a;
+  align-items: center;
+}
+
+.frame{
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+  background-color: #559A95;
+  border-radius: 8px;
+  color: #ffffff;
+  width: 30%;
+  border:2px solid #000000;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+  text-align: right;
+  float: right;
+
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}
+.mat-elevation-z8{
+  margin: 12px 12px 12px 12px;
+  width: 98%;
+}
+.container{
+  margin: 12px 12px 12px 12px;
+}
+.encabezado{
+  background-color: #559A95;
+}

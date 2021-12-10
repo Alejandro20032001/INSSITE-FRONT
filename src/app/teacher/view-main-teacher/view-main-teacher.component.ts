@@ -40,6 +40,15 @@ export class ViewMainTeacherComponent implements OnInit {
     this.router.navigate(['./login']);
   }
   shortDescription(course:Course): any{
-    return course.descriptionCourse.substring(0,50);
+    return course.descriptionCourse.substring(0,38);
  }
+ goModule(){
+    this.router.navigate(['./modulosConfig']);
+ }
+  progreso(){
+   this.router.navigate(['./progreso']);
+  }
+  calificar(){
+    
+  }
 }

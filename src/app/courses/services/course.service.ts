@@ -6,6 +6,7 @@ import { CreateCourse } from '../interfaces/create-course.interface';
 import { ResponseCourse } from '../interfaces/response-create-course';
 import { materialAnswer } from 'src/app/anadirMaterialModulo/ventana-principal-anadir-material-modulo/interfaces/materialAnswer.interface';
 import { courseAnswer } from '../interfaces/response.course';
+import { Student } from 'src/app/student/interfaces/student.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -24,5 +25,9 @@ export class CourseService {
   }
   createCourse(course:CreateCourse):Observable<courseAnswer>{
     return this.http.post<courseAnswer>(this.BASE_URL + '/course', course);
+  }
+
+  getStudents(id: string):Observable<any[]>{
+    return this.http.get<any[]>('https://inssite-database.herokuapp.com/course/students/'+id);
   }
 }
