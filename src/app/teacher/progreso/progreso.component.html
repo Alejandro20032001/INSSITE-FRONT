@@ -10,11 +10,11 @@
    <mat-drawer-container class="container-courses" autosize>
       <mat-drawer #drawer class="lateral" mode="side">
        <img src="../../../assets/images/Classroom.jpg"/>
+       <mat-action-list>
+         <button class="opt" mat-list-item (click)="goCourses()"> Mis cursos </button>
+       </mat-action-list>
       <mat-action-list>
         <button class="opt" mat-list-item (click)="goAddCourse()"> Añadir curso </button>
-      </mat-action-list>
-      <mat-action-list>
-        <button class="opt" mat-list-item (click)="goCourses()"> Mis cursos </button>
       </mat-action-list>
       <button  mat-flat-button (click)="logout()" class="logout">
         Cerrar sesion
