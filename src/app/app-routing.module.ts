@@ -17,6 +17,10 @@ import { CoursesModule } from './courses/courses.module';
 import { NuevoComponent } from './courses/nuevo/nuevo.component';
 import { ViewSearchCourseComponent } from './student/view-search-course/view-search-course.component';
 import { ProgresoComponent } from './teacher/progreso/progreso.component';
+import { SubirTareaEstudianteComponent } from './student/subir-tarea-estudiante/subir-tarea-estudiante.component';
+import { VistaEstudianteComponent } from './modulosVistaEstudiante/vista-estudiante/vista-estudiante.component';
+import { VistaTareasDocenteComponent } from './calificarTareas/vista-tareas-docente/vista-tareas-docente.component';
+import { ContenidoComponent } from './module/contenido/contenido.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -37,6 +41,10 @@ const routes: Routes = [
   { path: 'studentCourses', component: CoursesViewStudentComponent},
   { path: 'newC',component: NuevoComponent},
   { path: 'searchCourse', component: ViewSearchCourseComponent},
+  { path: 'subirTarea', component: SubirTareaEstudianteComponent},
+  { path: 'modulosVistaEstudiante', component: VistaEstudianteComponent},
+  { path: 'calificacionTareas', component: VistaTareasDocenteComponent},
+  { path: 'moduleContent',component: ContenidoComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ]
 

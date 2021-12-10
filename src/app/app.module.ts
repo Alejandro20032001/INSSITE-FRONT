@@ -32,6 +32,14 @@ import { CoursesModule } from './courses/courses.module';
 import { FilterPipe } from './pipes/filter.pipe';
 import { ViewSearchCourseComponent } from './student/view-search-course/view-search-course.component';
 import { ProgresoComponent } from './teacher/progreso/progreso.component';
+import { SubirTareaEstudianteComponent } from './student/subir-tarea-estudiante/subir-tarea-estudiante.component';
+import { VistaEstudianteComponent } from './modulosVistaEstudiante/vista-estudiante/vista-estudiante.component';
+import { ModulosVEHeaderComponent } from './modulosVistaEstudiante/modulos-veheader/modulos-veheader.component';
+import { ModuloCardComponent } from './modulosVistaEstudiante/modulo-card/modulo-card.component';
+import { HeaderTareasComponent } from './calificarTareas/header-tareas/header-tareas.component';
+import { VistaTareasDocenteComponent } from './calificarTareas/vista-tareas-docente/vista-tareas-docente.component';
+import { CuerpoTareaComponent } from './calificarTareas/cuerpo-tarea/cuerpo-tarea.component';
+import { ContenidoComponent } from './module/contenido/contenido.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +61,15 @@ import { ProgresoComponent } from './teacher/progreso/progreso.component';
     TareaComponent,
     ViewSearchCourseComponent,
     FilterPipe,
-    ProgresoComponent
+    ProgresoComponent,
+    SubirTareaEstudianteComponent,
+    VistaEstudianteComponent,
+    ModulosVEHeaderComponent,
+    ModuloCardComponent,
+    HeaderTareasComponent,
+    VistaTareasDocenteComponent,
+    CuerpoTareaComponent,
+    ContenidoComponent
   ],
   imports: [
     BrowserModule,

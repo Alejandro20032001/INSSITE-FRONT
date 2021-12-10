@@ -50,7 +50,7 @@ export class VideollamadaComponent implements OnInit {
     if (this.videollamada.link.length === 0) {
       alert("La URL es obligatoria");
     } else if (bandera) {
-      alert("Debes ingresar a una URL valida");
+      alert("Debes ingresar una URL valida");
     }
     else if (this.videollamada.fecha.length === 0) {
       alert("La fecha es obligatoria");
@@ -82,7 +82,7 @@ export class VideollamadaComponent implements OnInit {
         alert("La fecha no puede ser menor a " + fechaInicio);
       } else {
         if (this.enviar.date > fechaFin) {
-          alert("La fecha no puede ser mayor a " + fechaFin);
+          alert("La fecha no puede ser mayor o igual a " + fechaFin);
         } else {
 
           (await this.servicio.registrar(this.enviar)).subscribe((data) => {

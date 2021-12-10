@@ -1,0 +1,36 @@
+<div class="seccion-descripcion">
+
+  <div class="regresar">
+    <a (click) = "regresar()"> < Regresar</a>
+  </div>
+
+  <div class="titulo">
+    <h2>{{tarea.title}}</h2>
+  </div>
+
+  <div class="descripcion">
+    <p>{{tarea.descriptionResource}}</p>
+  </div>
+
+  <div class="guardar">
+    <div class="guardar-iz">
+      <a (click) = "enviar()">Enviar</a>
+    </div>
+
+    <div class="guardar-der">
+      <span>Valor tarea: {{tarea.score}} puntos</span>
+    </div>
+  </div>
+
+</div>
+<div class="seccion-respuesta">
+
+  <div class="titulo-respuesta">
+    <h2>Ingresa tu respuesta en este campo:</h2>
+  </div>
+
+  <div class="respuesta">
+    <textarea [(ngModel)]="enviarTarea.content"> </textarea>
+  </div>
+
+</div>

@@ -1,0 +1,90 @@
+<div class="toolbar">
+  <button type="button" mat-button (click)="drawer.toggle()">
+     <mat-icon>menu</mat-icon>
+  </button>
+  <h2>Estudiante</h2>
+</div>
+<mat-drawer-container class="container-courses" autosize>
+  <mat-drawer #drawer class="barra-lateral" mode="side">
+   <img src="../../../assets/images/logo.jpeg"/>
+  <mat-action-list>
+    <button class="opt" mat-list-item (click)="goHome()"> Inicio </button>
+  </mat-action-list>
+  <mat-action-list>
+    <button class="opt" mat-list-item (click)="miscursos()"> Mis cursos </button>
+  </mat-action-list>
+  <button  mat-flat-button (click)="logOut()" class="logout">
+   Cerrar sesion
+  </button>
+
+</mat-drawer>
+
+      <mat-grid-list cols="4" rowHeight="250px" style="display: flex; margin-top: 10px;">
+        <mat-grid-tile  [colspan]=1 [rowspan]= 1>
+          <mat-card class="NameMod">
+            <div style="height: 50%;  margin: 12px 12px 12px 12px; font-size:auto; " >
+              {{randomF()}}
+            </div>
+            <div>
+              <button mat-icon-button class="video-icon" (click)="randomF()" style="background-color: #559A95; bottom: 0px; " aria-label="Example icon-button with heart icon">
+              <mat-icon> sentiment_satisfied_alt</mat-icon>
+              </button>
+            </div>
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]=2 [rowspan]=1>
+          <mat-card class="NameMod">
+            <div>
+              <button class="tarea" mat-flat-button (click)="volver()" style="font-size: 20px; color: #ffffff;"> Modulos</button>
+            <button class="tarea" mat-flat-button  style="font-size: 20px; color: #ffffff;"> Tareas</button>
+            </div>
+            <div style="height: 50%; overflow: auto;">
+              <mat-list  *ngFor="let tarea of tareas">
+                <div *ngIf="esTarea(tarea.resourceType)">
+                <mat-list-item>
+                  {{tarea.title}}
+                  <mat-icon (click)="goTask(tarea.idResource)" style="cursor: pointer;">edit</mat-icon></mat-list-item>
+                <mat-divider></mat-divider>
+                </div>
+              </mat-list>
+            </div>
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]=1 [rowspan]=1>
+          <div class="d">
+            <mat-card class="demo-inline-calendar-card">
+              <mat-calendar (selectedChange)="selected = $event"></mat-calendar>
+            </mat-card>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <div style="width: 100%; background-color: #97ABAE;">
+        <div class="resource" *ngIf="materiales.length!=0; else nomat">
+          <mat-accordion style="width: 90%;  margin: 12px 12px 12px 12px;">
+            <mat-expansion-panel style="text-align: center;" *ngFor="let material of materiales" >
+
+                <mat-expansion-panel-header style="height: 80px;"*ngIf="!esTarea(material.resourceType)">
+                  <mat-panel-title style="font-size: large; color: #559A95;">
+                   <strong>{{material.title}} </strong>
+                  </mat-panel-title>
+                  <mat-panel-description >
+                    <div><span style="color: #559A95;">{{material.resourceType}}</span>
+                    </div>
+                  </mat-panel-description>
+
+                </mat-expansion-panel-header>
+                <div class="material" >{{material.descriptionResource}}</div>
+                <div class="material" >{{material.content}}</div>
+                </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+        <ng-template #nomat ><div style="padding:20px; font-size: x-large; text-align: center; margin-top: 30px;">
+         <strong>Este modulo aun no tiene material</strong>
+        </div></ng-template>
+        </div>
+</mat-drawer-container>
+
+<!--
+           (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false"
+        -->
