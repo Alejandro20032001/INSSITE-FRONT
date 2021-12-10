@@ -20,6 +20,7 @@
             aria-describedby="inputGroup-sizing-sm"
             maxlength="30"
             [(ngModel)]="nuevoCurso.courseName"
+            oninput="this.value = this.value.toUpperCase()"
           />
         </div>
       </div>
