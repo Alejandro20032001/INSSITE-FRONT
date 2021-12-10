@@ -50,7 +50,9 @@ export class ViewMainTeacherComponent implements OnInit {
     this.cookieService.set("idCurso",id);
     this.router.navigate(['./progreso']);
   }
-  calificar() {
+  calificar(id:string) {
+    this.cookieService.set("idCurso",id);
+    this.router.navigate(['./calificacionTareas']);
 
   }
 }
