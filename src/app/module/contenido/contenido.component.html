@@ -23,7 +23,7 @@
         <mat-grid-tile  [colspan]=1 [rowspan]= 1>
           <mat-card class="NameMod">
             <div style="height: 50%;  margin: 12px 12px 12px 12px; font-size:auto; " >
-              {{randomF()}}
+              {{fraseHoy}}
             </div>
             <div>
               <button mat-icon-button class="video-icon" (click)="randomF()" style="background-color: #559A95; bottom: 0px; " aria-label="Example icon-button with heart icon">
@@ -36,7 +36,8 @@
           <mat-card class="NameMod">
             <div>
               <button class="tarea" mat-flat-button (click)="volver()" style="font-size: 20px; color: #ffffff;"> Modulos</button>
-            <button class="tarea" mat-flat-button  style="font-size: 20px; color: #ffffff;"> Tareas</button>
+            <h2 style="font-size: 20px;"> Tareas</h2>
+            <mat-divider></mat-divider>
             </div>
             <div style="height: 50%; overflow: auto;">
               <mat-list  *ngFor="let tarea of tareas">
