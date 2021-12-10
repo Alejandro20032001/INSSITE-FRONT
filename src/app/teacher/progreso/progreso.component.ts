@@ -6,6 +6,8 @@ import { CourseService } from 'src/app/courses/services/course.service';
 import { Student } from 'src/app/student/interfaces/student.interface';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import { userSend } from 'src/app/registro/interfaces/userSend.interface';
+import { RegisterServices } from 'src/app/registro/services/user.service';
+import { Homework } from 'src/app/student/interfaces/homework.interface';
 
 @Component({
   selector: 'app-progreso',
@@ -21,24 +23,23 @@ import { userSend } from 'src/app/registro/interfaces/userSend.interface';
 })
 export class ProgresoComponent implements OnInit {
   dataSource!:userSend[];
-  columnsTo =['Nombre','Estado'] ;
-  columnsToDisplay = ['completeName', 'Estado'] ;
-  expandedElement!: userSend | null;
-  numTareas:number=3;
+  columnsTo =['Nombre Completo'] ;
+  columnsToDisplay = ['completeName'] ;
+  expandedElement!: userSend;
+  tareas:any=[''];
+  tareasHechas!:Homework[];
+  mostrar=false;
   constructor(private router : Router,
     private cookieService: CookieService,
-    private servicios: CourseService) { }
+    private servicios: CourseService, private userservice: RegisterServices) { }
 
   ngOnInit(): void {
+    this.cookieService.set('idCourse','ac16e052-d0cb-45c9-a7c5-c97ad093b298');
     this.servicios.getStudents('ac16e052-d0cb-45c9-a7c5-c97ad093b298').pipe(
-      tap((dataSource:userSend[]) => this.dataSource = dataSource.reverse())
+      tap((dataSource:userSend[]) => this.dataSource = dataSource.sort())
     )
     .subscribe();
-    console.group();
-    console.log(this.dataSource);
-    console.groupEnd();
-  }//this.cookieService.get('idModulo')).
-  
+  }
 
   goAddCourse():void{
     this.router.navigate(['./newC']);
@@ -51,4 +52,19 @@ export class ProgresoComponent implements OnInit {
     this.router.navigate(['./teacher']);
   }
 
+  studentU(idU:string){
+    this.tareasHechas=[];
+    let idC:string =this.cookieService.get('idCourse');
+    this.userservice.getprogreso(idC,idU).pipe(
+      tap((tareas:any) => this.tareas = tareas)
+    )
+    .subscribe(); 
+    this.mostrar=false;  
+
+  }
+  cantidad(id:string){
+    this.studentU(id);
+    this.tareasHechas=this.tareas.tareasHechas;
+    this.mostrar=!this.mostrar;
+  }
 }

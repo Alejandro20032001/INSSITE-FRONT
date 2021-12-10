@@ -23,8 +23,8 @@
      
      <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
         <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay ; index as i">
-        <th style="background-color: #559A95;" mat-header-cell *matHeaderCellDef> {{columnsTo[i]}} </th>
-        <td mat-cell style="background-color: #f7f7f7;" *matCellDef="let student">{{student[column]}}</td>
+        <th style="background-color: #559A95; color: #ffffff; font-size: 20px; font-style: bold;" mat-header-cell *matHeaderCellDef> {{columnsTo[i]}} </th>
+        <td mat-cell style="background-color: #f7f7f7;" *matCellDef="let student" >{{student[column]}}</td>
         </ng-container>
 
   <ng-container matColumnDef="expandedDetail" class="container">
@@ -36,13 +36,34 @@
           <div class="example-element-name"> {{element.roles}} </div>
           <div class="example-element-weight"> {{element.username}} </div>
         </div>
-        
-        <div style="padding: 20px; width: 40%;">
-          {{element.descriptionCourse}}
-          <!--<span class="example-element-description-attribution"> -- W </span>-->
-        </div>
-        <div class="example-element-description" > <strong>Tareas entregadas: <br> Promedio:<br>Estado:<br></strong> 
-        </div>
+        <div>
+          <button style="height: 80%; background-color:#f7f7f7;width: 50px;  display: flex;
+          justify-content: center; align-content: center; 
+      text-align: center; margin: 12px 12px 12px 12px;" mat-flat-button (click)="cantidad(element.idUser)">Mostrar <br> mas</button></div>
+        <div style="padding: 20px; width: 40%;"*ngIf="mostrar" >
+          <div style="display:inline-block; width: 50%;">
+            <h1>Tareas Hechas</h1>
+            <div *ngIf="tareasHechas.length!=0; else sinT">
+              <div style="padding: 20px; width: 100%; color: black;" *ngFor="let tarea of tareasHechas">
+                <li style="list-style: none;"> {{tarea.resource.title}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                 &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{tarea.score}}/{{tarea.resource.score}}</li>
+                <mat-divider></mat-divider>
+               </div>
+            </div>
+          <ng-template #sinT>No hay tareas hechas</ng-template>
+          
+          <div>
+            <mat-divider></mat-divider>
+            <h1>Estadisticas</h1>
+            <strong>Tareas totales: &nbsp; &nbsp; </strong>
+            <span class="big">{{tareas.tareasTotales.lenght}}</span> <br> 
+            <strong>Tareas faltantes:&nbsp; &nbsp;</strong> <span class="big">{{tareas.tareasFaltantes.lenght}} </span> <br>
+            <strong>Tareas entregadas: &nbsp; &nbsp;</strong> <span class="big">{{tareas.tareasHechas.length}}</span> <br>
+        <strong> Nota acumulada:  &nbsp; &nbsp;</strong> <span class="big">{{tareas.notaAcumulada}}</span><br>
+        <strong> Nota general:  &nbsp; &nbsp;</strong> <span class="big">{{tareas.notaGeneral}}</span><br>
+          </div>
+          </div>
+      </div>
       </div>
     </td>
   </ng-container>
@@ -50,7 +71,7 @@
   <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
   <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row"
       [class.example-expanded-row]="expandedElement === element"
-      (click)="expandedElement = expandedElement === element ? null : element">
+      (click)="expandedElement = expandedElement === element ? null : element" (click)="studentU(element.idUser)">
   </tr>
   <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
 </table>

@@ -27,7 +27,7 @@ export class CourseService {
     return this.http.post<courseAnswer>(this.BASE_URL + '/course', course);
   }
 
-  getStudents(id: string):Observable<Student[]>{
-    return this.http.get<Student[]>('http://localhost:3000/courses');
+  getStudents(id: string):Observable<any[]>{
+    return this.http.get<any[]>('https://inssite-database.herokuapp.com/course/students/'+id);
   }
 }
