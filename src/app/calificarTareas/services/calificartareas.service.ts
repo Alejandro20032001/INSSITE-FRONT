@@ -1,4 +1,5 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -17,4 +18,10 @@ export class calificarTareasService {
       let url = this.base_url + "course/homeworksToCheck/" + id;
       return this.http.get<TareaPorCalificar[]>(url);
     }
+
+    calificarTarea(id:string, score:string):Observable<any>{
+      let url = this.base_url + "homework/" + id + "/" + score;
+      return this.http.put<any>(url,"");
+    }
+
 }
