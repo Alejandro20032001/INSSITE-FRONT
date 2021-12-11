@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   })
 
   constructor(
-    private http:LoginService, 
+    private http:LoginService,
     private router:Router,
     private cookieService: CookieService,
     ) { }
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     //console.log(form);
     this.http.Login(form).subscribe(data => {
       let response:ResponseI = data
-
+      console.log(data);
       if (response) {  //validar status
         console.log(response.data.user.userRoll);
         //localStorage.setItem('token', response.data.accessToken)
