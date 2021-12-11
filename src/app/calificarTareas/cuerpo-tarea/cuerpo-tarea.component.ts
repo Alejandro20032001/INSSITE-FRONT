@@ -12,4 +12,8 @@ export class CuerpoTareaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  calificar(id:string):void{
+
+  }
+
 }
