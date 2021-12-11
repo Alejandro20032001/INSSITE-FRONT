@@ -57,7 +57,6 @@ export class LecturaComponent implements OnInit {
       (await this.servicio.registrar(this.enviar)).subscribe( (data) =>
         {
           if(data.message === "created"){
-            console.log(this.enviar.date);
             this.router.navigate(['materialModulo']);
           }
         }

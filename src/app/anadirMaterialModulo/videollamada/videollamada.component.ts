@@ -89,7 +89,6 @@ export class VideollamadaComponent implements OnInit {
 
           (await this.servicio.registrar(this.enviar)).subscribe((data) => {
             if (data.message === "created") {
-              console.log(data);
               this.router.navigate(['materialModulo']);
             }
           });

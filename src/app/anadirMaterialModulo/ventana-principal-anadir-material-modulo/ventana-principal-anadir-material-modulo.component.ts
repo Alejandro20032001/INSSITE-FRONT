@@ -57,7 +57,8 @@ export class VentanaPrincipalAnadirMaterialModuloComponent implements OnInit {
         }
         );
 
-        materiales.sort((a, b) => (a.orderResource > b.orderResource) ? 1 : -1);
+        this.ordenarLista(this.materiales);
+        console.log(this.materiales);
       })
     )
     .subscribe();
@@ -95,9 +96,24 @@ export class VentanaPrincipalAnadirMaterialModuloComponent implements OnInit {
   eliminar(id:string):void{
     this.servicios.eliminarMaterial(id).subscribe( (data) =>
     {
-      console.log(data);
       this.ngOnInit();
     }
   );
+  }
+
+  ordenarLista(lista:MaterialListaNombreCorreto[]):void{
+
+    let k,i,aux;
+    let n = lista.length;
+
+    for (k = 1; k < n; k++) {
+      for (i = 0; i < (n - k); i++) {
+          if (lista[i].orderResource > lista[i + 1].orderResource) {
+              aux = lista[i];
+              lista[i] = lista[i + 1];
+              lista[i + 1] = aux;
+          }
+      }
+    }
   }
 }
