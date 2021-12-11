@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { respuestaPF } from 'src/app/teacher/interface/respuesta.processof';
 import { User } from '../interfaces/user.interface';
 import { userAnswer } from '../interfaces/userAnswer.interface';
 import { userSend } from '../interfaces/userSend.interface';
@@ -19,14 +20,14 @@ export class RegisterServices {
       let url = this.base_url + "user"
       return this.http.post<userAnswer>(url, form)
     }
-    getprogreso(idC:string,idU: string):Observable<any>{
+    getprogreso(idC:string,idU: string):Observable<respuestaPF>{
       try{
-      let res:Observable<any>=this.http.get<any>('https://inssite-database.herokuapp.com/user/processOf/'+idC+'?idStudent='+idU);
-      return res;      
+      let res:Observable<respuestaPF>=this.http.get<respuestaPF>('https://inssite-database.herokuapp.com/user/processOf/'+idC+'?idStudent='+idU);
+      return res;
     }catch(err){
       console.log('llego');
-      
-      return new Observable<any>();
+
+      return new Observable<respuestaPF>();
     }
     }
 }

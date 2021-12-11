@@ -8,6 +8,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 import { userSend } from 'src/app/registro/interfaces/userSend.interface';
 import { RegisterServices } from 'src/app/registro/services/user.service';
 import { Homework } from 'src/app/student/interfaces/homework.interface';
+import { respuestaPF } from '../interface/respuesta.processof';
 
 @Component({
   selector: 'app-progreso',
@@ -26,7 +27,7 @@ export class ProgresoComponent implements OnInit {
   columnsTo =['Nombre Completo'] ;
   columnsToDisplay = ['completeName'] ;
   expandedElement!: userSend;
-  tareas:any=[''];
+  tareas!: respuestaPF;
   tareasHechas!:Homework[];
   mostrar=false;
   constructor(private router : Router,
@@ -56,7 +57,10 @@ export class ProgresoComponent implements OnInit {
     this.tareasHechas=[];
     let idC:string =this.cookieService.get('idCurso');
     this.userservice.getprogreso(idC,idU).pipe(
-      tap((tareas:any) => this.tareas = tareas)
+      tap((progreso:respuestaPF) => {
+        this.tareas = progreso
+        console.log(progreso);
+      })
     )
     .subscribe();
     this.mostrar=false;
@@ -64,7 +68,7 @@ export class ProgresoComponent implements OnInit {
   }
   cantidad(id:string){
     this.studentU(id);
-    this.tareasHechas=this.tareas.tareasHechas;
+    this.tareasHechas=this.tareas.tareasHechasDelCurso;
     this.mostrar=!this.mostrar;
   }
 }
