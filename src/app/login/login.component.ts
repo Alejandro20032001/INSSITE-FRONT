@@ -31,9 +31,7 @@ export class LoginComponent implements OnInit {
     //console.log(form);
     this.http.Login(form).subscribe(data => {
       let response:ResponseI = data
-      console.log(data);
       if (response) {  //validar status
-        console.log(response.data.user.userRoll);
         //localStorage.setItem('token', response.data.accessToken)
         this.cookieService.set('token', response.data.accessToken);
         //console.log(response.data.accessToken);
