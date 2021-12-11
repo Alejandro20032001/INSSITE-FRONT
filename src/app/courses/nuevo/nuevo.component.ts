@@ -45,6 +45,10 @@ export class NuevoComponent implements OnInit {
     this.goToTeacher();
   }
 
+  mayus(e:any):void {
+    e.value = e.value.toUpperCase();
+}
+
   guardar():void{
     let fechaActual:Date;
     fechaActual = new Date();

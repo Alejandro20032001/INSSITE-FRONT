@@ -7,7 +7,8 @@ export interface enviarMaterial{
   "content":string,
   "module":string,
   "date":Date,
-  "score":Number
+  "score":Number,
+  "orderResource":Number
   //idResource
   //coursemodule/resources/idModule get
 }

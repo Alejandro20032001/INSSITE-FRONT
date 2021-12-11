@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {tap} from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { Course } from 'src/app/student/interfaces/course.interface';
 import { CourseService } from 'src/app/courses/services/course.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-view-main-teacher',
@@ -15,40 +16,43 @@ export class ViewMainTeacherComponent implements OnInit {
   centered = false;
   disabled = false;
   unbounded = false;
-  goHome(){}
-  goAddCourse():void{
+  goHome() { }
+  goAddCourse(): void {
     this.router.navigate(['./newC']);
   }
 
 
-  courses!: Course[];
-  constructor(private courseService: CourseService, private router: Router) { }
+  courses: Course[] = [];
+  constructor(private courseService: CourseService, private router: Router,private cookieService: CookieService) { }
 
   ngOnInit(): void {
     this.courseService.getCourses().pipe(
-      tap((courses: Course[])=> this.courses=courses)
+      tap((courses: Course[]) => this.courses = courses)
     ).subscribe();
 
     this.courseService.getCourses()
-    .pipe(
-      tap()
+      .pipe(
+        tap()
       )
-    .subscribe();
+      .subscribe();
   }
 
-  logout():void{
+  logout(): void {
     this.router.navigate(['./login']);
   }
-  shortDescription(course:Course): any{
-    return course.descriptionCourse.substring(0,38);
- }
- goModule(){
-    this.router.navigate(['./modulosConfig']);
- }
-  progreso(){
-   this.router.navigate(['./progreso']);
+  shortDescription(course: Course): any {
+    return course.descriptionCourse.substring(0, 38);
   }
-  calificar(){
-    
+  goModule() {
+    this.router.navigate(['./modulosConfig']);
+  }
+  progreso(id:string) {
+    this.cookieService.set("idCurso",id);
+    this.router.navigate(['./progreso']);
+  }
+  calificar(id:string) {
+    this.cookieService.set("idCurso",id);
+    this.router.navigate(['./calificacionTareas']);
+
   }
 }

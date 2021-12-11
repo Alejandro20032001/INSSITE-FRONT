@@ -8,6 +8,7 @@ export interface MaterialLista{
   "module":string,
   "date":Date,
   "score":Number
-  "idResource":string
+  "idResource":string,
+  "orderResource":Number
   //coursemodule/resources/idModule get
 }

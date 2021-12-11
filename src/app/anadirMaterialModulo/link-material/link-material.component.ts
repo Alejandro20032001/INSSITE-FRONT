@@ -25,7 +25,8 @@ export class LinkMaterialComponent implements OnInit {
     content: '',
     module: '',
     date: new Date(),
-    score: 0
+    score: 0,
+    orderResource: 0
   }
 
   constructor(
@@ -58,6 +59,7 @@ export class LinkMaterialComponent implements OnInit {
       this.enviar.content = this.linkMaterial.link;
       this.enviar.descriptionResource = this.linkMaterial.descripcion;
       this.enviar.module = this.cookieService.get('idModulo');
+      this.enviar.orderResource = parseInt(this.cookieService.get("orden"));
 
       let fecha = new Date(this.cookieService.get("inicioModulo"));
       fecha.setHours(24 * parseInt(this.cookieService.get("duracionModulo")));
