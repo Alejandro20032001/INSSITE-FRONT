@@ -12,14 +12,18 @@ import { calificarTareasService } from '../services/calificartareas.service';
 })
 export class VistaTareasDocenteComponent implements OnInit {
 
-  constructor(private servicios:calificarTareasService, private router:Router, private cookieService: CookieService,) { }
+  constructor(private calificarTareaService:calificarTareasService, private router:Router, private cookieService: CookieService) { }
 
+  idResource : string = "";
+  nota : Number = 0;
+  titulo : string = "";
   tareasPorCalificar:TareaPorCalificar[] = [];
 
   ngOnInit(): void {
-    this.servicios.obtenerTareas(this.cookieService.get('idCurso')).
+    this.calificarTareaService.obtenerTareas(this.cookieService.get('idCurso')).
     pipe(
       tap((materiales:TareaPorCalificar[]) => {
+        console.log('funca',materiales);
         this.tareasPorCalificar = materiales;
       })
     )

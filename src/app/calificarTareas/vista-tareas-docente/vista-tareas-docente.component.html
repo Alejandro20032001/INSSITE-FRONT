@@ -12,25 +12,21 @@
       />
     </div>
   </div>
-  </div>
-  <br>
-    <div class="row">
-        <br />
-        <div class="col-1"></div>
-        <div class="col-10">
-          <div class="container-sm p-0">
-              <app-cuerpo-tarea></app-cuerpo-tarea>
-              </div><br>
-              <div class="container-sm p-0">
-                              <app-cuerpo-tarea></app-cuerpo-tarea>
-                              </div>
-            <!--<div *ngFor="let modulo of listaModulos">
-              <app-modulo-card [modulo]="modulo"></app-modulo-card>
-            </div>-->
-          
-          <br />
-        </div>
-      </div>
-  
-  <br />
+</div>
 
+<div class="row">
+  <br />
+  <div class="col-1"></div>
+  <div class="col-10">
+    <div
+      *ngFor="let tareaPorCalificar of tareasPorCalificar"
+      class="container-sm p-0 my-5"
+    >
+      <app-cuerpo-tarea
+        [tareaPorCalificar]="tareaPorCalificar"
+      ></app-cuerpo-tarea>
+
+      
+    </div>
+  </div>
+</div>
