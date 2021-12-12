@@ -23,7 +23,6 @@ export class VistaTareasDocenteComponent implements OnInit {
     this.calificarTareaService.obtenerTareas(this.cookieService.get('idCurso')).
     pipe(
       tap((materiales:TareaPorCalificar[]) => {
-        console.log('funca',materiales);
         this.tareasPorCalificar = materiales;
       })
     )
