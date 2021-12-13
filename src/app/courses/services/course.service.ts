@@ -18,7 +18,7 @@ export class CourseService {
 
   getCourses():Observable<Course[]>{
     //return this.http.get<Course[]>('http://localhost:3000'+'/courses');//prueba
-    return this.http.get<Course[]>('https://inssite-database.herokuapp.com/user/courses');
+    return this.http.get<Course[]>('https://inssite-database.herokuapp.com/course');
   }
   getCourse(id: string):Observable<Course>{
     return this.http.get<Course>('$(this.BASE_URL)/course/${id}');
