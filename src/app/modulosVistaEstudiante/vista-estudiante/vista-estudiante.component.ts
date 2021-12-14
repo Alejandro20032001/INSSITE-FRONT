@@ -26,7 +26,7 @@ export class VistaEstudianteComponent implements OnInit {
 
   //}
 
-  constructor(private servicios: ServicesObtenerModulos,  private cookie: CookieService) {
+  constructor(private servicios: ServicesObtenerModulos,  private cookie: CookieService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -46,6 +46,10 @@ export class VistaEstudianteComponent implements OnInit {
 
   obtenerModulos(id:string){
 
+  }
+
+  irCalificaciones(){
+    this.router.navigate(['./tareasEstudiante']);
   }
 
   ordenarLista(lista:ModuleFromDataBase[]):void{
