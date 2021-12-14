@@ -96,7 +96,7 @@ export class VentanaPrincipalAnadirMaterialModuloComponent implements OnInit {
   eliminar(id:string):void{
     this.servicios.eliminarMaterial(id).subscribe( (data) =>
     {
-      this.ngOnInit();
+      window.location.reload();
     }
   );
   }
