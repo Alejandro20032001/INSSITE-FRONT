@@ -6,19 +6,17 @@
       height="24"
       class="d-inline-block align-text-top"
     />
-    Mijael
+    {{tareaHecha.userDone.completeName}}
     <!--{{ tareaPorCalificar.userDone.completeName }}-->
   </div>
   <div class="card-body">
     <h4 class="card-title text-start fw-bold">
-      Inteligencia
+      {{tareaHecha.resource.title}}
       <!--{{ tareaPorCalificar.resource.title }}-->
     </h4>
     <div class="row">
       <div class="col-sm-9 overflow-auto" style="height: 150px">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga minus quae
-        dignissimos modi hic, at error possimus, dicta obcaecati odio aperiam,
-        neque et numquam odit minima officiis vitae eos pariatur.
+        {{tareaHecha.resource.descriptionResource}}
         <!--{{ tareaPorCalificar.content }}-->
       </div>
       <div class="col-sm-3">
@@ -31,9 +29,11 @@
                 class="form-control text-end"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-sm"
+                value="{{tareaHecha.score}}"
+                disabled
               />
               <span class="input-group-text" id="inputGroup-sizing-sm"
-                >/100
+                >/{{tareaHecha.resource.score}}
                 <!--{{tareaPorCalificar.resource.score}}--></span
               >
             </div>
