@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { GetHomeworksService} from '../services/homework.service'
 @Component({
   selector: 'app-vista-estudiante-tarea',
   templateUrl: './vista-estudiante-tarea.component.html',
@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VistaEstudianteTareaComponent implements OnInit {
 
-  constructor() { }
+  constructor(homeworService:GetHomeworksService) { }
 
   ngOnInit(): void {
+    
   }
 
 }
