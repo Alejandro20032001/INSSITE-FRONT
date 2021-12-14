@@ -21,6 +21,7 @@ import { SubirTareaEstudianteComponent } from './student/subir-tarea-estudiante/
 import { VistaEstudianteComponent } from './modulosVistaEstudiante/vista-estudiante/vista-estudiante.component';
 import { VistaTareasDocenteComponent } from './calificarTareas/vista-tareas-docente/vista-tareas-docente.component';
 import { ContenidoComponent } from './module/contenido/contenido.component';
+import { VistaEstudianteTareaComponent } from './tareasVistaEstudiante/vista-estudiante-tarea/vista-estudiante-tarea.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -45,6 +46,7 @@ const routes: Routes = [
   { path: 'modulosVistaEstudiante', component: VistaEstudianteComponent},
   { path: 'calificacionTareas', component: VistaTareasDocenteComponent},
   { path: 'moduleContent',component: ContenidoComponent},
+  { path: 'tareasEstudiante',component: VistaEstudianteTareaComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ]
 

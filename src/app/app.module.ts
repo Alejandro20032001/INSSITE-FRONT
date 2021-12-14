@@ -40,6 +40,9 @@ import { HeaderTareasComponent } from './calificarTareas/header-tareas/header-ta
 import { VistaTareasDocenteComponent } from './calificarTareas/vista-tareas-docente/vista-tareas-docente.component';
 import { CuerpoTareaComponent } from './calificarTareas/cuerpo-tarea/cuerpo-tarea.component';
 import { ContenidoComponent } from './module/contenido/contenido.component';
+import { HeaderComponent } from './tareasVistaEstudiante/header/header.component';
+import { TareasComponent } from './tareasVistaEstudiante/tareas/tareas.component';
+import { VistaEstudianteTareaComponent } from './tareasVistaEstudiante/vista-estudiante-tarea/vista-estudiante-tarea.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +72,10 @@ import { ContenidoComponent } from './module/contenido/contenido.component';
     HeaderTareasComponent,
     VistaTareasDocenteComponent,
     CuerpoTareaComponent,
-    ContenidoComponent
+    ContenidoComponent,
+    HeaderComponent,
+    TareasComponent,
+    VistaEstudianteTareaComponent
   ],
   imports: [
     BrowserModule,

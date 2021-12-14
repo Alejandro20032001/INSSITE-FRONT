@@ -14,9 +14,6 @@ export class VistaTareasDocenteComponent implements OnInit {
 
   constructor(private calificarTareaService:calificarTareasService, private router:Router, private cookieService: CookieService) { }
 
-  idResource : string = "";
-  nota : Number = 0;
-  titulo : string = "";
   tareasPorCalificar:TareaPorCalificar[] = [];
 
   ngOnInit(): void {
