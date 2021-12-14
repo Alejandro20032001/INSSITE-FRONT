@@ -26,7 +26,7 @@ export class ViewMainTeacherComponent implements OnInit {
   constructor(private courseService: CourseService, private router: Router,private cookieService: CookieService) { }
 
   ngOnInit(): void {
-    this.courseService.getCourses().pipe(
+    this.courseService.getMyCourses().pipe(
       tap((courses: Course[]) => this.courses = courses)
     ).subscribe();
 

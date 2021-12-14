@@ -20,6 +20,10 @@ export class CourseService {
     //return this.http.get<Course[]>('http://localhost:3000'+'/courses');//prueba
     return this.http.get<Course[]>('https://inssite-database.herokuapp.com/course');
   }
+  getMyCourses():Observable<Course[]>{
+    //return this.http.get<Course[]>('http://localhost:3000'+'/courses');//prueba
+    return this.http.get<Course[]>('https://inssite-database.herokuapp.com/user/courses');
+  }
   getCourse(id: string):Observable<Course>{
     return this.http.get<Course>('$(this.BASE_URL)/course/${id}');
   }
