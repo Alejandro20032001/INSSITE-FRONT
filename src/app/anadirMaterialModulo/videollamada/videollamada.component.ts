@@ -82,7 +82,7 @@ export class VideollamadaComponent implements OnInit {
       if (this.enviar.date < fechaInicio) {
         alert("La fecha no puede ser menor a " + fechaInicio);
       } else {
-        if (this.enviar.date > fechaFin) {
+        if (this.enviar.date >= fechaFin) {
           alert("La fecha no puede ser mayor o igual a " + fechaFin);
         } else {
 
