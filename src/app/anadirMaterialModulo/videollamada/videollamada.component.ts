@@ -78,7 +78,6 @@ export class VideollamadaComponent implements OnInit {
 
       let fechaFin = new Date(this.cookieService.get("inicioModulo"));
       fechaFin.setHours(24 * parseInt(this.cookieService.get("duracionModulo")));
-      this.enviar.date = fechaFin;
 
       if (this.enviar.date < fechaInicio) {
         alert("La fecha no puede ser menor a " + fechaInicio);
@@ -89,6 +88,7 @@ export class VideollamadaComponent implements OnInit {
 
           (await this.servicio.registrar(this.enviar)).subscribe((data) => {
             if (data.message === "created") {
+              console.log('Terminado');
               this.router.navigate(['materialModulo']);
             }
           });
