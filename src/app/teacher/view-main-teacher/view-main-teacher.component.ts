@@ -43,9 +43,6 @@ export class ViewMainTeacherComponent implements OnInit {
   shortDescription(course: Course): any {
     return course.descriptionCourse.substring(0, 30);
   }
-  goModule() {
-    this.router.navigate(['./modulosConfig']);
-  }
   progreso(id:string) {
     this.cookieService.set("idCurso",id);
     this.router.navigate(['./progreso']);
