@@ -32,15 +32,15 @@ export class ContenidoComponent implements OnInit {
   Frases:string[]= [
   "El valor de una idea radica en el uso de la misma – Thomas Edison.",
   "Tus clientes más insatisfechos deben ser tu mayor fuente de aprendizaje – Bill Gates",
-  "Una visión de una idea sin la capacidad de ejecución es únicamente una alucinación – Steve Case de AOL.",
+  "Una visión de una idea sin la capacidad de ejecución es únicamente una alucinación",
   "El único modo de hacer un gran trabajo es amar lo que haces - Steve Jobs",
   "El dinero no es la clave del éxito; la libertad para poder crear lo es - Nelson Mandela",
   "Cuanto más duramente trabajo, más suerte tengo - Gary Player",
-  "El trabajo duro hace que desaparezcan las arrugas de la mente y el espíritu - Helena Rubinstein",
-  "Escoge un trabajo que te guste, y nunca tendrás que trabajar ni un solo día de tu vida - Confucio",
-  "Un sueño no se hace realidad por arte de magia, necesita sudor, determinación y trabajo duro - Colin Powell",
-  "Cuéntamelo y me olvidaré. enséñamelo y lo recordaré. involúcrame y lo aprenderé - Benjamin Franklin",
-  "La lógica te llevará de la a a la z. la imaginación te llevará a cualquier lugar - Albert Einstein"];
+  "El trabajo duro hace que desaparezcan las arrugas de la mente y el espíritu",
+  "Escoge un trabajo que te guste, y nunca tendrás que trabajar ni un solo día de tu vida",
+  "Un sueño no se hace realidad por arte de magia, necesita sudor, determinación y trabajo duro",
+  "Cuéntamelo y me olvidaré, enséñamelo y lo recordaré, involúcrame y lo aprenderé",
+  "La lógica te llevará de la a a la z. la imaginación te llevará a cualquier lugar"];
 
 
   constructor(

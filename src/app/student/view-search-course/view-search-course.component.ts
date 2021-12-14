@@ -90,7 +90,7 @@ export class ViewSearchCourseComponent implements OnInit {
     return res;
   }
   shortDescription(course:Course): any{
-     return course.descriptionCourse.substring(0,50);
+     return course.descriptionCourse.substring(0,30);
   }
 }
 
