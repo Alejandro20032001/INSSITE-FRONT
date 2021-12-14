@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { TareaHecha } from '../interfaces/tarea.hecha.interface';
 
 @Component({
   selector: 'app-tareas',
@@ -6,6 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tareas.component.scss']
 })
 export class TareasComponent implements OnInit {
+
+  @Input() tareaHecha: TareaHecha = {
+    idHomework: '',
+    content: '',
+    score: 0,
+    resource: {
+      idResource:'',
+      resourceType:'',
+      title:'',
+      descriptionResource:'',
+      score:-1,
+    }
+  };
+
+  scoreOfTask: number = 0;
 
   constructor() { }
 
