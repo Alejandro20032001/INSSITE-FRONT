@@ -17,7 +17,12 @@ export class TareasComponent implements OnInit {
       resourceType:'',
       title:'',
       descriptionResource:'',
-      score:-1,
+      score:-1
+    },
+    userDone:{
+      idUser:'',
+      completeName:'',
+      username:''
     }
   };
 

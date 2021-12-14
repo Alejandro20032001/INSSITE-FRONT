@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { tap } from 'rxjs/operators';
 import { TareaHecha } from '../interfaces/tarea.hecha.interface';
 
 import { GetHomeworksService} from '../services/homework.service'
@@ -11,10 +12,16 @@ export class VistaEstudianteTareaComponent implements OnInit {
 
   tareas:TareaHecha[] = [];
 
-  constructor() { }
+  constructor(private servicio:GetHomeworksService) { }
 
   ngOnInit(): void {
-
+    this.servicio.getMyHomeworks().
+    pipe(
+      tap((materiales:TareaHecha[]) => {
+        this.tareas = materiales;
+      })
+    )
+    .subscribe();
   }
 
 }
